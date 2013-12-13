@@ -6,3 +6,4 @@
 # Test configs
 public/include/config/global.inc.scrypt.php
 public/include/config/global.inc.sha.php
+.idea

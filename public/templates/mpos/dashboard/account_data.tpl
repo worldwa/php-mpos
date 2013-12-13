@@ -1,5 +1,5 @@
 <article class="module width_quarter">
-  <header><h3>Account Information</h3></header>
+  <header><h3>账户信息</h3></header>
     <table class="tablesorter" cellspacing="0">
       <tr>
         <td colspan="2">
@@ -35,13 +35,13 @@
     <table class="tablesorter" cellspacing="0">
      <thead>
       <tr>
-        <th align="left">Worker</th>
+        <th align="left">矿工</th>
         <th align="right">Hashrate</th>
-        <th align="right" style="padding-right: 10px;">Difficulty</th>
+        <th align="right" style="padding-right: 10px;">难度</th>
       </tr>
       </thead>
       <tbody id="b-workers">
-        <td colspan="3" align="center">No worker information available</td>
+        <td colspan="3" align="center">目前还没有矿工</td>
       </tbody>
       </tr>
     </table>

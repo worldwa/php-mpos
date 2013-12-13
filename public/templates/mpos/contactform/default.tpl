@@ -2,22 +2,22 @@
   <input type="hidden" name="page" value="{$smarty.request.page|escape}">
   <input type="hidden" name="action" value="contactform">
     <article class="module width_3_quarter">
-    <header><h3>Contact Us</h3></header>
+    <header><h3>联系我们</h3></header>
     <div class="module_content">
       <fieldset>
-        <label for="senderName">Your Name</label>
+        <label for="senderName">姓名</label>
         <input type="text" class="text tiny" name="senderName" value="{$smarty.request.senderName|escape|default:""}" placeholder="Please type your name" size="15" maxlength="100" required />
       </fieldset>
       <fieldset>
-        <label for="senderEmail">Your Email Address</label>
+        <label for="senderEmail">Email</label>
         <input type="text" class="text tiny" name="senderEmail" value="{$smarty.request.senderEmail|escape|default:""}" placeholder="Please type your email" size="50"  maxlength="100" required />
       </fieldset>
       <fieldset>
-        <label for="senderEmail">Your Subject</label>
+        <label for="senderEmail">标题</label>
         <input type="text" class="text tiny" name="senderSubject" value="{$smarty.request.senderSubject|escape|default:""}" placeholder="Please type your subject" size="15" maxlength="100" required />
       </fieldset>
       <fieldset>
-        <label for="message">Your Message</label>
+        <label for="message">内容</label>
         <textarea type="text" name="senderMessage" cols="80" rows="10" maxlength="10000" required>{$smarty.request.senderMessage|escape|default:""}</textarea>
       </fieldset>
       <center>{nocache}{$RECAPTCHA|default:""}{/nocache}</center>

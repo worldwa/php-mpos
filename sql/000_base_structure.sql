@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `loggedIp` varchar(255) DEFAULT NULL,
   `is_locked` tinyint(1) NOT NULL DEFAULT '0',
   `failed_logins` int(5) unsigned DEFAULT '0',
+  `failed_pins` int(5) unsigned DEFAULT '0',
   `sessionTimeoutStamp` int(255) DEFAULT NULL,
   `pin` varchar(255) NOT NULL COMMENT 'four digit pin to allow account changes',
   `api_key` varchar(255) DEFAULT NULL,
@@ -156,7 +157,9 @@ CREATE TABLE IF NOT EXISTS `shares_archive` (
   `time` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `share_id` (`share_id`),
-  KEY `time` (`time`)
+  KEY `time` (`time`),
+  KEY `our_result` (`our_result`),
+  KEY `username` (`username`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Archive shares for potential later debugging purposes';
 
 CREATE TABLE IF NOT EXISTS `statistics_shares` (

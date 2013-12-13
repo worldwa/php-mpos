@@ -3,14 +3,14 @@
   <input type="hidden" name="action" value="{$smarty.request.action|escape}">
   <input type="hidden" name="do" value="updateAccount">
   <article class="module width_half">
-    <header><h3>Account Details</h3></header>
+    <header><h3>账户</h3></header>
     <div class="module_content">
       <fieldset>
-        <label>Username</label>
+        <label>用户名</label>
         <input type="text" value="{$GLOBAL.userdata.username|escape}" readonly />
       </fieldset>
       <fieldset>
-        <label>User Id</label>
+        <label>用户ID</label>
         <input type="text" value="{$GLOBAL.userdata.id}" readonly />
       </fieldset>
       {if !$GLOBAL.website.api.disabled}
@@ -24,7 +24,7 @@
         <input type="text" name="email" value="{nocache}{$GLOBAL.userdata.email|escape}{/nocache}" size="20" />
       </fieldset>
       <fieldset>
-        <label>Payment Address</label>
+        <label>付款地址</label>
         <input type="text" name="paymentAddress" value="{nocache}{$smarty.request.paymentAddress|default:$GLOBAL.userdata.coin_address|escape}{nocache}" size="40" />
       </fieldset>
       <fieldset>

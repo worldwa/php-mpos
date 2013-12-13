@@ -1,16 +1,16 @@
 <article class="module width_quarter">
-  <header><h3 class="">Add New Worker</h3></header>
+  <header><h3 class="">增加新矿工</h3></header>
   <form action="{$smarty.server.PHP_SELF}" method="post">
     <input type="hidden" name="page" value="{$smarty.request.page|escape}">
     <input type="hidden" name="action" value="{$smarty.request.action|escape}">
     <input type="hidden" name="do" value="add">
     <div class="module_content">
       <fieldset>
-        <label>Worker Name</label>
+        <label>矿工名</label>
         <input type="text" name="username" value="user" size="10" maxlength="20" required>
       </fieldset>
       <fieldset>
-        <label>Worker Password</label>
+        <label>矿工密码</label>
         <input type="text" name="password" value="password" size="10" maxlength="20" required>&nbsp;
       </fieldset>
       <div class="clear"></div>

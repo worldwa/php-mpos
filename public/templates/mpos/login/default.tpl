@@ -15,7 +15,7 @@
     </div>
     <footer>
       <div class="submit_link">
-        <a href="{$smarty.server.PHP_SELF}?page=password"><font size="1">Forgot your password?</font></a>
+        <a href="{$smarty.server.PHP_SELF}?page=password"><font size="1">忘记密码?</font></a>
         <input type="submit" value="Login" class="alt_btn" />
       </div>
     </footer>

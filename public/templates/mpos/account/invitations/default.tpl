@@ -10,7 +10,7 @@
         <input type="text" name="data[email]" value="{$smarty.request.data.email|escape|default:""}" size="30" />
       </fieldset>
       <fieldset>
-        <label>Message</label>
+        <label>内容</label>
         <textarea name="data[message]" rows="5">{$smarty.request.data.message|escape|default:"Please accept my invitation to this awesome pool."}</textarea>
       </fieldset>
     </div>

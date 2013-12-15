@@ -1,16 +1,16 @@
     <hr/>
     <li class="icon-home"><a href="{$smarty.server.PHP_SELF}">首页</a></li>
     {if $smarty.session.AUTHENTICATED|default:"0" == 1}
-    <h3>我的庄户</h3>
+    <h3>我的账户</h3>
     <ul class="toggle">
-      <li class="icon-gauge"><a href="{$smarty.server.PHP_SELF}?page=dashboard">控制面板</a></li>
+      <li class="icon-gauge"><a href="{$smarty.server.PHP_SELF}?page=dashboard">面板</a></li>
       <li class="icon-user"><a href="{$smarty.server.PHP_SELF}?page=account&action=edit">修改账户</a></li>
       <li class="icon-photo"><a href="{$smarty.server.PHP_SELF}?page=account&action=workers">我的矿工</a></li>
       <li class="icon-indent-left"><a href="{$smarty.server.PHP_SELF}?page=account&action=transactions">交易</a></li>
     {if !$GLOBAL.config.disable_notifications}<li class="icon-megaphone"><a href="{$smarty.server.PHP_SELF}?page=account&action=notifications">通知</a></li>{/if}
-    {if !$GLOBAL.config.disable_invitations}<li class="icon-plus"><a href="{$smarty.server.PHP_SELF}?page=account&action=invitations">邀请</a></li>{/if}
-      <li class="icon-barcode"><a href="{$smarty.server.PHP_SELF}?page=account&action=qrcode">二维码</a></li>
-    </ul>
+    {*{if !$GLOBAL.config.disable_invitations}<li class="icon-plus"><a href="{$smarty.server.PHP_SELF}?page=account&action=invitations">邀请</a></li>{/if}*}
+      {*<li class="icon-barcode"><a href="{$smarty.server.PHP_SELF}?page=account&action=qrcode">二维码</a></li>*}
+    {*</ul>*}
     </li>
     {/if}
     {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
@@ -62,13 +62,13 @@
     <ul class="toggle">
       <li class="icon-desktop"><a href="{$smarty.server.PHP_SELF}?page=gettingstarted">新手指南</a></li>
       {if !$GLOBAL.website.about.disabled}
-      <li class="icon-doc"><a href="{$smarty.server.PHP_SELF}?page=about&action=pool">About</a></li>
+      <li class="icon-doc"><a href="{$smarty.server.PHP_SELF}?page=about&action=pool">关于我们</a></li>
       {/if}
       {if !$GLOBAL.website.donors.disabled}
       <li class="icon-money"><a href="{$smarty.server.PHP_SELF}?page=about&action=donors">Donors</a></li>
       {/if}
     </ul>
-    <h3>Other</h3>
+    <h3>其他</h3>
     <ul class="toggle">
       {if $smarty.session.AUTHENTICATED|default:"0" == 1}
       {*{if !$GLOBAL.config.disable_contactform|default:"0" == 1}*}

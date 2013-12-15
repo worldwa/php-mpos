@@ -1,5 +1,5 @@
 <article class="module module width_3_quarter">
-  <header><h3>Overview {if $GLOBAL.config.price.currency}{$GLOBAL.config.currency}/{$GLOBAL.config.price.currency}: <span id="b-price">{$GLOBAL.price}</span>{/if} / Pool Workers: <span id="b-dworkers">{$GLOBAL.workers}</span></h3></header>
+  <header><h3> {if $GLOBAL.config.price.currency}{$GLOBAL.config.currency}/{$GLOBAL.config.price.currency}: <span id="b-price">{$GLOBAL.price}</span>{/if} / 矿工数: <span id="b-dworkers">{$GLOBAL.workers}</span></h3></header>
   <div class="module_content">
     <center>
     <div style="display: inline-block;">
@@ -21,6 +21,6 @@
     {/if}
   </div>
   <footer>
-    <p style="margin-left: 25px">Refresh interval: {$GLOBAL.config.statistics_ajax_refresh_interval|default:"10"} seconds. Hashrate based on shares submitted in the past {$INTERVAL|default:"5"} minutes.</p>
+    <p style="margin-left: 25px">更新间隔: {$GLOBAL.config.statistics_ajax_refresh_interval|default:"10"} 秒. 过去 {$INTERVAL|default:"5"} 分钟平均速度.</p>
   </footer>
 </article>

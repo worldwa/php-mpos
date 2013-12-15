@@ -24,7 +24,7 @@
 </article>
 
 <article class="module width_3_quarter">
-  <header><h3 class="">Worker Configuration</h3></header>
+  <header><h3 class="">矿工设置</h3></header>
   <form action="{$smarty.server.PHP_SELF}" method="post">
     <input type="hidden" name="page" value="{$smarty.request.page|escape}">
     <input type="hidden" name="action" value="{$smarty.request.action|escape}">
@@ -32,13 +32,13 @@
     <table class="tablesorter" cellspacing="0">
       <thead>
         <tr>
-          <th align="left">Worker Login</th>
-          <th align="left">Worker Password</th>
-          <th align="center">Active</th>
-          {if $GLOBAL.config.disable_notifications != 1}<th align="center">Monitor</th>{/if}
+          <th align="left">矿工名</th>
+          <th align="left">矿工密码</th>
+          <th align="center">激活状态</th>
+          {if $GLOBAL.config.disable_notifications != 1}<th align="center">监控</th>{/if}
           <th align="right">Khash/s</th>
-          <th align="right">Difficulty</th>
-          <th align="center" style="padding-right: 25px;">Action</th>
+          <th align="right">难度</th>
+          <th align="center" style="padding-right: 25px;">操作</th>
         </tr>
       </thead>
       <tbody>

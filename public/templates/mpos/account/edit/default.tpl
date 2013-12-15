@@ -27,28 +27,28 @@
         <label>付款地址</label>
         <input type="text" name="paymentAddress" value="{nocache}{$smarty.request.paymentAddress|default:$GLOBAL.userdata.coin_address|escape}{nocache}" size="40" />
       </fieldset>
+      {*<fieldset>*}
+        {*<label>Donation Percentage</label>*}
+        {*<font size="1"> Donation amount in percent (example: 0.5)</font>*}
+        {*<input type="text" name="donatePercent" value="{nocache}{$smarty.request.donatePercent|default:$GLOBAL.userdata.donate_percent|escape}{nocache}" size="4" />*}
+      {*</fieldset>*}
       <fieldset>
-        <label>Donation Percentage</label>
-        <font size="1"> Donation amount in percent (example: 0.5)</font>
-        <input type="text" name="donatePercent" value="{nocache}{$smarty.request.donatePercent|default:$GLOBAL.userdata.donate_percent|escape}{nocache}" size="4" />
-      </fieldset>
-      <fieldset>
-        <label>Automatic Payout Threshold</label>
-        <font size="1">{$GLOBAL.config.ap_threshold.min}-{$GLOBAL.config.ap_threshold.max} {$GLOBAL.config.currency}. Set to '0' for no auto payout.</font>
+        <label>自动提款额度</label>
+        <font size="1">{$GLOBAL.config.ap_threshold.min}-{$GLOBAL.config.ap_threshold.max} {$GLOBAL.config.currency}.如果为0，则表示不自动提款（例如1）.</font>
         <input type="text" name="payoutThreshold" value="{$smarty.request.payoutThreshold|default:$GLOBAL.userdata.ap_threshold|escape}" size="5" maxlength="5" />
       </fieldset>
+      {*<fieldset>*}
+        {*<label>Anonymous Account</label>*}
+        {*Hide username on website from others. Admins can still get your user information.*}
+        {*<label class="checkbox" for="is_anonymous">*}
+        {*<input class="ios-switch" type="hidden" name="is_anonymous" value="0" />*}
+        {*<input class="ios-switch" type="checkbox" name="is_anonymous" value="1" id="is_anonymous" {if $GLOBAL.userdata.is_anonymous}checked{/if} />*}
+        {*<div class="switch"></div>*}
+        {*</label>*}
+      {*</fieldset>*}
       <fieldset>
-        <label>Anonymous Account</label>
-        Hide username on website from others. Admins can still get your user information.
-        <label class="checkbox" for="is_anonymous">
-        <input class="ios-switch" type="hidden" name="is_anonymous" value="0" />
-        <input class="ios-switch" type="checkbox" name="is_anonymous" value="1" id="is_anonymous" {if $GLOBAL.userdata.is_anonymous}checked{/if} />
-        <div class="switch"></div>
-        </label>
-      </fieldset>
-      <fieldset>
-        <label>4 digit PIN</label>
-        <font size="1">The 4 digit PIN you chose when registering</font>
+        <label>4 位数 PIN</label>
+        <font size="1">你注册时填写的4位数PIN</font>
         <input type="password" name="authPin" size="4" maxlength="4">
       </fieldset>
     </div>

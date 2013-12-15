@@ -4,14 +4,14 @@
     <input type="hidden" name="page" value="{$smarty.request.page|escape}">
     <input type="hidden" name="action" value="{$smarty.request.action|escape}">
     <input type="hidden" name="do" value="resetPassword">
-    <header><h3>Password reset</h3></header>
+    <header><h3>密码重置</h3></header>
     <div class="module_content">
       <fieldset>
-        <label>New Password</label>
+        <label>新密码</label>
         <input type="password" name="newPassword" required>
       </fieldset>
       <fieldset>
-        <label>Repeat New Password</label>
+        <label>重新输入新密码</label>
         <input type="password" name="newPassword2" required>
       </fieldset>
       <div class="clear"></div>

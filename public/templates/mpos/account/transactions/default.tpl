@@ -1,5 +1,5 @@
 <article class="module width_full">
-  <header><h3>Transaction Summary</h3></header>
+  <header><h3>交易</h3></header>
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
@@ -19,7 +19,7 @@
 </article>
 
 <article class="module width_quarter">
-  <header><h3>Transaction Filter</h3></header>
+  <header><h3>过滤</h3></header>
   <div class="module_content">
   <form action="{$smarty.server.PHP_SELF}">
     <input type="hidden" name="page" value="{$smarty.request.page|escape}" />
@@ -64,7 +64,7 @@
 </article>
 
 <article class="module width_3_quarter">
-  <header><h3>Transaction History</h3></header>
+  <header><h3>历史</h3></header>
     <table cellspacing="0" class="tablesorter" width="100%">
       <thead>
         <tr>

@@ -59,5 +59,5 @@ require_once(CLASS_DIR . '/api.class.php');
 require_once(INCLUDE_DIR . '/lib/Michelf/Markdown.php');
 require_once(INCLUDE_DIR . '/lib/scrypt.php');
 
-require_once(INCLUDE_DIR . '/lib/mail/autoloader.inc.php');
+require_once(INCLUDE_DIR . '/lib/mail/PHPMailerAutoload.php');
 ?>

@@ -9,19 +9,19 @@
     <input type="hidden" name="action" value="register">
     <fieldset>
       <label>用户名</label>
-      <input type="text" class="text tiny" name="username" value="{$smarty.post.username|escape|default:""}" size="15" maxlength="20" required>
+      <input type="text" class="text tiny" name="username" value="{$smarty.post.username|escape|default:""}" size="15" maxlength="100" required>
     </fieldset>
     <fieldset>
       <label>密码</label>
-      <input type="password" class="text tiny" name="password1" value="" size="15" maxlength="20" required>
+      <input type="password" class="text tiny" name="password1" value="" size="15" maxlength="100" required>
       <label>再次输入密码</label>
-      <input type="password" class="text tiny" name="password2" value="" size="15" maxlength="20" required>
+      <input type="password" class="text tiny" name="password2" value="" size="15" maxlength="100" required>
     </fieldset>
     <fieldset>
       <label>Email</label>
-      <input type="text" name="email1" class="text small" value="{$smarty.post.email1|escape|default:""}" size="15" required>
+      <input type="text" name="email1" class="text small" value="{$smarty.post.email1|escape|default:""}" size="100" required>
       <label>再次输入Email</label>
-      <input type="text" class="text small" name="email2" value="{$smarty.post.email2|escape|default:""}" size="15" required>
+      <input type="text" class="text small" name="email2" value="{$smarty.post.email2|escape|default:""}" size="100" required>
     </fieldset>
     <fieldset>
       <label>PIN</label>

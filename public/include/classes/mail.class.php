@@ -39,14 +39,14 @@ class Mail extends Base {
     $aData['senderMessage'] = $senderMessage;
     $aData['email'] = $this->setting->getValue('website_email');
       return true;
-//    $aData['subject'] = 'Contact From';
-//      if ($this->sendMail('contactform/body', $aData)) {
-//        return true;
-//     } else {
-//       $this->setErrorMessage( 'Unable to send email' );
-//       return false;
-//     }
-//    return false;
+    $aData['subject'] = 'Contact From';
+      if ($this->sendMail('contactform/body', $aData)) {
+        return true;
+     } else {
+       $this->setErrorMessage( 'Unable to send email' );
+       return false;
+     }
+    return false;
   }
 
   /**
@@ -68,11 +68,42 @@ class Mail extends Base {
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     if (strlen(@$aData['senderName']) > 0 && @strlen($aData['senderEmail']) > 0 )
       $headers .= 'Reply-To: ' . $aData['senderName'] . ' <' . $aData['senderEmail'] . ">\n";
-    if (mail($aData['email'], $this->smarty->fetch(BASEPATH . 'templates/mail/subject.tpl'), $this->smarty->fetch(BASEPATH . 'templates/mail/' . $template  . '.tpl'), $headers))
+//    if (mail($aData['email'], $this->smarty->fetch(BASEPATH . 'templates/mail/subject.tpl'), $this->smarty->fetch(BASEPATH . 'templates/mail/' . $template  . '.tpl'), $headers))
+//      return true;
+    if($this->send($aData['email'],$this->smarty->fetch(BASEPATH . 'templates/mail/subject.tpl'),$this->smarty->fetch(BASEPATH . 'templates/mail/' . $template  . '.tpl')))
       return true;
     $this->setErrorMessage($this->sqlError('E0031'));
     return false;
   }
+
+  public function send($to, $subject, $body){
+    $mail = new PHPMailer;
+
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.163.com';  // Specify main and backup server
+    $mail->Port = 465;
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'iwakuang@163.com';                            // SMTP username
+    $mail->Password = 'iwakuang121';                           // SMTP password
+    $mail->SMTPSecure = 'ssl';                            // Enable encryption, 'ssl' also accepted
+
+    $mail->From = 'iwakuang@163.com';
+    $mail->FromName = '爱挖矿';
+    $mail->addAddress($to);               // Name is optional
+
+    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+    $mail->isHTML(true);                                  // Set email format to HTML
+
+    $mail->Subject = $subject;
+    $mail->Body    = $body;
+//    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    if(!$mail->send()) {
+      return false;
+    }
+    return true;
+  }
+
 }
 
 // Make our class available automatically

@@ -13,7 +13,7 @@
     </div>
     <footer>
       <div class="submit_link">
-        <input type="submit" value="Reset" class="alt_btn">
+        <input type="submit" value="重置" class="alt_btn">
       </div>
     </footer>
   </form>

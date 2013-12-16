@@ -23,7 +23,7 @@
       <center>{nocache}{$RECAPTCHA|default:""}{/nocache}</center>
     </div>
     <footer>
-      <div class="submit_link"><input type="submit" class="alt_btn" name="sendMessage" value="Send Email" /></div>
+      <div class="submit_link"><input type="submit" class="alt_btn" name="sendMessage" value="发送" /></div>
     </footer>
   </article>
 </form>

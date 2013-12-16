@@ -23,13 +23,13 @@
 </form>
 
 <article class="module width_3_quarter">
-  <header><h3>Past Invitations</h3></header>
+  <header><h3>邀请历史</h3></header>
   <table class="tablesorter" cellspacing="0">
     <thead style="font-size:13px;">
       <tr>
         <th>E-Mail</th>
-        <th align="center">Sent</th>
-        <th align="center">Activated</th>
+        <th align="center">发送</th>
+        <th align="center">激活</th>
       </tr>
     </thead>
     <tbody>

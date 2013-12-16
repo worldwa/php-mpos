@@ -18,7 +18,7 @@
     </div>
     <footer>
       <div class="submit_link">
-        <input type="submit" value="Change Password" class="alt_btn">
+        <input type="submit" value="修改密码" class="alt_btn">
       </div>
     </footer>
   </form>

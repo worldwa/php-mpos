@@ -10,7 +10,7 @@
          </tr>
 {elseif $GLOBAL.config.payout_system == 'pps'}
         <tr>
-          <td><b>Unpaid Shares</b></td>
+          <td><b>未支付 Shares</b></td>
           <td id="b-ppsunpaid">{$GLOBAL.userdata.pps.unpaidshares}</td>
         </tr>
         <tr>

@@ -34,7 +34,7 @@
         <tr>
           <th align="left">矿工名</th>
           <th align="left">矿工密码</th>
-          <th align="center">激活状态</th>
+          <th align="center">活动状态</th>
           {if $GLOBAL.config.disable_notifications != 1}<th align="center">监控</th>{/if}
           <th align="right">Khash/s</th>
           <th align="right">难度</th>
@@ -70,7 +70,7 @@
     <div class="clear"></div>
     <footer>
       <div class="submit_link">
-        <input type="submit" class="alt_btn" value="Update Workers">
+        <input type="submit" class="alt_btn" value="更新">
       </div>
     </footer>
   </form>

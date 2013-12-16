@@ -7,14 +7,14 @@
            <td><b>块</b></td>
            <td id="b-block" class="right">{$GLOBAL.userdata.estimates.block}</td>
          </tr>
-         {*<tr>*}
-           {*<td><b>手续费</b></td>*}
-           {*<td id="b-fee" class="right">{$GLOBAL.userdata.estimates.fee}</td>*}
-         {*</tr>*}
-         {*<tr>*}
-           {*<td><b>Donation</b></td>*}
-           {*<td id="b-donation" class="right">{$GLOBAL.userdata.estimates.donation}</td>*}
-         {*</tr>*}
+         <tr>
+           <td><b>手续费</b></td>
+           <td id="b-fee" class="right">{$GLOBAL.userdata.estimates.fee}</td>
+         </tr>
+         <tr>
+           <td><b>Donation</b></td>
+           <td id="b-donation" class="right">{$GLOBAL.userdata.estimates.donation}</td>
+         </tr>
          <tr>
            <td><b>支付</b></td>
            <td id="b-payout" class="right">{$GLOBAL.userdata.estimates.payout}</td>

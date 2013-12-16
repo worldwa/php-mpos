@@ -1,6 +1,6 @@
 
         {if $smarty.session.AUTHENTICATED|default:"0" == 1}
-        <a href="#left-sidebar" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">左侧栏</a>
+        <a href="#left-sidebar" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">导航</a>
         {/if}
         <div data-role="navbar">
           <ul>

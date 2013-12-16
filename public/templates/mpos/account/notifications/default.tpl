@@ -9,11 +9,11 @@
     <div class="module_content">
     <table width="100%">
       <tr>
-        <th align="left">Type</th>
-        <th align="center">Active</th>
+        <th align="left">类型</th>
+        <th align="center">运行</th>
       </tr>
       <tr>
-        <td align="left">IDLE Worker</td>
+        <td align="left">矿工闲置</td>
         <td>
           <span class="toggle">
           <label for="data[idle_worker]">
@@ -25,7 +25,7 @@
         </td>
       </tr>
       <tr>
-        <td align="left">New Blocks</td>
+        <td align="left">新块</td>
         <td>
           <span class="toggle">
           <label for="data[new_block]">
@@ -37,7 +37,7 @@
         </td>
       </tr>
       <tr>
-        <td align="left">Auto Payout</td>
+        <td align="left">自动付款</td>
         <td>
           <span class="toggle">
           <label for="data[auto_payout]">
@@ -49,7 +49,7 @@
         </td>
       </tr>
       <tr>
-        <td align="left">Manual Payout</td>
+        <td align="left">手动付款</td>
         <td>
           <span class="toggle">
           <label for="data[manual_payout]">
@@ -64,7 +64,7 @@
     </div>
     <footer>
       <div class="submit_link">
-        <input type="submit" value="Update" class="alt_btn">
+        <input type="submit" value="更新" class="alt_btn">
       </div>
     </footer>
   </article>
@@ -72,16 +72,16 @@
 
 <article class="module width_3_quarter">
   <header>
-      <h3>Notification History</h3>
+      <h3>通知历史</h3>
       <div class="submit_link">{include file="global/pagination.tpl"}</div>
   </header>
   <table width="100%" class="tablesorterpager" cellspacing="0">
     <thead style="font-size:13px;">
       <tr>
         <th align="center" style="cursor: pointer;">ID</th>
-        <th align="center" style="cursor: pointer;">Time</th>
-        <th align="center" style="cursor: pointer;">Type</th>
-        <th align="center" style="cursor: pointer;">Active</th>
+        <th align="center" style="cursor: pointer;">时间</th>
+        <th align="center" style="cursor: pointer;">类型</th>
+        <th align="center" style="cursor: pointer;">活动</th>
       </tr>
     </thead>
     <tbody style="font-size:12px;">
@@ -90,10 +90,10 @@
         <td align="center">{$NOTIFICATIONS[notification].id}</td>
         <td align="center">{$NOTIFICATIONS[notification].time}</td>
         <td align="center">
-{if $NOTIFICATIONS[notification].type == new_block}New Block
-{else if $NOTIFICATIONS[notification].type == auto_payout}Auto Payout
-{else if $NOTIFICATIONS[notification].type == idle_worker}IDLE Worker
-{else if $NOTIFICATIONS[notification].type == manual_payout}Manual Payout
+{if $NOTIFICATIONS[notification].type == new_block}新块
+{else if $NOTIFICATIONS[notification].type == auto_payout}自动付款
+{else if $NOTIFICATIONS[notification].type == idle_worker}矿工闲置
+{else if $NOTIFICATIONS[notification].type == manual_payout}手动付款
 {/if}
         </td>
         <td align="center">

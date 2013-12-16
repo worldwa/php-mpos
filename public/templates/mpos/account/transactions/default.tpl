@@ -19,7 +19,7 @@
 </article>
 
 <article class="module width_quarter">
-  <header><h3>过滤</h3></header>
+  <header><h3>筛选</h3></header>
   <div class="module_content">
   <form action="{$smarty.server.PHP_SELF}">
     <input type="hidden" name="page" value="{$smarty.request.page|escape}" />
@@ -47,11 +47,11 @@
     </tbody>
   </table>
     <fieldset>
-      <label>Type</label>
+      <label>类型</label>
       {html_options name="filter[type]" options=$TRANSACTIONTYPES selected=$smarty.request.filter.type|default:""}
     </fieldset>
     <fieldset>
-      <label>Status</label>
+      <label>状态</label>
       {html_options name="filter[status]" options=$TXSTATUS selected=$smarty.request.filter.status|default:""}
     </fieldset>
     </div>
@@ -69,11 +69,11 @@
       <thead>
         <tr>
           <th align="center">ID</th>
-          <th>Account</th>
-          <th>Date</th>
+          <th>账户</th>
+          <th>日期</th>
           <th>TX Type</th>
-          <th align="center">Status</th>
-          <th>Payment Address</th>
+          <th align="center">状态</th>
+          <th>付款地址</th>
           <th>TX #</th>
           <th>Block #</th>
           <th>Amount</th>
@@ -94,9 +94,9 @@
                 $TRANSACTIONS[transaction].type == 'Debit_AP' OR
                 $TRANSACTIONS[transaction].type == 'TXFee' OR
                 $TRANSACTIONS[transaction].confirmations >= $GLOBAL.confirmations
-            }<span class="confirmed">Confirmed</span>
-            {else if $TRANSACTIONS[transaction].confirmations == -1}<span class="orphan">Orphaned</span>
-            {else}<span class="unconfirmed">Unconfirmed</span>{/if}
+            }<span class="confirmed">已确认</span>
+            {else if $TRANSACTIONS[transaction].confirmations == -1}<span class="orphan">孤立</span>
+            {else}<span class="unconfirmed">未确认</span>{/if}
           </td>
           <td>{$TRANSACTIONS[transaction].coin_address|truncate:20:"...":true:true}</td>
           <td>{$TRANSACTIONS[transaction].txid|truncate:20:"...":true:true}</td>

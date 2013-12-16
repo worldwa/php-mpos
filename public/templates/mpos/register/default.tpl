@@ -30,7 +30,7 @@
     {nocache}{$RECAPTCHA|default:""}{/nocache}
     <footer>
       <div class="submit_link">
-        <input type="submit" value="Register" class="alt_btn">
+        <input type="submit" value="注册" class="alt_btn">
       </div>
     </footer>
   </form>

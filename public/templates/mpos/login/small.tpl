@@ -11,7 +11,7 @@
         <input type="password" name="password" size="22" maxlength="100" required />
       </fieldset2>
     </fieldset2>
-    <input type="submit" value="Login" class="alt_btn" />
+    <input type="submit" value="登录" class="alt_btn" />
   </form>
 </div>
 {/if}

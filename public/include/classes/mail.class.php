@@ -38,7 +38,6 @@ class Mail extends Base {
     $aData['senderSubject'] = $senderSubject;
     $aData['senderMessage'] = $senderMessage;
     $aData['email'] = $this->setting->getValue('website_email');
-      return true;
     $aData['subject'] = 'Contact From';
       if ($this->sendMail('contactform/body', $aData)) {
         return true;
@@ -80,15 +79,15 @@ class Mail extends Base {
     $mail = new PHPMailer;
 
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.163.com';  // Specify main and backup server
-    $mail->Port = 465;
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'iwakuang@163.com';                            // SMTP username
-    $mail->Password = 'iwakuang121';                           // SMTP password
-    $mail->SMTPSecure = 'ssl';                            // Enable encryption, 'ssl' also accepted
+    $mail->Host = $this->config['email']['Host'] ;  // Specify main and backup server
+    $mail->Port = $this->config['email']['Port'];
+    $mail->SMTPAuth = $this->config['email']['SMTPAuth'];                               // Enable SMTP authentication
+    $mail->Username =$this->config['email']['Username'];                            // SMTP username
+    $mail->Password = $this->config['email']['Password'] ;                           // SMTP password
+    $mail->SMTPSecure = $this->config['email']['SMTPSecure'];                            // Enable encryption, 'ssl' also accepted
 
-    $mail->From = 'iwakuang@163.com';
-    $mail->FromName = '爱挖矿';
+    $mail->From = $this->config['email']['From'];
+    $mail->FromName = $this->config['email']['FromName'] ;
     $mail->addAddress($to);               // Name is optional
 
     $mail->WordWrap = 50;                                 // Set word wrap to 50 characters

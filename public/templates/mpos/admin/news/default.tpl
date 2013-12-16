@@ -6,11 +6,11 @@
     <input type="hidden" name="do" value="add">
     <div class="module_content">
       <fieldset>
-        <label>Header</label>
+        <label>标题</label>
         <input size="30" type="text" name="data[header]" required />
       </fieldset>
       <fieldset>
-        <label>Content</label>
+        <label>内容</label>
         <textarea name="data[content]" rows="5" required></textarea>
       </fieldset>
     </div>

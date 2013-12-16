@@ -537,10 +537,10 @@ class User extends Base {
           $aData['token'] = $token;
           $aData['email'] = $email1;
           $aData['subject'] = 'E-Mail verification';
-          if (!$this->mail->sendMail('register/confirm_email', $aData)) {
-            $this->setErrorMessage('Unable to request email confirmation: ' . $this->mail->getError());
-            return false;
-          }
+//          if (!$this->mail->sendMail('register/confirm_email', $aData)) {
+//            $this->setErrorMessage('Unable to request email confirmation: ' . $this->mail->getError());
+//            return false;
+//          }
           return true;
         } else {
           $this->setErrorMessage('Failed to create confirmation token');

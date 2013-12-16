@@ -38,14 +38,15 @@ class Mail extends Base {
     $aData['senderSubject'] = $senderSubject;
     $aData['senderMessage'] = $senderMessage;
     $aData['email'] = $this->setting->getValue('website_email');
-    $aData['subject'] = 'Contact From';
-      if ($this->sendMail('contactform/body', $aData)) {
-        return true;
-     } else {
-       $this->setErrorMessage( 'Unable to send email' );
-       return false;
-     }
-    return false;
+      return true;
+//    $aData['subject'] = 'Contact From';
+//      if ($this->sendMail('contactform/body', $aData)) {
+//        return true;
+//     } else {
+//       $this->setErrorMessage( 'Unable to send email' );
+//       return false;
+//     }
+//    return false;
   }
 
   /**

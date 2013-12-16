@@ -508,8 +508,7 @@ class User extends Base {
       }
     }
     if ($this->mysqli->query("SELECT id FROM $this->table LIMIT 1")->num_rows > 0) {
-      //! $this->setting->getValue('accounts_confirm_email_disabled') ? $is_locked = 1 : $is_locked = 0;
-      $is_locked = 0;
+      ! $this->setting->getValue('accounts_confirm_email_disabled') ? $is_locked = 1 : $is_locked = 0;
       $is_admin = 0;
       $stmt = $this->mysqli->prepare("
         INSERT INTO $this->table (username, pass, email, pin, api_key, is_locked)

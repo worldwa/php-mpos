@@ -1,7 +1,7 @@
 <html>
 <body>
-<p>An manual payout request completed.</p>
-<p>Amount: {nocache}{$DATA.amount}{/nocache}</p>
+<p>一笔手动提款完成</p>
+<p>总共: {nocache}{$DATA.amount}{/nocache}</p>
 <br/>
 <br/>
 </body>

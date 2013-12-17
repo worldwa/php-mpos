@@ -1,10 +1,9 @@
 <html>
 <body>
-<p>One of your workers is currently IDLE: {nocache}{$DATA.worker}{/nocache}</p>
-<p>We have not received any shares for this worker in the past 10 minutes.</p>
-<p>Since monitoring is enabled for this worker, this notification was sent.</p>
+<p>矿工: {nocache}{$DATA.worker}{/nocache} 已经停止工作</p>
+<p>我们已经10分钟没有收到该矿工的消息了。</p>
 <br />
-<p>Please check your workers!</p>
+<p>请检查你的矿工工作情况。</p>
 <br/>
 <br/>
 </body>

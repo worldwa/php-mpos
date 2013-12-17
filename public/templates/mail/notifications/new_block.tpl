@@ -1,6 +1,6 @@
 <html>
 <body>
-<p>A new block has been discovered!</p>
+<p>发现了一个新的块!</p>
 <br/>
 <br/>
 </body>

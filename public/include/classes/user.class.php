@@ -113,18 +113,18 @@ class User extends Base {
     $this->debug->append("STA " . __METHOD__, 4);
     $this->debug->append("Checking login for $username with password $password", 2);
     if (empty($username) || empty($password)) {
-      $this->setErrorMessage("Invalid username or password.");
+      $this->setErrorMessage("用户名或密码不能为空");
       return false;
     }
     if (filter_var($username, FILTER_VALIDATE_EMAIL)) {
       $this->debug->append("Username is an e-mail: $username", 2);
       if (!$username = $this->getUserNameByEmail($username)) {
-        $this->setErrorMessage("Invalid username or password.");
+        $this->setErrorMessage("不合法的用户名");
         return false;
       }
     }
     if ($this->isLocked($this->getUserId($username))) {
-      $this->setErrorMessage("Account is locked. Please contact site support.");
+      $this->setErrorMessage("该账户已被锁定，请联系网站管理员");
       return false;
     }
     if ($this->checkUserPassword($username, $password)) {
@@ -132,7 +132,7 @@ class User extends Base {
       if ($this->setUserIp($this->getUserId($username), $_SERVER['REMOTE_ADDR']))
         return true;
     }
-    $this->setErrorMessage("Invalid username or password");
+    $this->setErrorMessage("不正确的用户名或密码");
     if ($id = $this->getUserId($username)) {
       $this->incUserFailed($id);
       // Check if this account should be locked
@@ -222,11 +222,11 @@ class User extends Base {
   public function updatePassword($userID, $current, $new1, $new2) {
     $this->debug->append("STA " . __METHOD__, 4);
     if ($new1 !== $new2) {
-      $this->setErrorMessage( 'New passwords do not match' );
+      $this->setErrorMessage( '2次密码输入不一致' );
       return false;
     }
     if ( strlen($new1) < 8 ) {
-      $this->setErrorMessage( 'New password is too short, please use more than 8 chars' );
+      $this->setErrorMessage( '密码最短为8个字符' );
       return false;
     }
     $current = $this->getHash($current);
@@ -240,7 +240,7 @@ class User extends Base {
       }
       $stmt->close();
     }
-    $this->setErrorMessage( 'Unable to update password, current password wrong?' );
+    $this->setErrorMessage( '更新密码失败，当前密码输入错误?' );
     return false;
   }
 
@@ -258,42 +258,42 @@ class User extends Base {
 
     // number validation checks
     if (!is_numeric($threshold)) {
-      $this->setErrorMessage('Invalid input for auto-payout');
+      $this->setErrorMessage('自动提款输入错误');
       return false;
     } else if ($threshold < $this->config['ap_threshold']['min'] && $threshold != 0) {
-      $this->setErrorMessage('Threshold below configured minimum of ' . $this->config['ap_threshold']['min']);
+      $this->setErrorMessage('最低自动提款限额不能低于 ' . $this->config['ap_threshold']['min']);
       return false;
     } else if ($threshold > $this->config['ap_threshold']['max']) {
-      $this->setErrorMessage('Threshold above configured maximum of ' . $this->config['ap_threshold']['max']);
+      $this->setErrorMessage('最低自动提款限额不能高于' . $this->config['ap_threshold']['max']);
       return false;
     }
     if (!is_numeric($donate)) {
-      $this->setErrorMessage('Invalid input for donation');
+      $this->setErrorMessage('捐款比例输入错误');
       return false;
     } else if ($donate < 0) {
-      $this->setErrorMessage('Donation below allowed 0% limit');
+      $this->setErrorMessage('捐款比例不能低于0%');
       return false;
     } else if ($donate > 100) {
-      $this->setErrorMessage('Donation above allowed 100% limit');
+      $this->setErrorMessage('捐款比例不能高于100%');
       return false;
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $this->setErrorMessage('Invalid email address');
+      $this->setErrorMessage('不合法的Email地址');
       return false;
     }
     if ($this->bitcoin->can_connect() === true && !empty($address)) {
       try {
         $aStatus = $this->bitcoin->validateaddress($address);
         if (!$aStatus['isvalid']) {
-          $this->setErrorMessage('Invalid coin address');
+          $this->setErrorMessage('不合法的钱包地址');
           return false;
         }
       } catch (BitcoinClientException $e) {
-        $this->setErrorMessage('Unable to verify coin address');
+        $this->setErrorMessage('验证钱包地址失败');
         return false;
       }
     } else {
-      $this->setErrorMessage('Unable to connect to RPC server for coin address validation');
+      $this->setErrorMessage('连接后端 RPC 服务验证钱包地址失败');
       return false;
     }
 
@@ -306,7 +306,7 @@ class User extends Base {
     if ($this->checkStmt($stmt) && $stmt->bind_param('sddsii', $address, $threshold, $donate, $email, $is_anonymous, $userID) && $stmt->execute())
       return true;
     // Catchall
-    $this->setErrorMessage('Failed to update your account');
+    $this->setErrorMessage('更新账户直白');
     $this->debug->append('Account update failed: ' . $this->mysqli->error);
     return false;
   }
@@ -459,35 +459,35 @@ class User extends Base {
   public function register($username, $password1, $password2, $pin, $email1='', $email2='', $strToken='') {
     $this->debug->append("STA " . __METHOD__, 4);
     if (strlen($username) > 40) {
-      $this->setErrorMessage('Username exceeding character limit');
+      $this->setErrorMessage('用户名多长，最长40个字符');
       return false;
     }
     if (preg_match('/[^a-z_\-0-9]/i', $username)) {
-      $this->setErrorMessage('Username may only contain alphanumeric characters');
+      $this->setErrorMessage('用户名只能包含字母或者数字');
       return false;
     }
     if ($this->getEmail($email1)) {
-      $this->setErrorMessage( 'This e-mail address is already taken' );
+      $this->setErrorMessage( '这个Email地址已经被使用' );
       return false;
     }
     if (strlen($password1) < 8) { 
-      $this->setErrorMessage( 'Password is too short, minimum of 8 characters required' );
+      $this->setErrorMessage( '密码最短8个字符' );
       return false;
     }
     if ($password1 !== $password2) {
-      $this->setErrorMessage( 'Password do not match' );
+      $this->setErrorMessage( '2次输入的密码不一致' );
       return false;
     }
     if (empty($email1) || !filter_var($email1, FILTER_VALIDATE_EMAIL)) {
-      $this->setErrorMessage( 'Invalid e-mail address' );
+      $this->setErrorMessage( '不合法的Email' );
       return false;
     }
     if ($email1 !== $email2) {
-      $this->setErrorMessage( 'E-mail do not match' );
+      $this->setErrorMessage( '2次输入的Email不一致' );
       return false;
     }
     if (!is_numeric($pin) || strlen($pin) > 4 || strlen($pin) < 4) {
-      $this->setErrorMessage( 'Invalid PIN' );
+      $this->setErrorMessage( '不合法的PIN' );
       return false;
     }
     if (isset($strToken) && !empty($strToken)) {
@@ -499,11 +499,11 @@ class User extends Base {
       $invitation->setUser($this);
       $invitation->setConfig($this->config);
       if (!$invitation->setActivated($aToken['id'])) {
-        $this->setErrorMessage('Unable to activate your invitation');
+        $this->setErrorMessage('激活邀请失败');
         return false;
       }
       if (!$this->token->deleteToken($strToken)) {
-        $this->setErrorMessage('Unable to remove used token');
+        $this->setErrorMessage('删除token失败');
         return false;
       }
     }
@@ -537,12 +537,12 @@ class User extends Base {
           $aData['email'] = $email1;
           $aData['subject'] = 'E-Mail verification';
           if (!$this->mail->sendMail('register/confirm_email', $aData)) {
-            $this->setErrorMessage('Unable to request email confirmation: ' . $this->mail->getError());
+            $this->setErrorMessage('发送邮件失败 ' . $this->mail->getError());
             return false;
           }
           return true;
         } else {
-          $this->setErrorMessage('Failed to create confirmation token');
+          $this->setErrorMessage('生成邮件确认失败');
           $this->debug->append('Unable to create confirm_email token: ' . $this->token->getError());
           return false;
         }
@@ -550,9 +550,9 @@ class User extends Base {
         return true;
       }
     } else {
-      $this->setErrorMessage( 'Unable to register' );
+      $this->setErrorMessage( '注册失败' );
       $this->debug->append('Failed to insert user into DB: ' . $this->mysqli->error);
-      if ($stmt->sqlstate == '23000') $this->setErrorMessage( 'Username or email already registered' );
+      if ($stmt->sqlstate == '23000') $this->setErrorMessage( '用户名或者邮件已经被使用' );
       return false;
     }
     return false;
@@ -569,11 +569,11 @@ class User extends Base {
     $this->debug->append("STA " . __METHOD__, 4);
     if ($aToken = $this->token->getToken($token)) {
       if ($new1 !== $new2) {
-        $this->setErrorMessage( 'New passwords do not match' );
+        $this->setErrorMessage( '2次密码输入不一致' );
         return false;
       }
       if ( strlen($new1) < 8 ) { 
-        $this->setErrorMessage( 'New password is too short, please use more than 8 chars' );
+        $this->setErrorMessage( '密码最短为8个字符' );
         return false;
       }
       $new_hash = $this->getHash($new1);
@@ -582,15 +582,15 @@ class User extends Base {
         if ($this->token->deleteToken($aToken['token'])) {
           return true;
         } else {
-          $this->setErrorMessage('Unable to invalidate used token');
+          $this->setErrorMessage('删除已使用的token失败');
         }
       } else {
-        $this->setErrorMessage('Unable to set new password');
+        $this->setErrorMessage('设置新密码失败');
       }
     } else {
-      $this->setErrorMessage('Invalid token');
+      $this->setErrorMessage('不合法的token');
     }
-    $this->debug->append('Failed to update password:' . $this->mysqli->error);
+    $this->debug->append('更新密码失败:' . $this->mysqli->error);
     return false;
   }
 
@@ -609,24 +609,24 @@ class User extends Base {
     if (filter_var($username, FILTER_VALIDATE_EMAIL)) {
       $this->debug->append("Username is an e-mail: $username", 2);
       if (!$username = $this->getUserNameByEmail($username)) {
-        $this->setErrorMessage("Invalid username or password.");
+        $this->setErrorMessage("不正确的用户名或密码");
         return false;
       }
     }
     if (!$aData['email'] = $this->getUserEmail($username, true)) {
-      $this->setErrorMessage("Unable to find a mail address for user $username");
+      $this->setErrorMessage("没有找到改用户名 $username 的Email地址");
       return false;
     }
     if (!$aData['token'] = $this->token->createToken('password_reset', $this->getUserId($username, true))) {
-      $this->setErrorMessage('Unable to setup token for password reset');
+      $this->setErrorMessage('生成重置密码token失败');
       return false;
     }
     $aData['username'] = $this->getUserName($this->getUserId($username, true));
-    $aData['subject'] = 'Password Reset Request';
+    $aData['subject'] = '密码重置请求';
     if ($this->mail->sendMail('password/reset', $aData)) {
         return true;
       } else {
-        $this->setErrorMessage('Unable to send mail to your address');
+        $this->setErrorMessage('发送邮件失败');
         return false;
       }
     return false;

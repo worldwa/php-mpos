@@ -146,7 +146,7 @@ class Notification extends Mail {
   public function sendNotification($account_id, $strType, $aMailData) {
     // Check if we notified for this event already
     if ( $this->isNotified($aMailData) ) {
-      $this->setErrorMessage('A notification for this event has been sent already');
+      $this->setErrorMessage('该通知已经发送');
       return false;
     }
     // Check if this user wants strType notifications
@@ -155,14 +155,14 @@ class Notification extends Mail {
       if ($stmt->close() && $this->sendMail('notifications/' . $strType, $aMailData) && $this->addNotification($account_id, $strType, $aMailData)) {
         return true;
       } else {
-        $this->setErrorMessage('SendMail call failed: ' . $this->mail->getError());
+        $this->setErrorMessage('发送邮件失败: ' . $this->mail->getError());
         return false;
       }
     } else {
-      $this->setErrorMessage('User disabled ' . $strType . ' notifications');
+      $this->setErrorMessage('用户已经取消 ' . $strType . ' 通知');
       return false;
     }
-    $this->setErrorMessage('Error sending mail notification');
+    $this->setErrorMessage('发送邮件通知失败');
     return false;
   }
 }

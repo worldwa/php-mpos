@@ -33,12 +33,12 @@ class Tools extends Base {
     // run the query
     $res = curl_exec($ch);
     if ($res === false) {
-      $this->setErrorMessage('Could not get reply: '.curl_error($ch));
+      $this->setErrorMessage('无法获取回复: '.curl_error($ch));
       return false;
     }
     $dec = json_decode($res, true);
     if (!$dec) {
-      $this->setErrorMessage('Invalid data received, please make sure connection is working and requested API exists');
+      $this->setErrorMessage('获取到未知数据，请确保连接正常以及请求的API存在');
       return false;
     }
     return $dec;
@@ -57,7 +57,7 @@ class Tools extends Base {
     } else if (preg_match('/cryptsy.com/', $url)) {
       return 'cryptsy';
     }
-    $this->setErrorMessage("API URL unknown");
+    $this->setErrorMessage("未知的API URL");
     return false;
   }
 
@@ -86,7 +86,7 @@ class Tools extends Base {
       break;
     }
     // Catchall, we have no data extractor for this API url
-    $this->setErrorMessage("Undefined API to getPrice() on URL " . $this->config['price']['url']);
+    $this->setErrorMessage("未定义的API getPrice()" . $this->config['price']['url']);
     return false;
   }
 }

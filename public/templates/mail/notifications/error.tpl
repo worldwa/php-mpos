@@ -1,6 +1,6 @@
   {include file="../global/header.tpl"}
-  <h1>An error occured!</h1>
-  <p>This should never happen. Please review the error output below.</p>
+  <h1>发生了一个错误!</h1>
+  <p>查看下面详细信息.</p>
   <table cellpadding="0" cellspacing="0" border="0" id="backgroundTable">
   <tr>
     <td>

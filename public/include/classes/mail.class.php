@@ -42,7 +42,7 @@ class Mail extends Base {
       if ($this->sendMail('contactform/body', $aData)) {
         return true;
      } else {
-       $this->setErrorMessage( 'Unable to send email' );
+       $this->setErrorMessage( '发送邮件失败' );
        return false;
      }
     return false;
@@ -76,28 +76,28 @@ class Mail extends Base {
   }
 
   public function send($to, $subject, $body){
-    $mail = new PHPMailer;
+    $phpMailer = new PHPMailer;
 
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = $this->config['email']['Host'] ;  // Specify main and backup server
-    $mail->Port = $this->config['email']['Port'];
-    $mail->SMTPAuth = $this->config['email']['SMTPAuth'];                               // Enable SMTP authentication
-    $mail->Username =$this->config['email']['Username'];                            // SMTP username
-    $mail->Password = $this->config['email']['Password'] ;                           // SMTP password
-    $mail->SMTPSecure = $this->config['email']['SMTPSecure'];                            // Enable encryption, 'ssl' also accepted
+    $phpMailer->isSMTP();                                      // Set mailer to use SMTP
+    $phpMailer->Host = $this->config['email']['Host'] ;  // Specify main and backup server
+    $phpMailer->Port = $this->config['email']['Port'];
+    $phpMailer->SMTPAuth = $this->config['email']['SMTPAuth'];                               // Enable SMTP authentication
+    $phpMailer->Username =$this->config['email']['Username'];                            // SMTP username
+    $phpMailer->Password = $this->config['email']['Password'] ;                           // SMTP password
+    $phpMailer->SMTPSecure = $this->config['email']['SMTPSecure'];                            // Enable encryption, 'ssl' also accepted
 
-    $mail->From = $this->config['email']['From'];
-    $mail->FromName = $this->config['email']['FromName'] ;
-    $mail->addAddress($to);               // Name is optional
+    $phpMailer->From = $this->config['email']['From'];
+    $phpMailer->FromName = $this->config['email']['FromName'] ;
+    $phpMailer->addAddress($to);               // Name is optional
 
-    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-    $mail->isHTML(true);                                  // Set email format to HTML
+    $phpMailer->WordWrap = 50;                                 // Set word wrap to 50 characters
+    $phpMailer->isHTML(true);                                  // Set email format to HTML
 
-    $mail->Subject = $subject;
-    $mail->Body    = $body;
+    $phpMailer->Subject = $subject;
+    $phpMailer->Body    = $body;
 //    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-    if(!$mail->send()) {
+    if(!$phpMailer->send()) {
       return false;
     }
     return true;

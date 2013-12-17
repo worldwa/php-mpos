@@ -116,7 +116,7 @@ class Monitoring extends Base {
         'Error Message' => $this->getErrorMsg($msgCode)
       );
       if (!$this->mail->sendMail('notifications/error', $aMailData))
-        $this->setErrorMessage('Failed to send mail notification');
+        $this->setErrorMessage('发送邮件通知失败');
     }
     if ($fatal) {
       if ($exitCode != 0) $this->setStatus($cron_name . "_disabled", "yesno", 1);

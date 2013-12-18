@@ -1,6 +1,6 @@
 
          <tr>
-           <td colspan="2"><b><u>{$GLOBAL.config.currency} Estimates</u></b></td>
+           <td colspan="2"><b><u>{$GLOBAL.config.currency} 预估</u></b></td>
          </tr>
 {if $GLOBAL.config.payout_system != 'pps'}
          <tr>
@@ -12,7 +12,7 @@
            <td id="b-fee" class="right">{$GLOBAL.userdata.estimates.fee}</td>
          </tr>
          <tr>
-           <td><b>Donation</b></td>
+           <td><b>捐赠</b></td>
            <td id="b-donation" class="right">{$GLOBAL.userdata.estimates.donation}</td>
          </tr>
          <tr>

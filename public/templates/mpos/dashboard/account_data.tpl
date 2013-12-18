@@ -36,7 +36,7 @@
      <thead>
       <tr>
         <th align="left">矿工</th>
-        <th align="right">Hashrate</th>
+        <th align="right">速度</th>
         <th align="right" style="padding-right: 10px;">难度</th>
       </tr>
       </thead>

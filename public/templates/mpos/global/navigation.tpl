@@ -3,7 +3,7 @@
     {if $smarty.session.AUTHENTICATED|default:"0" == 1}
     <h3>我的账户</h3>
     <ul class="toggle">
-      <li class="icon-gauge"><a href="{$smarty.server.PHP_SELF}?page=dashboard">面板</a></li>
+      <li class="icon-gauge"><a href="{$smarty.server.PHP_SELF}?page=dashboard">数据面板</a></li>
       <li class="icon-user"><a href="{$smarty.server.PHP_SELF}?page=account&action=edit">我的账户</a></li>
       <li class="icon-photo"><a href="{$smarty.server.PHP_SELF}?page=account&action=workers">我的矿工</a></li>
       <li class="icon-indent-left"><a href="{$smarty.server.PHP_SELF}?page=account&action=transactions">交易</a></li>
@@ -78,7 +78,7 @@
       {else}
       <li class="icon-login"><a href="{$smarty.server.PHP_SELF}?page=login">登录</a></li>
       <li class="icon-pencil"><a href="{$smarty.server.PHP_SELF}?page=register">注册</a></li>
-      <li class="icon-mail"><a href="{$smarty.server.PHP_SELF}?page=support">Support</a></li>
+      {*<li class="icon-mail"><a href="{$smarty.server.PHP_SELF}?page=support">Support</a></li>*}
       {/if}
     </ul>
     <ul>

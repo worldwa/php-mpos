@@ -28,7 +28,7 @@ if ($user->isAuthenticated()) {
   }
 
   $aWorkers = $worker->getWorkers($_SESSION['USERDATA']['id']);
-  if (!$aWorkers) $_SESSION['POPUP'][] = array('CONTENT' => '没有矿工被更新', 'TYPE' => 'errormsg');
+  if (!$aWorkers) $_SESSION['POPUP'][] = array('CONTENT' => '当前没有矿工', 'TYPE' => 'errormsg');
 
   $smarty->assign('WORKERS', $aWorkers);
 }

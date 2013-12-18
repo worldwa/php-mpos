@@ -7,17 +7,17 @@
     <div class="module_content">
       <fieldset>
         <label>矿工名</label>
-        <input type="text" name="username" value="user" size="10" maxlength="20" required>
+        <input type="text" name="username" value="矿工名" size="10" maxlength="20" required>
       </fieldset>
       <fieldset>
         <label>矿工密码</label>
-        <input type="text" name="password" value="password" size="10" maxlength="20" required>&nbsp;
+        <input type="text" name="password" value="密码" size="10" maxlength="20" required>&nbsp;
       </fieldset>
       <div class="clear"></div>
     </div>
     <footer>
       <div class="submit_link">
-        <input type="submit" value="Add New Worker" class="alt_btn">
+        <input type="submit" value="添加新矿工" class="alt_btn">
       </div>
     </footer>
   </form>

@@ -1,12 +1,12 @@
 <article class="module width_half">
-  <header><h3>Last Found Blocks</h3></header>
+  <header><h3>矿池最后发现的块</h3></header>
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
-        <th align="center">Block</th>
-        <th>Finder</th>
-        <th align="center">Time</th>
-        <th align="right" style="padding-right: 25px;">Actual Shares</th>
+        <th align="center">块</th>
+        <th>发现者</th>
+        <th align="center">实现</th>
+        <th align="right" style="padding-right: 25px;">实际 Share数</th>
       </tr>
     </thead>
     <tbody>

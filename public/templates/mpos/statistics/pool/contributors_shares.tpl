@@ -1,11 +1,11 @@
 <article class="module width_half" style="min-height: 350px;">
-  <header><h3>Contributor Shares</h3></header>
+  <header><h3>矿工 Shares</h3></header>
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
-        <th align="center">Rank</th>
+        <th align="center">排名</th>
         <th align="right"></th>
-        <th>User Name</th>
+        <th>用户名</th>
         <th align="right" style="padding-right: 25px;">Shares</th>
       </tr>
     </thead>

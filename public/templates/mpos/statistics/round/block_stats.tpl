@@ -1,5 +1,5 @@
 <article class="module width_full">
-  <header><h3>Block Statistics</h3></header>
+  <header><h3>块统计</h3></header>
   <table class="tablesorter">
     <tbody>
       <tr>
@@ -13,30 +13,30 @@
       <tr class="odd">
         <td>ID</td>
         <td>{$BLOCKDETAILS.id|number_format:"0"|default:"0"}</td>
-        <td>Height</td>
+        <td>总块数</td>
 	{if ! $GLOBAL.website.blockexplorer.disabled}
       	<td><a href="{$GLOBAL.website.blockexplorer.url}{$BLOCKDETAILS.blockhash}" target="_new">{$BLOCKDETAILS.height|number_format:"0"|default:"0"}</a></td>
 	{else}
       	<td>{$BLOCKDETAILS.height|number_format:"0"|default:"0"}</td>
 	{/if}
-        <td>Amount</td>
+        <td>含多少LTC</td>
         <td>{$BLOCKDETAILS.amount|number_format|default:"0"}</td>
-        <td>Confirmations</td>
+        <td>确认</td>
         <td>{if $BLOCKDETAILS.confirmations >= $GLOBAL.confirmations}
-          <font color="green">Confirmed</font>
+          <font color="green">已确认</font>
         {else if $BLOCKDETAILS.confirmations == -1}
-          <font color="red">Orphan</font>
+          <font color="red">孤立的</font>
         {else if $BLOCKDETAILS.confirmations == 0}0
         {else}{($GLOBAL.confirmations - $BLOCKDETAILS.confirmations)|default:"0"} left{/if}</td>
       </tr>
       <tr class="even">
-        <td>Difficulty</td>
+        <td>难度</td>
         <td>{$BLOCKDETAILS.difficulty|default:"0"}</td>
-        <td>Time</td>
+        <td>时间</td>
         <td>{$BLOCKDETAILS.time|default:"0"}</td>
-        <td>Shares</td>
+        <td>Share数</td>
         <td>{$BLOCKDETAILS.shares|number_format:"0"|default:"0"}</td>
-        <td>Finder</td>
+        <td>发现者</td>
         <td>{$BLOCKDETAILS.finder|default:"0"}</td>
       </tr>
     </tbody>

@@ -1,13 +1,13 @@
 <article class="module width_half" style="min-height: 350px">
-  <header><h3>Blocks found by own Workers</h3></header>
+  <header><h3>我的矿工发现的块</h3></header>
   <div>
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
-        <th align="center">Rank</th>
-        <th>Worker</th>
-        <th align="center">Blocks</th>
-        <th align="right" style="padding-right: 25px;">Coins Generated</th>
+        <th align="center">名次</th>
+        <th>矿工</th>
+        <th align="center">块数</th>
+        <th align="right" style="padding-right: 25px;">LTC数</th>
       </tr>
     </thead>
     <tbody>

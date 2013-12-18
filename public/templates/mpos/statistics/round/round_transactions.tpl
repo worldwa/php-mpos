@@ -1,13 +1,13 @@
 <article class="module width_half">
-  <header><h3>Round Transactions</h3></header>
+  <header><h3>周期交易</h3></header>
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
-        <th>User Name</th>
-        <th align="center">Type</th>
-        <th align="right">Round Shares</th>
-        <th align="right" scope="col">Round %</th>
-        <th align="right" style="padding-right: 25px;">Amount</th>
+        <th>用户名</th>
+        <th align="center">类型</th>
+        <th align="right">周期Shares输入</th>
+        <th align="right" scope="col">周期 %</th>
+        <th align="right" style="padding-right: 25px;">总共</th>
       </tr>
     </thead>
     <tbody>

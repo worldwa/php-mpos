@@ -41,14 +41,14 @@ $(document).ready(function(){
       rendererOptions: { smooth: true }
     },
     series: [
-      { yaxis: 'yaxis', label: 'Own',    fill: true                                            },
-      { yaxis: 'yaxis', label: 'Pool',   fill: false, trendline: { show: false }, lineWidth: 2, markerOptions: { show: true, size: 4 }},
-      { yaxis: 'y3axis', label: 'Sharerate', fill: false, trendline: { show: false }              },
+      { yaxis: 'yaxis', label: '我',    fill: true                                            },
+      { yaxis: 'yaxis', label: '矿池',   fill: false, trendline: { show: false }, lineWidth: 2, markerOptions: { show: true, size: 4 }},
+      { yaxis: 'y3axis', label: 'Share速度', fill: false, trendline: { show: false }              },
     ],
     legend: { show: true, location: 'sw', renderer: $.jqplot.EnhancedLegendRenderer, rendererOptions: { seriesToggleReplot: { resetAxes: true } } },
     axes: {
-      yaxis:  { min: 0, pad: 1.25, label: 'Hashrate' , labelRenderer: $.jqplot.CanvasAxisLabelRenderer },
-      y3axis: { min: 0, pad: 1.25, label: 'Sharerate', labelRenderer: $.jqplot.CanvasAxisLabelRenderer },
+      yaxis:  { min: 0, pad: 1.25, label: '速度' , labelRenderer: $.jqplot.CanvasAxisLabelRenderer },
+      y3axis: { min: 0, pad: 1.25, label: 'Share速度', labelRenderer: $.jqplot.CanvasAxisLabelRenderer },
       xaxis:  { tickInterval: {/literal}{$GLOBAL.config.statistics_ajax_refresh_interval}{literal}, labelRenderer: $.jqplot.CanvasAxisLabelRenderer, renderer: $.jqplot.DateAxisRenderer, angle: 30, tickOptions: { formatString: '%T' } },
     },
   };

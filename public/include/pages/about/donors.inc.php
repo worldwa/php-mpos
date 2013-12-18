@@ -4,7 +4,7 @@
 if (!defined('SECURITY')) die('Hacking attempt');
 
 if ($setting->getValue('disable_donors')) {
-  $_SESSION['POPUP'][] = array('CONTENT' => 'Donors are currently disabled. Please try again later.', 'TYPE' => 'errormsg');
+  $_SESSION['POPUP'][] = array('CONTENT' => '捐赠暂时关闭，请稍后重试.', 'TYPE' => 'errormsg');
   $smarty->assign("CONTENT", "disabled.tpl");
 } else {
   $aDonors = $transaction->getDonations();

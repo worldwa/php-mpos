@@ -162,13 +162,13 @@ if (@$_SESSION['USERDATA']['id']) {
 
   // Site-wide notifications, based on user events
   if ($aGlobal['userdata']['balance']['confirmed'] >= $config['ap_threshold']['max'])
-    $_SESSION['POPUP'][] = array('CONTENT' => 'You have exceeded the pools configured ' . $config['currency'] . ' warning threshold. Please initiate a transfer!', 'TYPE' => 'errormsg');
+    $_SESSION['POPUP'][] = array('CONTENT' => '你的存款太多啦，赶紧提点回去吧!', 'TYPE' => 'errormsg');
   if ($user->getUserFailed($_SESSION['USERDATA']['id']) > 0)
     $_SESSION['POPUP'][] = array('CONTENT' => 'You have ' . $user->getUserFailed($_SESSION['USERDATA']['id']) . ' failed login attempts! <a href="?page=account&action=reset_failed">Reset Counter</a>', 'TYPE' => 'errormsg');
 }
 
 if ($setting->getValue('maintenance'))
-  $_SESSION['POPUP'][] = array('CONTENT' => 'This pool is currently in maintenance mode.', 'TYPE' => 'warning');
+  $_SESSION['POPUP'][] = array('CONTENT' => '矿池当前出于维护状态.', 'TYPE' => 'warning');
 if ($motd = $setting->getValue('system_motd'))
   $_SESSION['POPUP'][] = array('CONTENT' => $motd, 'TYPE' => 'info');
 

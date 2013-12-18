@@ -117,7 +117,7 @@ $aSettings['statistics'][] = array(
   'tooltip' => 'Time in minutes, interval for hashrate and sharerate calculations. Higher intervals allow for better accuracy at a higer server load.'
 );
 $aSettings['statistics'][] = array(
-  'display' => 'Block Statistics Count', 'type' => 'text',
+  'display' => '块统计', 'type' => 'text',
   'size' => 25,
   'default' => 20,
   'name' => 'statistics_block_count', 'value' => $setting->getValue('statistics_block_count'),
@@ -181,7 +181,7 @@ $aSettings['acl'][] = array(
   'tooltip' => 'Make the pool statistics page private (users only) or public.'
 );
 $aSettings['acl'][] = array(
-  'display' => 'Block Statistics', 'type' => 'select',
+  'display' => '块统计', 'type' => 'select',
   'options' => array( 0 => 'Private', 1 => 'Public'),
   'default' => 1,
   'name' => 'acl_block_statistics', 'value' => $setting->getValue('acl_block_statistics'),

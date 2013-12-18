@@ -4,7 +4,7 @@
     <h3>我的账户</h3>
     <ul class="toggle">
       <li class="icon-gauge"><a href="{$smarty.server.PHP_SELF}?page=dashboard">面板</a></li>
-      <li class="icon-user"><a href="{$smarty.server.PHP_SELF}?page=account&action=edit">修改账户</a></li>
+      <li class="icon-user"><a href="{$smarty.server.PHP_SELF}?page=account&action=edit">我的账户</a></li>
       <li class="icon-photo"><a href="{$smarty.server.PHP_SELF}?page=account&action=workers">我的矿工</a></li>
       <li class="icon-indent-left"><a href="{$smarty.server.PHP_SELF}?page=account&action=transactions">交易</a></li>
     {if !$GLOBAL.config.disable_notifications}<li class="icon-megaphone"><a href="{$smarty.server.PHP_SELF}?page=account&action=notifications">通知</a></li>{/if}
@@ -32,8 +32,8 @@
       <li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=pool">矿池</a></li>
       <li class="icon-th-large"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blocks">块</a></li>
       <li class="icon-chart"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=graphs">趋势图</a></li>
-      <li class="icon-record"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=round">Round</a></li>
-      <li class="icon-search"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blockfinder">Finder</a></li>
+      <li class="icon-record"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=round">周期</a></li>
+      <li class="icon-search"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blockfinder">发现者</a></li>
       {if $GLOBAL.config.monitoring_uptimerobot_api_keys|default:"0"}<li class="icon-bell"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=uptime">运行时间</a></li>{/if}
     </ul>
     {else}
@@ -48,10 +48,10 @@
      <li class="icon-th-large"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blocks">块</a></li>
      {/if}
      {if $GLOBAL.acl.round.statistics}
-     <li class="icon-chart"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=round">Round</a></li>
+     <li class="icon-chart"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=round">周期</a></li>
      {/if}
      {if $GLOBAL.acl.blockfinder.statistics}
-     <li class="icon-search"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blockfinder">Finder</a></li>
+     <li class="icon-search"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blockfinder">发现者</a></li>
      {/if}
      {if $GLOBAL.acl.uptime.statistics}
      {if $GLOBAL.config.monitoring_uptimerobot_api_keys|default:"0"}<li class="icon-bell"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=uptime">Uptime</a></li>{/if}
@@ -65,7 +65,7 @@
       <li class="icon-doc"><a href="{$smarty.server.PHP_SELF}?page=about&action=pool">关于我们</a></li>
       {/if}
       {if !$GLOBAL.website.donors.disabled}
-      <li class="icon-money"><a href="{$smarty.server.PHP_SELF}?page=about&action=donors">Donors</a></li>
+      <li class="icon-money"><a href="{$smarty.server.PHP_SELF}?page=about&action=donors">捐赠</a></li>
       {/if}
     </ul>
     <h3>其他</h3>

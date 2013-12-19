@@ -24,7 +24,7 @@
         </tbody>
       </table>
       <p>如果你用的是命令行的方式，如下:</p>
-      <pre>./cgminer {if $GLOBAL.config.algorithm == 'scrypt'}--scrypt {/if} -o stratum+tcp://{$smarty.server.SERVER_NAME}:{$SITESTRATUMPORT|default:"3333"} -u <em>用户名</em>.<em>矿工名</em> -p <em>矿工密码</em></pre>
+      <pre>./cgminer {if $GLOBAL.config.algorithm == 'scrypt'}--scrypt {/if} -o stratum+tcp://stratum.iwakuang.com:{$SITESTRATUMPORT|default:"3333"} -u <em>用户名</em>.<em>矿工名</em> -p <em>矿工密码</em></pre>
     </li>
     <li>4. <strong>添加莱特币地址，以便我们及时付款给你</strong>
       <ul>

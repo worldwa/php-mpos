@@ -17,7 +17,7 @@
       <p>Settings for Stratum (recommended):</p>
       <table width="50%">
         <tbody>
-          <tr><td>STRATUM:</td><td><kbd>stratum+tcp://{$smarty.server.SERVER_NAME}</kbd></td></tr>
+          <tr><td>STRATUM:</td><td><kbd>stratum+tcp://stratum.iwakuang.com</kbd></td></tr>
           <tr><td>端口:</td><td><kbd>{$SITESTRATUMPORT|default:"3333"}</kbd></td></tr>
           <tr><td>矿工:</td><td><kbd><em>用户名</em>.<em>矿工名</em></kbd></td></tr>
           <tr><td>矿工密码:</td><td><kbd>*******</kbd></td></tr>

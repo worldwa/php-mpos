@@ -164,7 +164,7 @@ if (@$_SESSION['USERDATA']['id']) {
   if ($aGlobal['userdata']['balance']['confirmed'] >= $config['ap_threshold']['max'])
     $_SESSION['POPUP'][] = array('CONTENT' => '你的存款太多啦，赶紧提点回去吧!', 'TYPE' => 'errormsg');
   if ($user->getUserFailed($_SESSION['USERDATA']['id']) > 0)
-    $_SESSION['POPUP'][] = array('CONTENT' => 'You have ' . $user->getUserFailed($_SESSION['USERDATA']['id']) . ' failed login attempts! <a href="?page=account&action=reset_failed">Reset Counter</a>', 'TYPE' => 'errormsg');
+    $_SESSION['POPUP'][] = array('CONTENT' => '您已经登录错误重试 ' . $user->getUserFailed($_SESSION['USERDATA']['id']) . ' 次了! <a href="?page=account&action=reset_failed">重置次数</a>', 'TYPE' => 'errormsg');
 }
 
 if ($setting->getValue('maintenance'))

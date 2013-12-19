@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8"/>
     <title>{$GLOBAL.website.title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"  href="{$PATH}/css/jquery.mobile-1.3.2.min.css" />

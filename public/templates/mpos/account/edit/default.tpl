@@ -34,8 +34,8 @@
       </fieldset>
       <fieldset>
         <label>自动付款最小额度</label>
-        <font size="1">{$GLOBAL.config.ap_threshold.min}-{$GLOBAL.config.ap_threshold.max} {$GLOBAL.config.currency}.如果为0，则表示不自动付款（例如1）.</font>
-        <input type="text" name="payoutThreshold" value="{$smarty.request.payoutThreshold|default:$GLOBAL.userdata.ap_threshold|escape}" size="5" maxlength="5" />
+        <font size="1">{$GLOBAL.config.ap_threshold.min}-{$GLOBAL.config.ap_threshold.max} {$GLOBAL.config.currency}. 如果为0，则表示不自动付款.</font>
+        <input type="text" name="payoutThreshold" value="{$smarty.request.payoutThreshold|default:$GLOBAL.userdata.ap_threshold|escape}" size="{$GLOBAL.config.ap_threshold.max|strlen}" maxlength="{$GLOBAL.config.ap_threshold.max|strlen}" />
       </fieldset>
       <fieldset>
         <label>匿名</label>
@@ -60,7 +60,7 @@
   </article>
 </form>
 
-{if !$GLOBAL.disable_mp}
+{if !$GLOBAL.disable_payouts}
 <form action="{$smarty.server.PHP_SELF}" method="post">
   <input type="hidden" name="page" value="{$smarty.request.page|escape}">
   <input type="hidden" name="action" value="{$smarty.request.action|escape}">
@@ -126,7 +126,7 @@
     </div>
     <footer>
       <div class="submit_link">
-        <input type="submit" value="修改密码" class="alt_btn">
+        <input type="submit" value="Change Password" class="alt_btn">
       </div>
     </footer>
   </article>

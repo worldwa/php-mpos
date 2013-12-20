@@ -140,13 +140,15 @@ $(document).ready(function(){
     $('#b-pvalid').html(data.getdashboarddata.data.pool.shares.valid);
     $('#b-pivalid').html(data.getdashboarddata.data.pool.shares.invalid + " (" + data.getdashboarddata.data.pool.shares.invalid_percent + "%)" );
     $('#b-diff').html(data.getdashboarddata.data.network.difficulty);
+    $('#b-nextdiff').html(data.getdashboarddata.data.network.nextdifficulty + " (Change in " + data.getdashboarddata.data.network.blocksuntildiffchange + " Blocks)");
+    $('#b-esttimeperblock').html(data.getdashboarddata.data.network.esttimeperblock + " seconds"); // <- this needs some nicer format
     $('#b-nblock').html(data.getdashboarddata.data.network.block);
     $('#b-target').html(data.getdashboarddata.data.pool.shares.estimated + " (done: " + data.getdashboarddata.data.pool.shares.progress + "%)" );
     {/literal}{if $GLOBAL.config.payout_system != 'pps'}{literal }
-    $('#b-payout').html((parseFloat(data.getdashboarddata.data.personal.estimates.payout).toFixed(4)));
-    $('#b-block').html((parseFloat(data.getdashboarddata.data.personal.estimates.block).toFixed(4)));
-    $('#b-fee').html((parseFloat(data.getdashboarddata.data.personal.estimates.fee).toFixed(4)));
-    $('#b-donation').html((parseFloat(data.getdashboarddata.data.personal.estimates.donation).toFixed(4)));
+    $('#b-payout').html((parseFloat(data.getdashboarddata.data.personal.estimates.payout).toFixed(8)));
+    $('#b-block').html((parseFloat(data.getdashboarddata.data.personal.estimates.block).toFixed(8)));
+    $('#b-fee').html((parseFloat(data.getdashboarddata.data.personal.estimates.fee).toFixed(8)));
+    $('#b-donation').html((parseFloat(data.getdashboarddata.data.personal.estimates.donation).toFixed(8)));
 {/literal}{else}{literal}
     $('#b-ppsunpaid').html((parseFloat(data.getdashboarddata.data.personal.shares.unpaid).toFixed(0)));
     $('#b-ppsdiff').html((parseFloat(data.getdashboarddata.data.personal.sharedifficulty).toFixed(2)));

@@ -3,12 +3,7 @@
 // Make sure we are called from index.php
 if (!defined('SECURITY')) die('Hacking attempt');
 
-// Load a list of themes available
-$aTmpThemes = glob(THEME_DIR . '/*');
-$aThemes = array();
-foreach ($aTmpThemes as $dir) {
-  if (basename($dir) != 'cache' && basename($dir) != 'compile' && basename($dir) != 'mail') $aThemes[basename($dir)] = basename($dir);
-}
+$aThemes = $template->getThemes();
 
 // Load the settings available in this system
 $aSettings['website'][] = array(
@@ -237,18 +232,11 @@ $aSettings['system'][] = array(
   'tooltip' => 'Enable or Disable invitations. Users will not be able to invite new users via email if disabled.'
 );
 $aSettings['system'][] = array(
-  'display' => 'Disable Manual Payouts', 'type' => 'select',
+  'display' => 'Disable Payouts', 'type' => 'select',
   'options' => array( 0 => 'No', 1 => 'Yes' ),
   'default' => 0,
-  'name' => 'disable_mp', 'value' => $setting->getValue('disable_mp'),
-  'tooltip' => 'Enable or Disable the manual payout processing. Users will not be able to withdraw any funds if disabled.'
-);
-$aSettings['system'][] = array(
-  'display' => 'Disable Automatic Payouts', 'type' => 'select',
-  'options' => array( 0 => 'No', 1 => 'Yes' ),
-  'default' => 0,
-  'name' => 'disable_ap', 'value' => $setting->getValue('disable_ap'),
-  'tooltip' => 'Enable or Disable the automatic payout processing. Users exceeding their thresholds will not be paid out if disabled.'
+  'name' => 'disable_payouts', 'value' => $setting->getValue('disable_payouts'),
+  'tooltip' => 'Enable or Disable the payout processing. Users will not be able to withdraw any funds if disabled.'
 );
 $aSettings['system'][] = array(
   'display' => 'Disable notifications', 'type' => 'select',

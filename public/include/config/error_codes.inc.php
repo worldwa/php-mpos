@@ -22,7 +22,7 @@ $aErrorCodes['E0015'] = '发现可能重复支付';
 $aErrorCodes['E0016'] = '删除账户share失败';
 $aErrorCodes['E0017'] = 'Failed to update Uptime Robot status';
 $aErrorCodes['E0018'] = 'Cron disbaled due to errors';
-$aErrorCodes['E0019'] = "SQL查询傻逼哎: %s";
+$aErrorCodes['E0019'] = "SQL查询失败: %s";
 $aErrorCodes['E0020'] = 'SQL执行内部错误';
 $aErrorCodes['E0021'] = '未能获取你的邀请信息';
 $aErrorCodes['E0022'] = '创建邀请失败';
@@ -69,4 +69,6 @@ $aErrorCodes['E0062'] = 'Block has no share_id, not running payouts';
 $aErrorCodes['E0063'] = 'Upstream share already assigned to previous block';
 $aErrorCodes['E0064'] = '创建交易记录失败';
 $aErrorCodes['E0065'] = '余额大于零';
+$aErrorCodes['E0072'] = 'Worker names must be alphanumeric';
+$aErrorCodes['E0073'] = 'Worker name is too long; try entering a shorter name'
 ?>

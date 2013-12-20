@@ -155,7 +155,7 @@ class Notification extends Mail {
       if ($stmt->close() && $this->sendMail('notifications/' . $strType, $aMailData) && $this->addNotification($account_id, $strType, $aMailData)) {
         return true;
       } else {
-        $this->setErrorMessage('发送邮件失败');
+        $this->setErrorMessage('发送邮件失败' . $this->getError());
         return false;
       }
     } else {

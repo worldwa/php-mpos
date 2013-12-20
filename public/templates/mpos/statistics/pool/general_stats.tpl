@@ -24,7 +24,19 @@
       {/if}
         </tr>
         <tr>
-          <th align="left">预估挖到一个快需要多久</td>
+          <th align="left">预估下一次难度</td>
+      {if ! $GLOBAL.website.chaininfo.disabled}
+          <td><a href="{$GLOBAL.website.chaininfo.url}" target="_new"><font size="2">{$NETWORK.EstNextDifficulty}  (Change in {$NETWORK.BlocksUntilDiffChange} Blocks)</font></a></td>
+      {else}
+          <td><font size="2">{$NETWORK.EstNextDifficulty} (Change in {$NETWORK.EstNextDifficulty} Blocks)</font></td>
+      {/if}
+        </tr>
+        <tr>
+          <th align="left">预计一个块的产生时间 (全网)</td>
+          <td><font size="2">{$NETWORK.EstTimePerBlock|seconds_to_words}</font></td>
+        </tr>
+        <tr>
+          <th align="left">预计一个块的产生时间 (本矿池)</td>
           <td>{$ESTTIME|seconds_to_words}</td>
         </tr>
         <tr>
@@ -33,21 +45,21 @@
         </tr>
     {if ! $GLOBAL.website.blockexplorer.disabled}
         <tr>
-          <th align="left" width="50%">下一个块</td>
+          <th align="left" width="50%">下一个块（全网）</td>
           <td colspan="3">{$CURRENTBLOCK + 1} &nbsp;&nbsp;<font size="1"> (Current: <a href="{$GLOBAL.website.blockexplorer.url}{$CURRENTBLOCKHASH}" target="_new">{$CURRENTBLOCK})</a></font></td>
         </tr>
     {else}
         <tr>
-          <th align="left">下一个块</td>
+          <th align="left">下一个块（全网）</td>
           <td colspan="3">{$CURRENTBLOCK + 1} &nbsp;&nbsp; (Current: {$CURRENTBLOCK})</td>
         </tr>
     {/if}
         <tr>
-          <th align="left">矿池上次发现的块</td>
+          <th align="left">发现上一个块</td>
           <td colspan="3"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=round&height={$LASTBLOCK}" target="_new">{$LASTBLOCK|default:"0"}</a></td>
         </tr>
         <tr>
-          <th align="left">矿池上次发现块距现在</td>
+          <th align="left">上一个块距现在</td>
           <td colspan="3">{$TIMESINCELAST|seconds_to_words}</td>
         </tr>
       </tbody>

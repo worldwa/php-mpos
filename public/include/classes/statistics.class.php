@@ -800,6 +800,85 @@ class Statistics extends Base {
   public function getEstimatedShares($dDiff) {
     return round((POW(2, (32 - $this->config['target_bits'])) * $dDiff) / pow(2, ($this->config['difficulty'] - 16)));
   }
+
+  /**
+   * Get the Expected Time per Block in the whole Network in seconde
+   * @return seconds double Seconds per Block
+   */
+  public function getNetworkExpectedTimePerBlock(){
+    if ($data = $this->memcache->get(__FUNCTION__)) return $data;
+
+    if ($this->bitcoin->can_connect() === true) {
+      $dNetworkHashrate = $this->bitcoin->getnetworkhashps();
+      $dDifficulty = $this->bitcoin->getdifficulty();
+    } else {
+      $dNetworkHashrate = 0;
+      $dDifficulty = 1;
+    }
+
+    return $this->memcache->setCache(__FUNCTION__, pow(2, 32) * $dDifficulty / $dNetworkHashrate);
+  }
+
+  /**
+   * Get the Expected next Difficulty
+   * @return difficulty double Next difficulty
+   **/
+  public function getExpectedNextDifficulty(){
+    if ($data = $this->memcache->get(__FUNCTION__)) return $data;
+
+    if ($this->bitcoin->can_connect() === true) {
+      $dDifficulty = $this->bitcoin->getdifficulty();
+    } else {
+      $dDifficulty = 1;
+    }
+
+    return $this->memcache->setCache(__FUNCTION__, round($dDifficulty * $this->config['cointarget'] / $this->getNetworkExpectedTimePerBlock(), 8));
+  }
+
+  /**
+   * Get Number of blocks until next difficulty change
+   * @return blocks int blocks until difficulty change
+   **/
+  public function getBlocksUntilDiffChange(){
+    if ($data = $this->memcache->get(__FUNCTION__)) return $data;
+
+    if ($this->bitcoin->can_connect() === true) {
+      $iBlockcount = $this->bitcoin->getblockcount();
+    } else {
+      $iBlockcount = 1;
+    }
+
+    return $this->memcache->setCache(__FUNCTION__, $this->config['coindiffchangetarget'] - ($iBlockcount % $this->config['coindiffchangetarget']));
+  }
+
+  /**
+   * Get current PPS value
+   * @return value double PPS Value
+   **/
+
+  public function getPPSValue() {
+    // Fetch RPC difficulty
+    if ($this->bitcoin->can_connect() === true) {
+      $dDifficulty = $this->bitcoin->getdifficulty();
+    } else {
+      $dDifficulty = 1;
+    }
+
+    if ($this->config['pps']['reward']['type'] == 'blockavg' && $this->block->getBlockCount() > 0) {
+      $pps_reward = round($this->block->getAvgBlockReward($this->config['pps']['blockavg']['blockcount']));
+    } else {
+      if ($this->config['pps']['reward']['type'] == 'block') {
+        if ($aLastBlock = $this->block->getLast()) {
+          $pps_reward = $aLastBlock['amount'];
+        } else {
+          $pps_reward = $this->config['pps']['reward']['default'];
+        }
+      } else {
+        $pps_reward = $this->config['pps']['reward']['default'];
+      }
+    }
+    return round($pps_reward / (pow(2, $this->config['target_bits']) * $dDifficulty), 12);
+  }
 }
 
 $statistics = new Statistics();
@@ -810,6 +889,7 @@ $statistics->setUser($user);
 $statistics->setBlock($block);
 $statistics->setMemcache($memcache);
 $statistics->setConfig($config);
+$statistics->setBitcoin($bitcoin);
 $statistics->setErrorCodes($aErrorCodes);
 
 ?>

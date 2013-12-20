@@ -95,7 +95,6 @@ Small Time Miners are running various stratum only pools for different coins.
 
 ### nutnut
 
-
 | Pool URL | Coin | Avg. Hashrate | Avg. Active Workers | Notes |
 | -------- | ---- | ------------: | ------------------: | ----- |
 | http://ftc.nut2pools.com | Feathercoin | 45-50Mhs | 25 workers | New style, PPLNS |
@@ -103,7 +102,6 @@ Small Time Miners are running various stratum only pools for different coins.
 | http://pxc.nut2pools.com | Phenixcoin | 0 | 0 | New style | PPLNS |
 
 ### ahmedbodi
-
 
 | Pool URL | Coin | Avg. Hashrate | Avg. Active Workers | Notes |
 | -------- | ---- | ------------: | ------------------: | ----- |
@@ -116,16 +114,14 @@ Small Time Miners are running various stratum only pools for different coins.
 
 ### Neozonz
 
-
 | Pool URL | Coin | Avg. Hashrate | Avg. Active Workers | Notes |
 | -------- | ---- | ------------: | ------------------: | ----- |
 | https://www.mine-litecoin.com | Litecoin | 10Mhs | 75 workers | Custom Template, Prop |
 
 ### CaptainAK
 
-
-| Pool URL | Coin | Avg. Hashrate | Avg. Active Workers | Notes |
-| -------- | ---- | ------------: | ------------------: | ----- |
+| Pool URL                | Coin | Avg. Hashrate | Avg. Active Workers | Notes |
+| ----------------------- | ---- | ------------: | ------------------: | ----- |
 | http://btb.pnwminer.com | Bitbar | 5-10 Mhs | 5 workers | PPLNS |
 | http://dgc.pnwminer.com | DigitalCoin | 0 Mhs | 0 workers | PPLNS |
 | http://btg.pnwminer.com | BitGem | .5-2 Mhs | 1 workers | PPLNS |
@@ -138,3 +134,30 @@ Small Time Miners are running various stratum only pools for different coins.
 | Pool URL | Coin | Avg. Hashrate | Avg. Active Workers | Notes |
 | -------- | ---- | ------------: | ------------------: | ----- |
 | http://magic.port-x.de/ | LTC | 0.5 Mhs | 2 | Prop |
+
+### Coinz
+
+| Pool URL | Coin | Avg. Hashrate | Avg. Active Workers | Notes |
+| -------- | ---- | ------------: | ------------------: | ----- |
+| http://asc.coinz.pw | Asiccoin | 2-4Ghs | 2-4 workers | Prop |
+| http://dem.coinz.pw | Deutch eMark | 0Ghs | 0 workers | Prop |
+| http://fst.coinz.pw | Fastcoin | 15-25Mhs | 20-30 workers | Prop |
+| http://glx.coinz.pw | Galaxycoin | 0Mhs | 0 workers | Prop |
+| http://ltc.coinz.pw | Litecoin | 0Mhs | 0 workers | Prop |
+| http://sxc.coinz.pw | Sexcoin | 10-20Mhs | 15-25 workers | Prop |
+| http://tgc.coinz.pw | Tigercoin | 2-4Ghs | 2-4 workers | Prop |
+| http://zet.coinz.pw | Zetacoin | 5-10Ghs | 2-3 workers | Prop |
+
+### ckoeber
+
+| Pool URL                         | Coin  | Avg. Hashrate | Avg. Active Workers | Notes |
+| -------------------------------- | ----- | ------------: | ------------------: | ----- |
+| http://spotspool.chriskoeber.com | Spots | 37 Mhs        | 55 workers          | Prop  |
+
+### [Poolerino.com](http://poolerino.com/ "Poolerino.com") ([@Fredyy90](https://github.com/Fredyy90/ "Fredyy90 on GitHub"))
+
+[Poolerino.com](http://poolerino.com/ "Poolerino.com")  is going to build up a network of first-class, high performance pools on highend enterprise server hardware
+
+| Pool URL | Coin | Avg. Hashrate | Avg. Active Workers | Notes |
+| -------- | ---- | ------------: | ------------------: | ----- |
+| http://doge.poolerino.com | Doge | 300 MH/s | 600 | PROP + VARDIFF + 0% Fee |

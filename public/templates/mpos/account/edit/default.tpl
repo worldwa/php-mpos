@@ -38,8 +38,8 @@
         <input type="text" name="payoutThreshold" value="{$smarty.request.payoutThreshold|default:$GLOBAL.userdata.ap_threshold|escape}" size="5" maxlength="5" />
       </fieldset>
       <fieldset>
-        <label>Anonymous Account</label>
-        Hide username on website from others. Admins can still get your user information.
+        <label>匿名</label>
+        对本站其他用户匿名
         <label class="checkbox" for="is_anonymous">
         <input class="ios-switch" type="hidden" name="is_anonymous" value="0" />
         <input class="ios-switch" type="checkbox" name="is_anonymous" value="1" id="is_anonymous" {if $GLOBAL.userdata.is_anonymous}checked{/if} />
@@ -54,7 +54,7 @@
     </div>
     <footer>
       <div class="submit_link">
-        <input type="submit" value="Update Account" class="alt_btn">
+        <input type="submit" value="更新账户" class="alt_btn">
       </div>
     </footer>
   </article>
@@ -71,7 +71,7 @@
     </header>
     <div class="module_content">
       <p style="padding-left:30px; padding-redight:30px; font-size:10px;">
-        Please note: a {$GLOBAL.config.txfee} {$GLOBAL.config.currency} transaction will apply when processing "On-Demand" manual payments
+        提示: 提款LTC网络(非本站)会收取 {$GLOBAL.config.txfee} {$GLOBAL.config.currency} 的手续费。
       </p>
       <fieldset>
         <label>账户结余</label>
@@ -106,7 +106,6 @@
     <div class="module_content">
       <p style="padding-left:30px; padding-redight:30px; font-size:10px;">
       提示：密码修改成功后，请重新登录
-      Note: You will be redirected to login on successful completion of a password change
       </p>
       <fieldset>
         <label>当前密码</label>

@@ -1,3 +1,4 @@
+    <p>官方qq群：133278594</p>
     <p>Pool Powered By <a href="https://github.com/TheSerapher/php-mpos">MPOS</a></p>
     <p><strong>© 爱挖矿 2013</p>
     {if $DEBUG > 0}

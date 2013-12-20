@@ -1,23 +1,23 @@
 <article class="module width_quarter">
-  {*<header><h3>账户信息</h3></header>*}
-    {*<table class="tablesorter" cellspacing="0">*}
-      {*<tr>*}
-        {*<td colspan="2">*}
-{*{if $GLOBAL.userdata.no_fees}*}
-        {*You are mining without any pool fees applied and*}
-{*{else if $GLOBAL.fees > 0}*}
-        {*You are mining at <font color="orange">{$GLOBAL.fees|escape}%</font> pool fee and*}
-{*{else}*}
-        {*This pool does not apply fees and*}
-{*{/if}*}
-{*{if $GLOBAL.userdata.donate_percent > 0}*}
-        {*you donate <font color="green">{$GLOBAL.userdata.donate_percent|escape}%</font>.*}
-{*{else}*}
-        {*you are not <a href="{$smarty.server.PHP_SELF}?page=account&action=edit">donating</a>.*}
-{*{/if}*}
-        {*</td>*}
-      {*</tr>*}
-    {*</table>*}
+  <header><h3>账户信息</h3></header>
+    <table class="tablesorter" cellspacing="0">
+      <tr>
+        <td colspan="2">
+          {if $GLOBAL.userdata.no_fees}
+            您当前还没有产生任何手续费。
+          {else if $GLOBAL.fees > 0}
+            矿池当前收取 <font color="orange">{$GLOBAL.fees|escape}%</font> 的手续费。
+          {else}
+            矿池当前不收取任何手续费。
+          {/if}
+          {if $GLOBAL.userdata.donate_percent > 0}
+            你已经捐赠<font color="green">{$GLOBAL.userdata.donate_percent|escape}%</font>。
+          {else}
+            你没有<a href="{$smarty.server.PHP_SELF}?page=account&action=edit">捐赠</a>。
+          {/if}
+        </td>
+      </tr>
+    </table>
     <table class="tablesorter" cellspacing="0">
       <thead>
         <tr><th colspan="2"><b>{$GLOBAL.config.currency} 账户结余</b></th></tr>

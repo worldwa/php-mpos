@@ -24,11 +24,11 @@
       {/if}
         </tr>
         <tr>
-          <th align="left">Est. Avg. Time per Round</td>
+          <th align="left">预估挖到一个快需要多久</td>
           <td>{$ESTTIME|seconds_to_words}</td>
         </tr>
         <tr>
-          <th align="left">Est. Shares this Round</td>
+          <th align="left">预估当前挖到一块需要shares数</td>
           <td id="b-target">{$ESTIMATES.shares} (done: {$ESTIMATES.percent}%)</td>
         </tr>
     {if ! $GLOBAL.website.blockexplorer.disabled}

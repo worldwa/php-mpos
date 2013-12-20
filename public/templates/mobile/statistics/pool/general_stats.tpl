@@ -1,25 +1,25 @@
 <table>
   <tbody>
     <tr>
-      <td class="leftheader">Pool Hash Rate</td>
+      <td class="leftheader">矿池速度</td>
       <td colspan="4">{($GLOBAL.hashrate)|number_format:"3"} {$GLOBAL.hashunits.pool}</td>
     </tr>
     <tr>
-      <td class="leftheader">Pool Efficiency</td>
+      <td class="leftheader">矿池难度</td>
       <td colspan="4">{if $GLOBAL.roundshares.valid > 0}{(100 - (100 / $GLOBAL.roundshares.valid * $GLOBAL.roundshares.invalid))|number_format:"2"}{else}0{/if} %</td>
     </tr>
     <tr>
-      <td class="leftheader">Current Active Workers</td>
+      <td class="leftheader">当前活跃的矿工</td>
       <td colspan="4">{$GLOBAL.workers}</td>
     </tr>
     {if ! $GLOBAL.website.blockexplorer.disabled}
     <tr>
-      <td class="leftheader">Next Network Block</td>
+      <td class="leftheader">下一个块</td>
       <td colspan="4">{$CURRENTBLOCK + 1} &nbsp;&nbsp;<font size="1"> (Current: <a href="{$GLOBAL.website.blockexplorer.url}{$CURRENTBLOCKHASH}" target="_new">{$CURRENTBLOCK})</a></font></td>
     </tr>
     {else}
     <tr>
-      <td class="leftheader">Next Network Block</td>
+      <td class="leftheader">下一个块</td>
       <td colspan="4">{$CURRENTBLOCK + 1} &nbsp;&nbsp; (Current: {$CURRENTBLOCK})</td>
     </tr>
     {/if}

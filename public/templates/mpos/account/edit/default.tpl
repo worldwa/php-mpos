@@ -9,16 +9,16 @@
         <label>用户名</label>
         <input type="text" value="{$GLOBAL.userdata.username|escape}" readonly />
       </fieldset>
-      <fieldset>
-        <label>用户ID</label>
-        <input type="text" value="{$GLOBAL.userdata.id}" readonly />
-      </fieldset>
-      {if !$GLOBAL.website.api.disabled}
-      <fieldset>
-        <label>API Key</label>
-        <a href="{$smarty.server.PHP_SELF}?page=api&action=getuserstatus&api_key={$GLOBAL.userdata.api_key}&id={$GLOBAL.userdata.id}">{$GLOBAL.userdata.api_key}</a>
-      </fieldset>
-      {/if}
+      {*<fieldset>*}
+        {*<label>用户ID</label>*}
+        {*<input type="text" value="{$GLOBAL.userdata.id}" readonly />*}
+      {*</fieldset>*}
+      {*{if !$GLOBAL.website.api.disabled}*}
+      {*<fieldset>*}
+        {*<label>API Key</label>*}
+        {*<a href="{$smarty.server.PHP_SELF}?page=api&action=getuserstatus&api_key={$GLOBAL.userdata.api_key}&id={$GLOBAL.userdata.id}">{$GLOBAL.userdata.api_key}</a>*}
+      {*</fieldset>*}
+      {*{/if}*}
       <fieldset>
         <label>E-Mail</label>
         <input type="text" name="email" value="{nocache}{$GLOBAL.userdata.email|escape}{/nocache}" size="20" />

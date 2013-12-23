@@ -48,16 +48,25 @@
   </table>
     <fieldset>
       <label>类型</label>
-      {html_options name="filter[type]" options=$TRANSACTIONTYPES selected=$smarty.request.filter.type|default:""}
+      {*{html_options name="filter[type]" options=$TRANSACTIONTYPES selected=$smarty.request.filter.type|default:""}*}
+      <select name="filter[type]">
+        <option selected="selected" value=""></option>
+        <option value="Credit_PPS">PPS收益</option>
+      </select>
     </fieldset>
     <fieldset>
       <label>状态</label>
-      {html_options name="filter[status]" options=$TXSTATUS selected=$smarty.request.filter.status|default:""}
+      {*{html_options name="filter[status]" options=$TXSTATUS selected=$smarty.request.filter.status|default:""}*}
+      <select name="filter[status]">
+        <option selected="selected" value=""></option>
+        <option value="Confirmed">已确认</option>
+        <option value="Unconfirmed">未确认</option>
+      </select>
     </fieldset>
     </div>
   <footer>
     <div class="submit_link">
-      <input type="submit" value="Filter" class="alt_btn">
+      <input type="submit" value="筛选" class="alt_btn">
     </div>
   </footer>
 </form>
@@ -106,5 +115,5 @@
 {/section}
       </tbody>
     </table>
-    <footer><p style="margin-left: 25px; font-size: 9px;"><b>Debit_AP</b> = Auto Threshold Payment, <b>Debit_MP</b> = Manual Payment, <b>Donation</b> = Donation, <b>Fee</b> = Pool Fees (if applicable)</p></footer>
+    {*<footer><p style="margin-left: 25px; font-size: 9px;"><b>Debit_AP</b> = Auto Threshold Payment, <b>Debit_MP</b> = Manual Payment, <b>Donation</b> = Donation, <b>Fee</b> = Pool Fees (if applicable)</p></footer>*}
 </article>

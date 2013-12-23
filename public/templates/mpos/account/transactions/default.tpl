@@ -71,12 +71,12 @@
           <th align="center">ID</th>
           <th>账户</th>
           <th>日期</th>
-          <th>TX Type</th>
+          <th>交易类型</th>
           <th align="center">状态</th>
           <th>付款地址</th>
-          <th>TX #</th>
-          <th>Block #</th>
-          <th>Amount</th>
+          {*<th>TX #</th>*}
+          {*<th>Block #</th>*}
+          <th>总共</th>
         </tr>
       </thead>
       <tbody style="font-size:12px;">
@@ -87,7 +87,7 @@
           <td>{$TRANSACTIONS[transaction].timestamp}</td>
           <td>{$TRANSACTIONS[transaction].type}</td>
           <td align="center">
-            {if $TRANSACTIONS[transaction].type == 'Credit_PPS' OR
+            {if $TRANSACTIONS[transaction].type == 'PPS收益' OR
                 $TRANSACTIONS[transaction].type == 'Fee_PPS' OR
                 $TRANSACTIONS[transaction].type == 'Donation_PPS' OR
                 $TRANSACTIONS[transaction].type == 'Debit_MP' OR

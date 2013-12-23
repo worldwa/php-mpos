@@ -94,7 +94,7 @@
           <td>{$TRANSACTIONS[transaction].timestamp}</td>
           <td>{$TRANSACTIONS[transaction].type}</td>
           <td align="center">
-            {if $TRANSACTIONS[transaction].type == 'Credit_PPS' OR
+            {if $TRANSACTIONS[transaction].type == 'PPS收益' OR
                 $TRANSACTIONS[transaction].type == 'Fee_PPS' OR
                 $TRANSACTIONS[transaction].type == 'Donation_PPS' OR
                 $TRANSACTIONS[transaction].type == 'Debit_MP' OR

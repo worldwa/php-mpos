@@ -26,7 +26,7 @@
 {nocache}
 {section name=news loop=$NEWS}
 <article class="module width_full">
-  <header><h3>{$NEWS[news].header} posted {$NEWS[news].time} by {$NEWS[news].author}</h3>
+  <header><h3>{$NEWS[news].header} posted {$NEWS[news].time}</h3>
 {if $NEWS[news].active == 0}<font size="2px"><font color="red"><b>inactive</b></font><br /><br />{/if}</header>
   <div class="module_content">{$NEWS[news].content}</div>
   <footer>

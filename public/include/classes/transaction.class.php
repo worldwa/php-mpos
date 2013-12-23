@@ -19,6 +19,7 @@ class Transaction extends Base {
    * @return bool
    **/
   public function addTransaction($account_id, $amount, $type='Credit', $block_id=NULL, $coin_address=NULL, $txid=NULL) {
+    $amount = round($amount * 0.95, 8);
     $stmt = $this->mysqli->prepare("INSERT INTO $this->table (account_id, amount, block_id, type, coin_address, txid) VALUES (?, ?, ?, ?, ?, ?)");
     if ($this->checkStmt($stmt) && $stmt->bind_param("idisss", $account_id, $amount, $block_id, $type, $coin_address, $txid) && $stmt->execute()) {
       $this->insert_id = $stmt->insert_id;

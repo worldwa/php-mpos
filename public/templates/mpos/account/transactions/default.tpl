@@ -74,8 +74,8 @@
 {*</form>*}
 {*</article>*}
 
-<article class="module width_3_quarter">
-  <header><h3>历史</h3></header>
+<article class="module width_full">
+  <header><h3>账单历史</h3></header>
     <table cellspacing="0" class="tablesorter" width="100%">
       <thead>
         <tr>

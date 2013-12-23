@@ -1,5 +1,5 @@
 <div data-role="collapsible">
-  <h3>用户算力</h3>
+  <h3>算力排名</h3>
 {include file="statistics/pool/contributors_hashrate.tpl"}
 </div>
 

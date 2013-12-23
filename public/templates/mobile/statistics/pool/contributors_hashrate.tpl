@@ -4,8 +4,8 @@
         <th>排名</th>
         <th>用户名</th>
         <th data-priority="critical" align="right">KH/s</th>
-        <th data-priority="2" align="right">{$GLOBAL.config.currency}/Day</th>
-        <th data-priority="3" align="right">{$GLOBAL.config.price.currency}/Day</th>
+        <th data-priority="2" align="right">{$GLOBAL.config.currency}/天</th>
+        <th data-priority="3" align="right">{$GLOBAL.config.price.currency}/天</th>
       </tr>
     </thead>
     <tbody>

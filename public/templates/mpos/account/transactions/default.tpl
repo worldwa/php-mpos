@@ -1,5 +1,5 @@
 <article class="module width_full">
-  <header><h3>交易</h3></header>
+  <header><h3>账单</h3></header>
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
@@ -80,7 +80,7 @@
           <th align="center">ID</th>
           <th>账户</th>
           <th>日期</th>
-          <th>交易类型</th>
+          <th>账单类型</th>
           <th align="center">状态</th>
           <th>付款地址</th>
           {*<th>TX #</th>*}

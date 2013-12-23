@@ -1,5 +1,5 @@
 <article class="module width_half">
-  <header><h3>周期交易</h3></header>
+  <header><h3>周期账单</h3></header>
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>

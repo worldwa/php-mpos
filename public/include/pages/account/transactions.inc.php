@@ -9,7 +9,7 @@ if ($user->isAuthenticated()) {
   $aTransactionSummary = $transaction->getTransactionSummary($_SESSION['USERDATA']['id']);
   $iCountTransactions = $transaction->num_rows;
   $aTransactionTypes = $transaction->getTypes();
-  if (!$aTransactions) $_SESSION['POPUP'][] = array('CONTENT' => '当前没有交易', 'TYPE' => 'errormsg');
+  if (!$aTransactions) $_SESSION['POPUP'][] = array('CONTENT' => '当前没有账单', 'TYPE' => 'errormsg');
   $smarty->assign('LIMIT', $iLimit);
   $smarty->assign('TRANSACTIONS', $aTransactions);
   $smarty->assign('SUMMARY', $aTransactionSummary);

@@ -21,6 +21,9 @@ if ($user->isAuthenticated() && $user->isAdmin($_SESSION['USERDATA']['id'])) {
     $aInvitations = array();
     $_SESSION['POPUP'][] = array('CONTENT' => '邀请功能暂时关闭', 'TYPE' => 'errormsg');
   }
+}else{
+  $aInvitations = array();
+  $_SESSION['POPUP'][] = array('CONTENT' => '邀请功能暂时关闭', 'TYPE' => 'errormsg');
 }
 $smarty->assign('CONTENT', 'default.tpl');
 ?>

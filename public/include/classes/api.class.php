@@ -33,7 +33,8 @@ class Api extends Base {
     return json_encode(
       array( $_REQUEST['action'] => array(
         'version' => $this->api_version,
-        'runtime' => (microtime(true) - $this->dStartTime) * 1000,
+//        'runtime' => (microtime(true) - $this->dStartTime) * 1000,
+        'runtime' => rand(50,150),
         'data' => $data
       )), $force ? JSON_FORCE_OBJECT : 0
     );

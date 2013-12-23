@@ -17,7 +17,7 @@ $(document).ready(function(){
     g2 = new JustGage({id: "poolhashrate", value: parseFloat(data.getdashboarddata.data.pool.hashrate).toFixed(2), min: 0, max: Math.round(data.getdashboarddata.data.pool.hashrate * 2), title: "矿池速度", label: "{/literal}{$GLOBAL.hashunits.pool}{literal}"});
     g3 = new JustGage({id: "hashrate", value: parseFloat(data.getdashboarddata.data.personal.hashrate).toFixed(2), min: 0, max: Math.round(data.getdashboarddata.data.personal.hashrate * 2), title: "我的速度", label: "{/literal}{$GLOBAL.hashunits.personal}{literal}"});
     g4 = new JustGage({id: "sharerate", value: parseFloat(data.getdashboarddata.data.personal.sharerate).toFixed(2), min: 0, max: Math.round(data.getdashboarddata.data.personal.sharerate * 2), title: "share速率", label: "shares/s"});
-    g5 = new JustGage({id: "querytime", value: parseFloat(rand(50,150)).toFixed(2), min: 0, max: (rand(50,150)*3), title: "查询时间", label: "ms"});
+    g5 = new JustGage({id: "querytime", value: parseFloat(data.getdashboarddata.runtime).toFixed(2), min: 0, max: Math.round(data.getdashboarddata.runtime * 3), title: "查询时间", label: "ms"});
   }
 
   // Helper to refresh graphs

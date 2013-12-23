@@ -27,14 +27,15 @@
           <td id="b-ppsdiff">{$GLOBAL.userdata.sharedifficulty|number_format:"2"}</td>
         </tr>
 {/if}
-           <tr>
-               <td><b>拒绝率</b></td>
-               <td id="b-fee" class="right">{($GLOBAL.userdata.shares.invalid / ($GLOBAL.roundshares.valid + $GLOBAL.roundshares.invalid) * 100)|number_format:"2"}%</td>
-           </tr>
+
          <tr><td colspan="2">&nbsp;</td></tr>
          {include file="dashboard/round_shares.tpl"}
          <tr><td colspan="2">&nbsp;</td></tr>
        {/if}
+       <tr>
+           <td><b>拒绝率</b></td>
+           <td id="b-fee" class="right">{($GLOBAL.userdata.shares.invalid / ($GLOBAL.roundshares.valid + $GLOBAL.roundshares.invalid) * 100)|number_format:"2"}%</td>
+       </tr>
          {include file="dashboard/payout_estimates.tpl"}
          <tr><td colspan="2">&nbsp;</td></tr>
          {include file="dashboard/network_info.tpl"}

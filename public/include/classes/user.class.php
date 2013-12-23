@@ -498,10 +498,10 @@ class User extends Base {
       $invitation->setDebug($this->debug);
       $invitation->setUser($this);
       $invitation->setConfig($this->config);
-      if (!$invitation->setActivated($aToken['id'])) {
-        $this->setErrorMessage('激活邀请失败');
-        return false;
-      }
+//      if (!$invitation->setActivated($aToken['id'])) {
+//        $this->setErrorMessage('激活邀请失败');
+//        return false;
+//      }
       if (!$this->token->deleteToken($strToken)) {
         $this->setErrorMessage('删除token失败');
         return false;

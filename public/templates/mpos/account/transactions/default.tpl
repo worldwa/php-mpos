@@ -115,7 +115,6 @@
 {/section}
       </tbody>
     </table>
-  <footer><p style="margin-left: 25px; font-size: 14px;">Credit_PPS: PPS收益</footer>
-  Credit_PPS
+  <footer><p style="margin-left: 25px; font-size: 12px;">Credit_PPS: PPS收益</footer>
     {*<footer><p style="margin-left: 25px; font-size: 9px;"><b>Debit_AP</b> = Auto Threshold Payment, <b>Debit_MP</b> = Manual Payment, <b>Donation</b> = Donation, <b>Fee</b> = Pool Fees (if applicable)</p></footer>*}
 </article>

@@ -38,7 +38,7 @@
                       {*<td align="right"><i>{$GLOBAL.userdata.shares.invalid|number_format}</i>{if $GLOBAL.roundshares.valid > 0}<font size='1px'> ({($GLOBAL.userdata.shares.invalid / ($GLOBAL.roundshares.valid + $GLOBAL.roundshares.invalid) * 100)|number_format:"2"}%)</font>{/if}</td>*}
                     {*</tr>*}
                     {*<tr><td colspan="2">&nbsp;</td></tr>*}
-                    <tr><td colspan="2"><b><u>{$GLOBAL.config.currency}收入预估</u></b></td></tr>
+                    <tr><td colspan="2"><b><u>{$GLOBAL.config.currency} 收入预估</u></b></td></tr>
                     <tr>
                       <td><b>24小时</b></td>
                       <td align="right">{$GLOBAL.userdata.estimates.hours24}</td>

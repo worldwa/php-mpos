@@ -1,6 +1,6 @@
 
          <tr>
-           <td colspan="2"><b><u>{$GLOBAL.config.currency}收入预估</u></b></td>
+           <td colspan="2"><b><u>{$GLOBAL.config.currency} 收入预估</u></b></td>
          </tr>
 {if $GLOBAL.config.payout_system != 'pps'}
          <tr>

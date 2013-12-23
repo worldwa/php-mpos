@@ -4,7 +4,7 @@
      <thead>
       <tr>
         <th align="left">矿工</th>
-        <th align="right">速度</th>
+        <th align="right">算力</th>
         <th align="right">难度</th>
       </tr>
       </thead>

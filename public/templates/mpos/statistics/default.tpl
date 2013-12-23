@@ -4,7 +4,7 @@
     <table class="" width="50%" style="font-size:14px;">
       <tbody>
         <tr>
-          <td class="leftheader">矿池速度</td>
+          <td class="leftheader">矿池算力</td>
           <td>{$GLOBAL.hashrate} {$GLOBAL.hashunits.pool}</td>
         </tr>
         <tr>

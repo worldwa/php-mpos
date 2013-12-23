@@ -21,6 +21,6 @@
     {/if}
   </div>
   <footer>
-    <p style="margin-left: 25px">更新间隔: {$GLOBAL.config.statistics_ajax_refresh_interval|default:"10"} 秒. 过去 {$INTERVAL|default:"5"} 分钟平均速度.</p>
+    <p style="margin-left: 25px">更新间隔: {$GLOBAL.config.statistics_ajax_refresh_interval|default:"10"} 秒. 过去 {$INTERVAL|default:"5"} 分钟平均算力.</p>
   </footer>
 </article>

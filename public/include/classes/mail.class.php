@@ -88,6 +88,7 @@ class Mail extends Base {
 
     $phpMailer->From = $this->config['email']['From'];
     $phpMailer->FromName = $this->config['email']['FromName'] ;
+    $phpMailer->CharSet = "UTF-8";
     $phpMailer->addAddress($to);               // Name is optional
 
     $phpMailer->WordWrap = 50;                                 // Set word wrap to 50 characters

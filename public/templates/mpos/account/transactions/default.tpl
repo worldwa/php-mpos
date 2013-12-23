@@ -3,15 +3,17 @@
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
-    {foreach $SUMMARY as $type=>$total}
-        <th>{$type}</th>
-    {/foreach}
+    {*{foreach $SUMMARY as $type=>$total}*}
+        {*<th>{$type}</th>*}
+    {*{/foreach}*}
+        <th>总收益</th>
+        <th>已提出</th>
       </tr>
     </thead>
     <tbody>
       <tr>
     {foreach $SUMMARY as $type=>$total}
-        <td class="right">{$total}</td>
+      {if $type == 'TXFee'}<td class="right">{$total}</td>{/if}
     {/foreach}
       </tr>
     </tbody>

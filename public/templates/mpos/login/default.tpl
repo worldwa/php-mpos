@@ -5,11 +5,11 @@
     <div class="module_content">
         <fieldset>
           <label>用户名/E-Mail</label>
-          <input type="text" name="username" size="22" maxlength="100" value="{$smarty.request.username|default:""|escape}" placeholder="Your username or email" required />
+          <input type="text" name="username" size="22" maxlength="100" value="{$smarty.request.username|default:""|escape}" placeholder="用户名或Email" required />
         </fieldset>
         <fieldset>
           <label>密码</label>
-          <input type="password" name="password" size="22" maxlength="100" placeholder="Your password" required />
+          <input type="password" name="password" size="22" maxlength="100" placeholder="密码" required />
         </fieldset>
       <div class="clear"></div>
     </div>

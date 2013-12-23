@@ -27,17 +27,17 @@
       <li class="icon-pencil"><a href="{$smarty.server.PHP_SELF}?page=admin&action=templates">Templates</a></li>
     </ul>
     {/if}
-    {if $smarty.session.AUTHENTICATED|default}
-    <h3>统计</h3>
-    <ul class="toggle">
-      <li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=pool">矿池</a></li>
-      <li class="icon-th-large"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blocks">块</a></li>
-      <li class="icon-chart"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=graphs">趋势图</a></li>
-      <li class="icon-record"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=round">周期</a></li>
-      <li class="icon-search"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blockfinder">发现者</a></li>
+    {if $smarty.session.AUTHENTICATED|default: "0" == 1 && $GLOBAL.userdata.is_admin == 1}
+    {*<h3>统计</h3>*}
+    {*<ul class="toggle">*}
+      {*<li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=pool">矿池</a></li>*}
+      {*<li class="icon-th-large"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blocks">块</a></li>*}
+      {*<li class="icon-chart"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=graphs">趋势图</a></li>*}
+      {*<li class="icon-record"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=round">周期</a></li>*}
+      {*<li class="icon-search"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blockfinder">发现者</a></li>*}
       {*{if $GLOBAL.config.monitoring_uptimerobot_api_keys|default:"0"}<li class="icon-bell"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=uptime">运行时间</a></li>{/if}*}
-    </ul>
-    {else}
+    {*</ul>*}
+    {*{else}*}
     <h3>统计</h3>
     <ul class="toggle">
      {if $GLOBAL.acl.pool.statistics}
@@ -72,9 +72,9 @@
     <h3>其他</h3>
     <ul class="toggle">
       {if $smarty.session.AUTHENTICATED|default:"0" == 1}
-      {if !$GLOBAL.config.disable_contactform|default:"0" == 1}
-      <li class="icon-mail"><a href="{$smarty.server.PHP_SELF}?page=contactform">Support</a></li>
-      {/if}
+      {*{if !$GLOBAL.config.disable_contactform|default:"0" == 1}*}
+      {*<li class="icon-mail"><a href="{$smarty.server.PHP_SELF}?page=contactform">Support</a></li>*}
+      {*{/if}*}
       <li class="icon-off"><a href="{$smarty.server.PHP_SELF}?page=logout">退出</a></li>
       {else}
       <li class="icon-login"><a href="{$smarty.server.PHP_SELF}?page=login">登录</a></li>
@@ -85,18 +85,18 @@
     <ul>
       <hr/>
     </ul>
-    {if $smarty.session.AUTHENTICATED|default:"0" == 1}
-     <br />
-    {else}
-    <ul>
-     <center>
-      <div style="display: inline-block;">
-      <i><u><b><font size="2">LIVE STATS</font></b></u></i>
-      <div id="mr" style="width:180px; height:120px;"></div>
-      <div id="hr" style="width:180px; height:120px;"></div>
-      </div>
-     </center>
-    </ul>
-      <hr/>
-    {include file="global/navjs.tpl"}
-    {/if}
+    {*{if $smarty.session.AUTHENTICATED|default:"0" == 1}*}
+     {*<br />*}
+    {*{else}*}
+    {*<ul>*}
+     {*<center>*}
+      {*<div style="display: inline-block;">*}
+      {*<i><u><b><font size="2">LIVE STATS</font></b></u></i>*}
+      {*<div id="mr" style="width:180px; height:120px;"></div>*}
+      {*<div id="hr" style="width:180px; height:120px;"></div>*}
+      {*</div>*}
+     {*</center>*}
+    {*</ul>*}
+      {*<hr/>*}
+    {*{include file="global/navjs.tpl"}*}
+    {*{/if}*}

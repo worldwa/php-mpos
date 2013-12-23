@@ -8,7 +8,7 @@
       <li class="icon-photo"><a href="{$smarty.server.PHP_SELF}?page=account&action=workers">我的矿工</a></li>
       <li class="icon-indent-left"><a href="{$smarty.server.PHP_SELF}?page=account&action=transactions">交易</a></li>
     {if !$GLOBAL.config.disable_notifications}<li class="icon-megaphone"><a href="{$smarty.server.PHP_SELF}?page=account&action=notifications">通知</a></li>{/if}
-    {if !$GLOBAL.config.disable_invitations}<li class="icon-plus"><a href="{$smarty.server.PHP_SELF}?page=account&action=invitations">邀请</a></li>{/if}
+    {if !$GLOBAL.config.disable_invitations && $user->isAdmin($_SESSION['USERDATA']['id'])}<li class="icon-plus"><a href="{$smarty.server.PHP_SELF}?page=account&action=invitations">邀请</a></li>{/if}
       <li class="icon-barcode"><a href="{$smarty.server.PHP_SELF}?page=account&action=qrcode">二维码</a></li>
     </ul>
     </li>

@@ -97,10 +97,10 @@ class Invitation extends Base {
       $this->setErrorMessage($this->getErrorMsg('E0023'));
       return false;
     }
-    if (preg_match('/[^a-z_\.\!\?\-0-9 ]/i', $aData['message'])) {
-      $this->setErrorMessage($this->getErrorMsg('E0024'));
-      return false;
-    }
+//    if (preg_match('/[^a-z_\.\!\?\-0-9 ]/i', $aData['message'])) {
+//      $this->setErrorMessage($this->getErrorMsg('E0024'));
+//      return false;
+//    }
     // Ensure this invitation does not exist yet nor do we have an account with that email
     if ($this->user->getEmail($aData['email'])) {
       $this->setErrorMessage($this->getErrorMsg('E0025'));

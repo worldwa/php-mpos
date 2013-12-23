@@ -1,4 +1,4 @@
- <article class="module width_quarter">
+ <article class="module width_quarter" {if !$GLOBAL.config.disable_invitations &&  $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}style="display: none"{/if}>
    <header><h3>{$GLOBAL.config.payout_system|capitalize} 统计</h3></header>
    <div class="module_content">
      <table width="100%">

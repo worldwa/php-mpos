@@ -43,12 +43,12 @@ $(document).ready(function(){
     series: [
       { yaxis: 'yaxis', label: '我',    fill: true                                            },
       { yaxis: 'yaxis', label: '矿池',   fill: false, trendline: { show: false }, lineWidth: 2, markerOptions: { show: true, size: 4 }},
-      { yaxis: 'y3axis', label: 'Share速度', fill: false, trendline: { show: false }              },
+      { yaxis: 'y3axis', label: 'Share速率', fill: false, trendline: { show: false }              },
     ],
     legend: { show: true, location: 'sw', renderer: $.jqplot.EnhancedLegendRenderer, rendererOptions: { seriesToggleReplot: { resetAxes: true } } },
     axes: {
       yaxis:  { min: 0, pad: 1.25, label: '速度' , labelRenderer: $.jqplot.CanvasAxisLabelRenderer },
-      y3axis: { min: 0, pad: 1.25, label: 'Share速度', labelRenderer: $.jqplot.CanvasAxisLabelRenderer },
+      y3axis: { min: 0, pad: 1.25, label: 'Share速率', labelRenderer: $.jqplot.CanvasAxisLabelRenderer },
       xaxis:  { tickInterval: {/literal}{$GLOBAL.config.statistics_ajax_refresh_interval}{literal}, labelRenderer: $.jqplot.CanvasAxisLabelRenderer, renderer: $.jqplot.DateAxisRenderer, angle: 30, tickOptions: { formatString: '%T' } },
     },
   };
@@ -96,7 +96,7 @@ $(document).ready(function(){
   } else {
     initSharerate = 1
   }
-  g4 = new JustGage({id: "sharerate", value: parseFloat({/literal}{$GLOBAL.userdata.sharerate}{literal}).toFixed(2), min: 0, max: Math.round(initSharerate), gaugeColor: '#6f7a8a', valueFontColor: '#555', shadowOpacity : 0.8, shadowSize : 0, shadowVerticalOffset : 10, title: "Share速度", label: "shares/s"});
+  g4 = new JustGage({id: "sharerate", value: parseFloat({/literal}{$GLOBAL.userdata.sharerate}{literal}).toFixed(2), min: 0, max: Math.round(initSharerate), gaugeColor: '#6f7a8a', valueFontColor: '#555', shadowOpacity : 0.8, shadowSize : 0, shadowVerticalOffset : 10, title: "Share速率", label: "shares/s"});
   g5 = new JustGage({id: "querytime", value: parseFloat(0).toFixed(0), min: 0, max: Math.round(5 * 100), gaugeColor: '#6f7a8a', valueFontColor: '#555', shadowOpacity : 0.8, shadowSize : 0, shadowVerticalOffset : 10, title: "查询时间", label: "ms"});
 
   // Helper to refresh graphs

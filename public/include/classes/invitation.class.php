@@ -115,7 +115,7 @@ class Invitation extends Base {
       return false;
     }
     $aData['username'] = $this->user->getUserName($account_id);
-    $aData['subject'] = 'Pending Invitation';
+    $aData['subject'] = '邀请';
     if ($this->mail->sendMail('invitations/body', $aData)) {
       $aToken = $this->token->getToken($aData['token']);
       if (!$this->createInvitation($account_id, $aData['email'], $aToken['id']))

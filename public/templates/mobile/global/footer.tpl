@@ -1,1 +1,1 @@
-          <h1>Powered by <a target="_blank" href="https://github.com/TheSerapher/php-mpos" data-ajax="false">MPOS</a></h1>
+          <h1>官网QQ群：133278594</h1>

@@ -18,59 +18,59 @@
   </table>
 </article>
 
-<article class="module width_quarter">
-  <header><h3>筛选</h3></header>
-  <div class="module_content">
-  <form action="{$smarty.server.PHP_SELF}">
-    <input type="hidden" name="page" value="{$smarty.request.page|escape}" />
-    <input type="hidden" name="action" value="{$smarty.request.action|escape}" />
-    <table cellspacing="0" class="tablesorter">
-    <tbody>
-      <tr>
-{if $COUNTTRANSACTIONS / $LIMIT > 1}
-        <td align="left">
-  {if $smarty.request.start|default:"0" > 0}
-          <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" - $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"><i class="icon-left-open"></i></a>
-  {else}
-          <i class="icon-left-open"></i>
-  {/if}
-        </td>
-        <td align="right">
-  {if $COUNTTRANSACTIONS - $smarty.request.start|default:"0" - $LIMIT > 0}
-          <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" + $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"><i class="icon-right-open"></i></a>
-  {else}
-          <i class="icon-right-open"></i>
-  {/if}
-{/if}
-        </td>
-      </tr>
-    </tbody>
-  </table>
-    <fieldset>
-      <label>类型</label>
+{*<article class="module width_quarter" style="display: ">*}
+  {*<header><h3>筛选</h3></header>*}
+  {*<div class="module_content">*}
+  {*<form action="{$smarty.server.PHP_SELF}">*}
+    {*<input type="hidden" name="page" value="{$smarty.request.page|escape}" />*}
+    {*<input type="hidden" name="action" value="{$smarty.request.action|escape}" />*}
+    {*<table cellspacing="0" class="tablesorter">*}
+    {*<tbody>*}
+      {*<tr>*}
+{*{if $COUNTTRANSACTIONS / $LIMIT > 1}*}
+        {*<td align="left">*}
+  {*{if $smarty.request.start|default:"0" > 0}*}
+          {*<a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" - $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"><i class="icon-left-open"></i></a>*}
+  {*{else}*}
+          {*<i class="icon-left-open"></i>*}
+  {*{/if}*}
+        {*</td>*}
+        {*<td align="right">*}
+  {*{if $COUNTTRANSACTIONS - $smarty.request.start|default:"0" - $LIMIT > 0}*}
+          {*<a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" + $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"><i class="icon-right-open"></i></a>*}
+  {*{else}*}
+          {*<i class="icon-right-open"></i>*}
+  {*{/if}*}
+{*{/if}*}
+        {*</td>*}
+      {*</tr>*}
+    {*</tbody>*}
+  {*</table>*}
+    {*<fieldset>*}
+      {*<label>类型</label>*}
       {*{html_options name="filter[type]" options=$TRANSACTIONTYPES selected=$smarty.request.filter.type|default:""}*}
-      <select name="filter[type]">
-        <option selected="selected" value=""></option>
-        <option value="Credit_PPS">PPS收益</option>
-      </select>
-    </fieldset>
-    <fieldset>
-      <label>状态</label>
+      {*<select name="filter[type]">*}
+        {*<option selected="selected" value=""></option>*}
+        {*<option value="Credit_PPS">PPS收益</option>*}
+      {*</select>*}
+    {*</fieldset>*}
+    {*<fieldset>*}
+      {*<label>状态</label>*}
       {*{html_options name="filter[status]" options=$TXSTATUS selected=$smarty.request.filter.status|default:""}*}
-      <select name="filter[status]">
-        <option selected="selected" value=""></option>
-        <option value="Confirmed">已确认</option>
-        <option value="Unconfirmed">未确认</option>
-      </select>
-    </fieldset>
-    </div>
-  <footer>
-    <div class="submit_link">
-      <input type="submit" value="筛选" class="alt_btn">
-    </div>
-  </footer>
-</form>
-</article>
+      {*<select name="filter[status]">*}
+        {*<option selected="selected" value=""></option>*}
+        {*<option value="Confirmed">已确认</option>*}
+        {*<option value="Unconfirmed">未确认</option>*}
+      {*</select>*}
+    {*</fieldset>*}
+    {*</div>*}
+  {*<footer>*}
+    {*<div class="submit_link">*}
+      {*<input type="submit" value="筛选" class="alt_btn">*}
+    {*</div>*}
+  {*</footer>*}
+{*</form>*}
+{*</article>*}
 
 <article class="module width_3_quarter">
   <header><h3>历史</h3></header>
@@ -80,7 +80,7 @@
           <th align="center">ID</th>
           <th>账户</th>
           <th>日期</th>
-          <th>账单类型</th>
+          {*<th>账单类型</th>*}
           <th align="center">状态</th>
           <th>付款地址</th>
           {*<th>TX #</th>*}
@@ -94,7 +94,7 @@
           <td align="center">{$TRANSACTIONS[transaction].id}</td>
           <td>{$TRANSACTIONS[transaction].username}</td>
           <td>{$TRANSACTIONS[transaction].timestamp}</td>
-          <td>{$TRANSACTIONS[transaction].type}</td>
+          {*<td>{$TRANSACTIONS[transaction].type}</td>*}
           <td align="center">
             {if $TRANSACTIONS[transaction].type == 'Credit_PPS' OR
                 $TRANSACTIONS[transaction].type == 'Fee_PPS' OR

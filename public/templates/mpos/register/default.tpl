@@ -25,7 +25,8 @@
     </fieldset>
     <fieldset>
       <label>PIN</label>
-      <input type="password" class="text pin" name="pin" value="" size="4" maxlength="4"><font size="1"> (4位数字. <b>记住这4位PIN，你修改账户信息时需要用到它。</b>)</font>
+      <input type="password" class="text pin" name="pin" value="" size="4" maxlength="4"> (4位数字)</font>
+      <label>务必牢记，您修改账户以及提款时需要用到它。</label></b>)
     </fieldset>
     {nocache}{$RECAPTCHA|default:""}{/nocache}
     <footer>

@@ -146,7 +146,7 @@ if (@$_SESSION['USERDATA']['id']) {
 
   // Site-wide notifications, based on user events
   if ($aGlobal['userdata']['balance']['confirmed'] >= $config['ap_threshold']['max'])
-    $_SESSION['POPUP'][] = array('CONTENT' => '你的存款太多啦，赶紧提点回去吧!', 'TYPE' => 'errormsg');
+    $_SESSION['POPUP'][] = array('CONTENT' => '您的存款太多啦，赶紧提点回去吧!', 'TYPE' => 'errormsg');
   if ($user->getUserFailed($_SESSION['USERDATA']['id']) > 0)
     $_SESSION['POPUP'][] = array('CONTENT' => '您已经登录错误重试 ' . $user->getUserFailed($_SESSION['USERDATA']['id']) . ' 次了! <a href="?page=account&action=reset_failed">重置次数</a>', 'TYPE' => 'errormsg');
 }

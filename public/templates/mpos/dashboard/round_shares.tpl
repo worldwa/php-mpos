@@ -10,7 +10,7 @@
            <td id="b-pvalid" class="right">{$GLOBAL.roundshares.valid}</td>
          </tr>
          <tr>
-           <td><b>你的接受Share数<b></td>
+           <td><b>您的接受Share数<b></td>
            <td id="b-yvalid" class="right">{$GLOBAL.userdata.shares.valid}</td>
          </tr>
          <tr>

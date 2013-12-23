@@ -48,7 +48,7 @@
       </fieldset>
       <fieldset>
         <label>4 位数 PIN</label>
-        <font size="1">你注册时填写的4位数PIN</font>
+        <font size="1">您注册时填写的4位数PIN</font>
         <input type="password" name="authPin" size="4" maxlength="4">
       </fieldset>
     </div>

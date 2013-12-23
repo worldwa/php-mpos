@@ -6,7 +6,7 @@ if (!defined('SECURITY')) die('Hacking attempt');
 if ($user->isAuthenticated() && $user->isAdmin($_SESSION['USERDATA']['id'])) {
   if (!$setting->getValue('disable_invitations')) {
 //    if ($invitation->getCountInvitations($_SESSION['USERDATA']['id']) >= $config['accounts']['invitations']['count']) {
-//      $_SESSION['POPUP'][] = array('CONTENT' => '你已经超过了邀请次数：' . $config['accounts']['invitations']['count'], 'TYPE' => 'errormsg');
+//      $_SESSION['POPUP'][] = array('CONTENT' => '您已经超过了邀请次数：' . $config['accounts']['invitations']['count'], 'TYPE' => 'errormsg');
 //    } else
     if (isset($_POST['do']) && $_POST['do'] == 'sendInvitation') {
       if ($invitation->sendInvitation($_SESSION['USERDATA']['id'], $_POST['data'])) {

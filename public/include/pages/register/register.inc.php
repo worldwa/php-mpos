@@ -40,7 +40,7 @@ if ($setting->getValue('disable_invitations') && $setting->getValue('lock_regist
   } else {
     isset($_POST['token']) ? $token = $_POST['token'] : $token = '';
     if ($user->register(@$_POST['username'], @$_POST['password1'], @$_POST['password2'], @$_POST['pin'], @$_POST['email1'], @$_POST['email2'], $token)) {
-      ! $setting->getValue('accounts_confirm_email_disabled') ? $_SESSION['POPUP'][] = array('CONTENT' => '登录邮件查看邮件，以激活你的账户') : $_SESSION['POPUP'][] = array('CONTENT' => '账户创建成功，请登录');
+      ! $setting->getValue('accounts_confirm_email_disabled') ? $_SESSION['POPUP'][] = array('CONTENT' => '登录邮件查看邮件，以激活您的账户') : $_SESSION['POPUP'][] = array('CONTENT' => '账户创建成功，请登录');
     } else {
       $_SESSION['POPUP'][] = array('CONTENT' => '创建账户失败: ' . $user->getError(), 'TYPE' => 'errormsg');
     }

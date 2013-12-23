@@ -11,9 +11,9 @@
             矿池当前不收取任何手续费。
           {/if}
           {*{if $GLOBAL.userdata.donate_percent > 0}*}
-            {*你已经捐赠<font color="green">{$GLOBAL.userdata.donate_percent|escape}%</font>。*}
+            {*您已经捐赠<font color="green">{$GLOBAL.userdata.donate_percent|escape}%</font>。*}
           {*{else}*}
-            {*你没有<a href="{$smarty.server.PHP_SELF}?page=account&action=edit">捐赠</a>。*}
+            {*您没有<a href="{$smarty.server.PHP_SELF}?page=account&action=edit">捐赠</a>。*}
           {*{/if}*}
         </td>
       </tr>

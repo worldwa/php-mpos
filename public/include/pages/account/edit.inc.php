@@ -23,7 +23,7 @@ if ($user->isAuthenticated()) {
               $_SESSION['POPUP'][] = array('CONTENT' => '创建人工提款请求失败', 'TYPE' => 'errormsg');
             }
           } else {
-            $_SESSION['POPUP'][] = array('CONTENT' => '你已经提交了一个提款请求.', 'TYPE' => 'errormsg');
+            $_SESSION['POPUP'][] = array('CONTENT' => '您已经提交了一个提款请求.', 'TYPE' => 'errormsg');
           }
         } else {
           $_SESSION['POPUP'][] = array('CONTENT' => '余额不足, 最少需要 ' . $config['txfee'] . ' ' . $config['currency'] . '才能提款', 'TYPE' => 'errormsg');

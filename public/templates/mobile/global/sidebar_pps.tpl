@@ -18,7 +18,7 @@
 
                     <tr>
                       <td><b>拒绝率</b></td>
-                      <td align="right">{($GLOBAL.userdata.shares.invalid / ($GLOBAL.roundshares.valid + $GLOBAL.roundshares.invalid) * 100)|number_format:"2"}</td>
+                      <td align="right">{($GLOBAL.userdata.shares.invalid / ($GLOBAL.roundshares.valid + $GLOBAL.roundshares.invalid) * 100)|number_format:"2"}%</td>
                     </tr>
 
                     <tr><td colspan="2">&nbsp;</td></tr>

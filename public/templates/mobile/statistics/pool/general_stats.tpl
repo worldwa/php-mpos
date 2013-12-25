@@ -4,10 +4,10 @@
       <td class="leftheader">矿池算力</td>
       <td colspan="4">{($GLOBAL.hashrate)|number_format:"3"} {$GLOBAL.hashunits.pool}</td>
     </tr>
-    <tr>
-      <td class="leftheader">矿池难度</td>
-      <td colspan="4">{if $GLOBAL.roundshares.valid > 0}{(100 - (100 / $GLOBAL.roundshares.valid * $GLOBAL.roundshares.invalid))|number_format:"2"}{else}0{/if} %</td>
-    </tr>
+    {*<tr>*}
+      {*<td class="leftheader">矿池效率</td>*}
+      {*<td colspan="4">{if $GLOBAL.roundshares.valid > 0}{(100 - (100 / $GLOBAL.roundshares.valid * $GLOBAL.roundshares.invalid))|number_format:"2"}{else}0{/if} %</td>*}
+    {*</tr>*}
     <tr>
       <td class="leftheader">当前活跃的矿工</td>
       <td colspan="4">{$GLOBAL.workers}</td>

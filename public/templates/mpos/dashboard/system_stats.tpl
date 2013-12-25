@@ -3,7 +3,7 @@
    <div class="module_content">
      <table width="100%">
        <tbody>
-       {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 0}
+       {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
 {if $GLOBAL.config.payout_system == 'pplns'}
          <tr>
            <td><b>PPLNS Target</b></td>

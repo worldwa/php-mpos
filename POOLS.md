@@ -154,10 +154,30 @@ Small Time Miners are running various stratum only pools for different coins.
 | -------------------------------- | ----- | ------------: | ------------------: | ----- |
 | http://spotspool.chriskoeber.com | Spots | 37 Mhs        | 55 workers          | Prop  |
 
+
 ### [Poolerino.com](http://poolerino.com/ "Poolerino.com") ([@Fredyy90](https://github.com/Fredyy90/ "Fredyy90 on GitHub"))
 
 [Poolerino.com](http://poolerino.com/ "Poolerino.com")  is going to build up a network of first-class, high performance pools on highend enterprise server hardware
 
 | Pool URL | Coin | Avg. Hashrate | Avg. Active Workers | Notes |
 | -------- | ---- | ------------: | ------------------: | ----- |
-| http://doge.poolerino.com | Doge | 300 MH/s | 600 | PROP + VARDIFF + 0% Fee |
+| http://doge.poolerino.com | Dogecoin | 950 MH/s | 1600 | PROP + VARDIFF + 0% Fee |
+| http://cat.poolerino.com | Catcoin | 550 MH/s | 520 | PROP + VARDIFF + 0% Fee |
+| http://eac.poolerino.com | Earthcoin | 110 MH/s |130 | PROP + VARDIFF + 0% Fee |
+| http://glb.poolerino.com | Globe | 125 GH/s | 8 | PROP + VARDIFF + 0% Fee |
+
+### [Coinium.org](http://www.coinium.org/ "Coinium.org") ([@raistlinthewiz](https://github.com/raistlinthewiz/ "raistlinthewiz on GitHub"))
+
+[Coinium.org](http://coinium.org/ "Coinium.org") - high performance pool network that is hosted in UK.
+
+| Pool URL                         | Coin  | Avg. Hashrate | Avg. Active Workers | Notes |
+| -------------------------------- | ----- | ------------: | ------------------: | ----- |
+| http://doge.coinium.org          | DOGE  | 50 Mhs        | ~100 workers          | PPLNS |
+| http://emd.coinium.org           | EMD   | 10 Mhs        |  ~10 workers          | PPLNS |
+| http://earth.coinium.org         | EAC   | 15 Mhs        |  ~30 workers          | PPLNS |
+
+### t3chie
+
+| Pool URL                         | Coin  | Avg. Hashrate | Avg. Active Workers | Notes |
+| -------------------------------- | ----- | ------------: | ------------------: | ----- |
+| https://gdcpool.us               | Grandcoin | 2-10 Mhs  | 15 workers          | SSL + Stratum/Getwork  |

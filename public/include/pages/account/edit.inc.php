@@ -11,7 +11,7 @@ if ($user->isAuthenticated()) {
     switch (@$_POST['do']) {
     case 'cashOut':
       if ($setting->getValue('disable_payouts') == 1) {
-        $_SESSION['POPUP'][] = array('CONTENT' => '手工提前暂时关闭.', 'TYPE' => 'info');
+        $_SESSION['POPUP'][] = array('CONTENT' => '手工提现暂时关闭.', 'TYPE' => 'info');
       } else {
         $aBalance = $transaction->getBalance($_SESSION['USERDATA']['id']);
         $dBalance = $aBalance['confirmed'];

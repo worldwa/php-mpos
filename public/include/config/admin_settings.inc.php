@@ -106,7 +106,7 @@ $aSettings['statistics'][] = array(
 );
 $aSettings['statistics'][] = array(
   'display' => 'Ajax Data Interval', 'type' => 'select',
-  'options' => array('60' => '1', '300' => '5', '600' => '10'),
+  'options' => array('60' => '1', '180' => '3', '300' => '5', '600' => '10'),
   'default' => 300,
   'name' => 'statistics_ajax_data_interval', 'value' => $setting->getValue('statistics_ajax_data_interval'),
   'tooltip' => 'Time in minutes, interval for hashrate and sharerate calculations. Higher intervals allow for better accuracy at a higer server load.'
@@ -286,6 +286,27 @@ $aSettings['system'][] = array(
   'default' => 0,
   'name' => 'disable_dashboard_api', 'value' => $setting->getValue('disable_dashboard_api'),
   'tooltip' => 'Disable dashboard API entirely to reduce server load.'
+);
+$aSettings['system'][] = array(
+  'display' => 'Disable Live Navbar', 'type' => 'select',
+  'options' => array( 0 => 'No', 1 => 'Yes'),
+  'default' => 0,
+  'name' => 'disable_navbar', 'value' => $setting->getValue('disable_navbar'),
+  'tooltip' => 'Disable live updates on the navbar to reduce server load.'
+);
+$aSettings['system'][] = array(
+  'display' => 'Disable Navbar API', 'type' => 'select',
+  'options' => array( 0 => 'No', 1 => 'Yes'),
+  'default' => 0,
+  'name' => 'disable_navbar_api', 'value' => $setting->getValue('disable_navbar_api'),
+  'tooltip' => 'Disable navbar API entirely to reduce server load. Used in pool stats and navbar mini stats.'
+);
+$aSettings['system'][] = array(
+  'display' => 'Disable TX Summaries', 'type' => 'select',
+  'options' => array( 0 => 'No', 1 => 'Yes'),
+  'default' => 0,
+  'name' => 'disable_transactionsummary', 'value' => $setting->getValue('disable_transactionsummary'),
+  'tooltip' => 'Disable transaction summaries. Helpful with large transaction tables.'
 );
 $aSettings['recaptcha'][] = array(
   'display' => 'Enable re-Captcha', 'type' => 'select',

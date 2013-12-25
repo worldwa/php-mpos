@@ -1,3 +1,4 @@
+{if $DISABLE_TRANSACTIONSUMMARY|default:"0" != 1}
 <article class="module width_full">
   <header><h3>账单</h3></header>
   <table class="tablesorter" cellspacing="0">
@@ -19,6 +20,7 @@
     </tbody>
   </table>
 </article>
+{/if}
 
 {*<article class="module width_quarter" style="display: ">*}
   {*<header><h3>筛选</h3></header>*}

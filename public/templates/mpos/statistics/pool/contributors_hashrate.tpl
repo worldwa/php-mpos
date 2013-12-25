@@ -7,8 +7,8 @@
         <th align="center">排名</th>
         <th align="right"></th>
         <th align="left" scope="col">用户名</th>
-{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
         <th align="right" scope="col">KH/s</th>
+{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
         <th align="right">{$GLOBAL.config.currency}/天</th>
         {if $GLOBAL.config.price.currency}<th align="right" style="padding-right: 25px;">{$GLOBAL.config.price.currency}/天</th>{/if}
 {/if}
@@ -23,8 +23,8 @@
         <td align="center">{$rank++}</td>
         <td align="right">{if $CONTRIBHASHES[contrib].donate_percent > 0}<i class="icon-star-empty"></i>{/if}</td>
         <td>{if $CONTRIBHASHES[contrib].is_anonymous|default:"0" == 1 && $GLOBAL.userdata.is_admin|default:"0" == 0}anonymous{else}{$CONTRIBHASHES[contrib].account|escape}{/if}</td>
-{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
         <td align="right">{$CONTRIBHASHES[contrib].hashrate|number_format}</td>
+{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
         <td align="right">{$estday|number_format:"3"}</td>
         {if $GLOBAL.config.price.currency}<td align="right" style="padding-right: 25px;">{($estday * $GLOBAL.price)|default:"n/a"|number_format:"4"}</td>{/if}
 {/if}

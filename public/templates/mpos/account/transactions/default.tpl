@@ -4,11 +4,18 @@
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
-    {*{foreach $SUMMARY as $type=>$total}*}
-        {*<th>{$type}</th>*}
-    {*{/foreach}*}
+    {foreach $SUMMARY as $type=>$total}
+      {if $type != 'TXFee'}
+        <th>
+          {if $type == 'Credit_PPS'}PPS收益{/if}
+          {if $type == 'Debit_MP'}手动提现{/if}
+          {if $type == 'Debit_AP'}自动提现{/if}
+          {if $type == 'Donation_PPS'}捐赠{/if}
+        </th>
+      {/if}
+    {/foreach}
         <th>总收益</th>
-        <th>已提出</th>
+        <th>已提出（包括捐赠）</th>
       </tr>
     </thead>
     <tbody>
@@ -84,7 +91,7 @@
           <th align="center">ID</th>
           <th>账户</th>
           <th>日期</th>
-          {*<th>账单类型</th>*}
+          <th>账单类型</th>
           <th align="center">状态</th>
           <th>付款地址</th>
           {*<th>TX #</th>*}
@@ -94,11 +101,17 @@
       </thead>
       <tbody style="font-size:12px;">
 {section transaction $TRANSACTIONS}
+  {if $TRANSACTIONS[transaction].type != 'TXFee'}
         <tr class="{cycle values="odd,even"}">
           <td align="center">{$TRANSACTIONS[transaction].id}</td>
           <td>{$TRANSACTIONS[transaction].username}</td>
           <td>{$TRANSACTIONS[transaction].timestamp}</td>
-          {*<td>{$TRANSACTIONS[transaction].type}</td>*}
+          <td>
+            {if $TRANSACTIONS[transaction].type == 'Credit_PPS'}PPS收益{/if}
+            {if $TRANSACTIONS[transaction].type == 'Debit_MP'}手动提现{/if}
+            {if $TRANSACTIONS[transaction].type == 'Debit_AP'}自动提现{/if}
+            {if $TRANSACTIONS[transaction].type == 'Donation_PPS'}捐赠{/if}
+          </td>
           <td align="center">
             {if $TRANSACTIONS[transaction].type == 'Credit_PPS' OR
                 $TRANSACTIONS[transaction].type == 'Fee_PPS' OR
@@ -116,6 +129,7 @@
           {*<td>{if $TRANSACTIONS[transaction].height == 0}n/a{else}<a href="{$smarty.server.PHP_SELF}?page=statistics&action=round&height={$TRANSACTIONS[transaction].height}">{$TRANSACTIONS[transaction].height}</a>{/if}</td>*}
           <td><font color="{if $TRANSACTIONS[transaction].type == 'Credit' or $TRANSACTIONS[transaction].type == 'Credit_PPS' or $TRANSACTIONS[transaction].type == 'Bonus'}green{else}red{/if}">{$TRANSACTIONS[transaction].amount|number_format:"8"}</td>
         </tr>
+  {/if}
 {/section}
       </tbody>
     </table>

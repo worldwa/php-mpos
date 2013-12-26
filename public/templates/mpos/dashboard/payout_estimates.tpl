@@ -20,10 +20,10 @@
            <td id="b-payout" class="right">{$GLOBAL.userdata.estimates.payout}</td>
          </tr>
 {else}
-        <tr>
-          <td><b>1小时</b></td>
-          <td id="b-est1hour" align="left">{$GLOBAL.userdata.estimates.hours1|round:"8"}</td>
-        </tr>
+        {*<tr>*}
+          {*<td><b>1小时</b></td>*}
+          {*<td id="b-est1hour" align="left">{$GLOBAL.userdata.estimates.hours1|round:"8"}</td>*}
+        {*</tr>*}
         <tr>
           <td><b>24小时</b></td>
           <td id="b-est24hours" align="left">{($GLOBAL.userdata.estimates.hours24)|round:"8"}</td>

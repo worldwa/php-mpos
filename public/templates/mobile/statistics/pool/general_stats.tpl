@@ -4,10 +4,12 @@
       <td class="leftheader">矿池算力</td>
       <td colspan="4">{($GLOBAL.hashrate)|number_format:"3"} {$GLOBAL.hashunits.pool}</td>
     </tr>
-    {*<tr>*}
-      {*<td class="leftheader">矿池效率</td>*}
-      {*<td colspan="4">{if $GLOBAL.roundshares.valid > 0}{(100 - (100 / $GLOBAL.roundshares.valid * $GLOBAL.roundshares.invalid))|number_format:"2"}{else}0{/if} %</td>*}
-    {*</tr>*}
+    {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
+    <tr>
+      <td class="leftheader">矿池效率</td>
+      <td colspan="4">{if $GLOBAL.roundshares.valid > 0}{(100 - (100 / $GLOBAL.roundshares.valid * $GLOBAL.roundshares.invalid))|number_format:"2"}{else}0{/if} %</td>
+    </tr>
+    {/if}
     <tr>
       <td class="leftheader">当前活跃的矿工</td>
       <td colspan="4">{$GLOBAL.workers}</td>
@@ -28,14 +30,16 @@
       {*<td colspan="4">{if $GLOBAL.website.blockexplorer.url}<a href="{$GLOBAL.website.blockexplorer.url}{$LASTBLOCKHASH}" target="_new">{$LASTBLOCK|default:"0"}</a>{else}{$LASTBLOCK|default:"0"}{/if}</td>*}
     {*</tr>*}
     {if ! $GLOBAL.website.chaininfo.disabled}
-    <tr>
-      <td class="leftheader">当前难度</td>
-      <td colspan="4"><a href="{$GLOBAL.website.chaininfo.url}" target="_new">{$DIFFICULTY}</a></td>
-    </tr>
-    <tr>
-      <td class="leftheader">预估下次难度</td>
-      <td colspan="4"><a href="{$GLOBAL.website.chaininfo.url}" target="_new">{$NETWORK.EstNextDifficulty}</a></td>
-    </tr>
+      <tr>
+        <td class="leftheader">当前难度</td>
+        <td colspan="4"><a href="{$GLOBAL.website.chaininfo.url}" target="_new">{$DIFFICULTY}</a></td>
+      </tr>
+      {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
+        <tr>
+          <td class="leftheader">预估下次难度</td>
+          <td colspan="4"><a href="{$GLOBAL.website.chaininfo.url}" target="_new">{$NETWORK.EstNextDifficulty}</a></td>
+        </tr>
+      {/if}
     {/if}
     {*<tr>*}
       {*<td class="leftheader">Est. Avg. Time per Round (Network)</td>*}

@@ -4,18 +4,16 @@
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
-    {foreach $SUMMARY as $type=>$total}
-      {if $type != 'TXFee'}
-        <th>
-          {if $type == 'Credit_PPS'}PPS收益{/if}
-          {if $type == 'Debit_MP'}手动提现{/if}
-          {if $type == 'Debit_AP'}自动提现{/if}
-          {if $type == 'Donation_PPS'}捐赠{/if}
-        </th>
-      {/if}
-    {/foreach}
-        <th>总收益</th>
-        <th>已提出（包括捐赠）</th>
+        {foreach $SUMMARY as $type=>$total}
+          {if $type != 'TXFee'}
+            <th>
+              {if $type == 'Credit_PPS'}PPS收益{/if}
+              {if $type == 'Debit_MP'}手动提现{/if}
+              {if $type == 'Debit_AP'}自动提现{/if}
+              {if $type == 'Donation_PPS'}捐赠{/if}
+            </th>
+          {/if}
+        {/foreach}
       </tr>
     </thead>
     <tbody>

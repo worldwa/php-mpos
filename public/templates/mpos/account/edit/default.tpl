@@ -24,7 +24,7 @@
         <input type="text" name="email" value="{nocache}{$GLOBAL.userdata.email|escape}{/nocache}" size="20" />
       </fieldset>
       <fieldset>
-        <label>付款地址</label>
+        <label>提款地址</label>
         <input type="text" name="paymentAddress" value="{nocache}{$smarty.request.paymentAddress|default:$GLOBAL.userdata.coin_address|escape}{nocache}" size="40" />
       </fieldset>
       <fieldset>
@@ -33,8 +33,8 @@
         <input type="text" name="donatePercent" value="{nocache}{$smarty.request.donatePercent|default:$GLOBAL.userdata.donate_percent|escape}{nocache}" size="4" />
       </fieldset>
       <fieldset>
-        <label>自动付款最小额度</label>
-        <font size="1">{$GLOBAL.config.ap_threshold.min}-{$GLOBAL.config.ap_threshold.max} {$GLOBAL.config.currency}. 如果为0，则表示不自动付款.</font>
+        <label>满多少自动提款</label>
+        <font size="1">{$GLOBAL.config.ap_threshold.min}-{$GLOBAL.config.ap_threshold.max} {$GLOBAL.config.currency}. 如果为0，则表示不自动提款.</font>
         <input type="text" name="payoutThreshold" value="{$smarty.request.payoutThreshold|default:$GLOBAL.userdata.ap_threshold|escape}" size="{$GLOBAL.config.ap_threshold.max|strlen}" maxlength="{$GLOBAL.config.ap_threshold.max|strlen}" />
       </fieldset>
       <fieldset>

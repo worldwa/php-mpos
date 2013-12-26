@@ -91,7 +91,7 @@
           <th>日期</th>
           <th>账单类型</th>
           <th align="center">状态</th>
-          <th>付款地址</th>
+          <th>提款地址</th>
           {*<th>TX #</th>*}
           {*<th>Block #</th>*}
           <th>总共</th>

@@ -26,7 +26,7 @@
       <p>如果您用的是命令行的方式，如下:</p>
       <pre>./cgminer {if $GLOBAL.config.algorithm == 'scrypt'}--scrypt {/if} -o stratum+tcp://stratum.iwakuang.com:{$SITESTRATUMPORT|default:"3333"} -u <em>用户名</em>.<em>矿工名</em> -p <em>矿工密码</em></pre>
     </li>
-    <li>4. <strong>添加莱特币地址，以便我们及时付款给您</strong>
+    <li>4. <strong>添加莱特币地址，以便我们及时提款给您</strong>
       <ul>
         <li> 下载莱特币钱包客户端，<a href="{$SITECOINURL|default:"http://www.litecoin.org"}" target="_blank">莱特币钱包下载</a>.
           <p>生成一个莱特币地址然后绑定到您的个人账户上.</p>

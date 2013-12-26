@@ -37,7 +37,7 @@
         </td>
       </tr>
       <tr>
-        <td align="left">自动付款</td>
+        <td align="left">自动提款</td>
         <td>
           <span class="toggle">
           <label for="data[auto_payout]">
@@ -49,7 +49,7 @@
         </td>
       </tr>
       <tr>
-        <td align="left">手动付款</td>
+        <td align="left">手动提款</td>
         <td>
           <span class="toggle">
           <label for="data[manual_payout]">
@@ -91,9 +91,9 @@
         <td align="center">{$NOTIFICATIONS[notification].time}</td>
         <td align="center">
 {if $NOTIFICATIONS[notification].type == new_block}新块
-{else if $NOTIFICATIONS[notification].type == auto_payout}自动付款
+{else if $NOTIFICATIONS[notification].type == auto_payout}自动提款
 {else if $NOTIFICATIONS[notification].type == idle_worker}矿工闲置
-{else if $NOTIFICATIONS[notification].type == manual_payout}手动付款
+{else if $NOTIFICATIONS[notification].type == manual_payout}手动提款
 {/if}
         </td>
         <td align="center">

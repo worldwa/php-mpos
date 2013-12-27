@@ -71,8 +71,8 @@
     </header>
     <div class="module_content">
       <p style="padding-left:30px; padding-redight:30px; font-size:10px;">
-        {*提示: 提款LTC网络（非本站）可能会收取手续费， 一般为{$GLOBAL.config.txfee} {$GLOBAL.config.currency}（可能小于0.02） 。*}
-        提示: 提款LTC网络（非本站）可能会收取手续费， 一般为0.02 {$GLOBAL.config.currency}（可能小于0.02）。
+        {*提示: 提款LTC网络（非本站）可能会收取交易费， 一般为{$GLOBAL.config.txfee} {$GLOBAL.config.currency}（可能小于0.02） 。*}
+        提示: 提款LTC网络（非本站）可能会收取交易费， 一般为0.02 {$GLOBAL.config.currency}（可能小于0.02）。
       </p>
       <fieldset>
         <label>账户结余</label>

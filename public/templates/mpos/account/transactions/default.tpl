@@ -5,15 +5,13 @@
     <thead>
       <tr>
         {foreach $SUMMARY as $type=>$total}
-          {if $type != 'TXFee'}
-            <th>
-              {if $type == 'Credit_PPS'}PPS收益{/if}
-              {if $type == 'Debit_MP'}手动提现{/if}
-              {if $type == 'Debit_AP'}自动提现{/if}
-              {if $type == 'Donation_PPS'}捐赠{/if}
-              {if $type == 'TXFee'}提现交易费（LTC网络）{/if}
-            </th>
-          {/if}
+          <th>
+            {if $type == 'Credit_PPS'}PPS收益{/if}
+            {if $type == 'Debit_MP'}手动提现{/if}
+            {if $type == 'Debit_AP'}自动提现{/if}
+            {if $type == 'Donation_PPS'}捐赠{/if}
+            {if $type == 'TXFee'}提现交易费（LTC网络）{/if}
+          </th>
         {/foreach}
       </tr>
     </thead>

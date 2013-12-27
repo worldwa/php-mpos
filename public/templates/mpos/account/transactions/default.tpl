@@ -98,7 +98,6 @@
       </thead>
       <tbody style="font-size:12px;">
 {section transaction $TRANSACTIONS}
-  {if $TRANSACTIONS[transaction].type != 'TXFee'}
         <tr class="{cycle values="odd,even"}">
           <td align="center">{$TRANSACTIONS[transaction].id}</td>
           <td>{$TRANSACTIONS[transaction].username}</td>
@@ -127,7 +126,6 @@
           {*<td>{if $TRANSACTIONS[transaction].height == 0}n/a{else}<a href="{$smarty.server.PHP_SELF}?page=statistics&action=round&height={$TRANSACTIONS[transaction].height}">{$TRANSACTIONS[transaction].height}</a>{/if}</td>*}
           <td><font color="{if $TRANSACTIONS[transaction].type == 'Credit' or $TRANSACTIONS[transaction].type == 'Credit_PPS' or $TRANSACTIONS[transaction].type == 'Bonus'}green{else}red{/if}">{$TRANSACTIONS[transaction].amount|number_format:"8"}</td>
         </tr>
-  {/if}
 {/section}
       </tbody>
     </table>

@@ -19,7 +19,7 @@
     <tbody>
       <tr>
     {foreach $SUMMARY as $type=>$total}
-      {if $type != 'TXFee'}<td class="right">{$total}</td>{/if}
+      {if $type != 'TXFee'}<td class="right">{$total|number_format:"8"}</td>{/if}
     {/foreach}
       </tr>
     </tbody>

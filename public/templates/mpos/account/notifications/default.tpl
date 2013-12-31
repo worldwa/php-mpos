@@ -24,18 +24,20 @@
           </span>
         </td>
       </tr>
-      <tr>
-        <td align="left">新块</td>
-        <td>
-          <span class="toggle">
-          <label for="data[new_block]">
-          <input type="hidden" name="data[new_block]" value="0" />
-          <input type="checkbox" class="ios-switch" name="data[new_block]" id="data[new_block]" value="1"{nocache}{if $SETTINGS['new_block']}checked{/if}{/nocache} />
-          <div class="switch"></div>
-          </label>
-          </span>
-        </td>
-      </tr>
+      {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
+        <tr>
+          <td align="left">新块</td>
+          <td>
+            <span class="toggle">
+            <label for="data[new_block]">
+            <input type="hidden" name="data[new_block]" value="0" />
+            <input type="checkbox" class="ios-switch" name="data[new_block]" id="data[new_block]" value="1"{nocache}{if $SETTINGS['new_block']}checked{/if}{/nocache} />
+            <div class="switch"></div>
+            </label>
+            </span>
+          </td>
+        </tr>
+      {/if}
       <tr>
         <td align="left">自动提款</td>
         <td>

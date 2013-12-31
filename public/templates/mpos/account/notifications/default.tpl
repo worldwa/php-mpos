@@ -90,7 +90,8 @@
 {section notification $NOTIFICATIONS}
       <tr class="{cycle values="odd,even"}">
         <td align="center">{$NOTIFICATIONS[notification].id}</td>
-        <td align="center">{$NOTIFICATIONS[notification].time}</td>
+        {*<td align="center">{$NOTIFICATIONS[notification].time}</td>*}
+        <td align="center">{date('Y-m-d H:i:s', strtotime($NOTIFICATIONS[notification].time)+8*60*60)}</td>
         <td align="center">
 {if $NOTIFICATIONS[notification].type == new_block}新块
 {else if $NOTIFICATIONS[notification].type == auto_payout}自动提款

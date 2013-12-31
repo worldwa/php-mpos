@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>{$GLOBAL.website.title} I {$smarty.request.page|escape|default:"home"|capitalize}</title>
-	
-	<link rel="stylesheet" href="{$PATH}/css/layout.css" type="text/css" media="screen" />
+	<title>{$GLOBAL.website.title}</title>
+  <meta name="keywords" content="莱特币矿池 矿池 LTC矿池 爱挖矿 莱特币 LTC" />
+  <meta name="description" content="{$GLOBAL.website.title},永久免费的莱特币矿池,专业指导，矿工停机实时通知，24小时随机提款。"/>
+
+  <link rel="stylesheet" href="{$PATH}/css/layout.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="{$PATH}/css/fontello.css">
   <link rel="stylesheet" href="{$PATH}/css/animation.css">
   <!--[if IE 7]><link rel="stylesheet" href="css/fontello-ie7.css"><![endif]-->

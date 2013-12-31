@@ -74,7 +74,7 @@
 
 <article class="module width_3_quarter">
   <header>
-      <h3>通知历史</h3>
+      <h3>通知历史（通知邮件有可能在垃圾邮件箱里面，请注意查看）</h3>
       <div class="submit_link">{include file="global/pagination.tpl"}</div>
   </header>
   <table width="100%" class="tablesorterpager" cellspacing="0">

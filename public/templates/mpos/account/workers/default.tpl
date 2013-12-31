@@ -7,11 +7,11 @@
     <div class="module_content">
       <fieldset>
         <label>矿工名</label>
-        <input type="text" name="username" value="矿工名" size="10" maxlength="20" required>
+        <input type="text" name="username" value="" size="10" maxlength="20" required>
       </fieldset>
       <fieldset>
         <label>矿工密码</label>
-        <input type="text" name="password" value="密码" size="10" maxlength="20" required>&nbsp;
+        <input type="text" name="password" value="" size="10" maxlength="20" required>&nbsp;
       </fieldset>
       <div class="clear"></div>
     </div>
@@ -24,7 +24,7 @@
 </article>
 
 <article class="module width_3_quarter">
-  <header><h3 class="">矿工设置</h3></header>
+  <header><h3 class="">矿工设置 {if $GLOBAL.config.disable_notifications != 1}（如果打开监控，请先在左侧栏通知中打开矿工闲置通知，否则收不到邮件）{/if}</h3></header>
   <form action="{$smarty.server.PHP_SELF}" method="post">
     <input type="hidden" name="page" value="{$smarty.request.page|escape}">
     <input type="hidden" name="action" value="{$smarty.request.action|escape}">
@@ -35,7 +35,7 @@
           <th align="left">矿工名</th>
           <th align="left">矿工密码</th>
           <th align="center">活动状态</th>
-          {if $GLOBAL.config.disable_notifications != 1}<th align="center">监控</th>{/if}
+          {if $GLOBAL.config.disable_notifications != 1}<th align="center">监控（邮件通知矿工闲置）</th>{/if}
           <th align="right">Khash/s</th>
           <th align="right">难度</th>
           <th align="center" style="padding-right: 25px;">操作</th>

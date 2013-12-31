@@ -39,7 +39,7 @@ if (empty($aWorkers)) {
   foreach ($aWorkers as $aWorker) {
     $aData = $aWorker;
     $aData['username'] = $user->getUserName($aWorker['account_id']);
-    $aData['subject'] = 'IDLE Worker : ' . $aWorker['username'];
+    $aData['subject'] = '矿工闲置 : ' . $aWorker['username'];
     $aData['worker'] = $aWorker['username'];
     $aData['email'] = $user->getUserEmail($aData['username']);
     $log->logDebug("    " . $aWorker['username'] . "...");

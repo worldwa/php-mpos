@@ -1,5 +1,5 @@
 <article class="module width_half" style="min-height: 350px">
-  <header><h3>矿工算力排名（<i class="icon-star-empty"></i>表示有捐赠）</h3></header>
+  <header><h3>矿工算力排名（<i class="icon-star-empty"></i>表示捐赠者）</h3></header>
   <div>
   <table class="tablesorter" cellspacing="0">
     <thead>

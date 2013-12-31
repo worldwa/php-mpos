@@ -1,10 +1,10 @@
 <article class="module width_half" style="min-height: 350px">
-  <header><h3>矿工算力</h3></header>
+  <header><h3>矿工算力排名（<i class="icon-star-empty"></i>表示有捐赠）</h3></header>
   <div>
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
-        <th align="center">排名</th>
+        <th align="center">名次</th>
         <th align="right"></th>
         <th align="left" scope="col">用户名</th>
         <th align="right" scope="col">KH/s</th>

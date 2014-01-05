@@ -18,6 +18,6 @@
            <td id="b-pivalid" class="right">{$GLOBAL.roundshares.invalid}</td>
          </tr>
          <tr>
-           <td><b>矿池拒绝Share数</b></td>
+           <td><b>您的拒绝Share数</b></td>
            <td id="b-yivalid" class="right">{$GLOBAL.userdata.shares.invalid}</td>
          </tr>

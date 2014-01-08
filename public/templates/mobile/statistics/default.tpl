@@ -13,7 +13,7 @@
     {*<td><a href="http://explorer.litecoin.net/search?q={$CURRENTBLOCK}" target="_new">{$CURRENTBLOCK}</a></td>*}
   {*</tr>*}
   <tr>
-    <td class="leftheader">当前块</td>
+    <td class="leftheader">当前难度</td>
     <td><a href="http://allchains.info/" target="_new">{$DIFFICULTY}</a></td>
   </tr>
   </tbody>

@@ -17,15 +17,15 @@
     {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
     <h3>Admin Panel</h3>
     <ul class="toggle">
-      <li class="icon-bell"><a href="{$smarty.server.PHP_SELF}?page=admin&action=monitoring">Monitoring</a></li>
-      <li class="icon-torso"><a href="{$smarty.server.PHP_SELF}?page=admin&action=user">User Info</a></li>
-      <li class="icon-money"><a href="{$smarty.server.PHP_SELF}?page=admin&action=wallet">Wallet Info</a></li>
-      <li class="icon-exchange"><a href="{$smarty.server.PHP_SELF}?page=admin&action=transactions">Transactions</a></li>
-      <li class="icon-cog"><a href="{$smarty.server.PHP_SELF}?page=admin&action=settings">Settings</a></li>
-      <li class="icon-doc"><a href="{$smarty.server.PHP_SELF}?page=admin&action=news">News</a></li>
-      <li class="icon-chart"><a href="{$smarty.server.PHP_SELF}?page=admin&action=reports">Reports</a></li>
-      <li class="icon-photo"><a href="{$smarty.server.PHP_SELF}?page=admin&action=poolworkers">Pool Workers</a></li>
-      <li class="icon-pencil"><a href="{$smarty.server.PHP_SELF}?page=admin&action=templates">Templates</a></li>
+      <li class="icon-bell"><a href="{$smarty.server.PHP_SELF}?page=admin&action=monitoring">监控</a></li>
+      <li class="icon-torso"><a href="{$smarty.server.PHP_SELF}?page=admin&action=user">用户信息</a></li>
+      <li class="icon-money"><a href="{$smarty.server.PHP_SELF}?page=admin&action=wallet">钱包信息</a></li>
+      <li class="icon-exchange"><a href="{$smarty.server.PHP_SELF}?page=admin&action=transactions">账单信息</a></li>
+      <li class="icon-cog"><a href="{$smarty.server.PHP_SELF}?page=admin&action=settings">设置</a></li>
+      <li class="icon-doc"><a href="{$smarty.server.PHP_SELF}?page=admin&action=news">新闻</a></li>
+      <li class="icon-chart"><a href="{$smarty.server.PHP_SELF}?page=admin&action=reports">报表</a></li>
+      <li class="icon-photo"><a href="{$smarty.server.PHP_SELF}?page=admin&action=poolworkers">矿工信息</a></li>
+      <li class="icon-pencil"><a href="{$smarty.server.PHP_SELF}?page=admin&action=templates">模板</a></li>
     </ul>
     {/if}
     {if $smarty.session.AUTHENTICATED|default: "0" == 1 && $GLOBAL.userdata.is_admin == 1}

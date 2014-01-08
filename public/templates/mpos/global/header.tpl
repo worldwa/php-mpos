@@ -7,8 +7,7 @@
           {elseif  $smarty.request.action|escape == 'edit'}账户管理
           {elseif  $smarty.request.action|escape == 'workers'}矿工管理
           {elseif  $smarty.request.action|escape == 'transactions'}账单记录
-          {else}
-            {$smarty.request.action|escape|capitalize}
+          {else} {$smarty.request.action|escape|capitalize}
           {/if}
         {else}
           {*{$smarty.request.page|escape|default:"首页"|capitalize}*}
@@ -19,8 +18,7 @@
           {elseif $smarty.request.page|escape|default:'index' == 'dashboard' }数据统计
           {elseif $smarty.request.page|escape|default:'index' == 'account' }账户
           {elseif $smarty.request.page|escape|default:'index' == 'statistics' }统计
-          {else}
-            {$smarty.request.page|escape|default:"index"|capitalize}
+          {else} {$smarty.request.page|escape|default:"home"|capitalize}
           {/if}
         {/if}
       </h2>

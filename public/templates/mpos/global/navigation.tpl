@@ -15,7 +15,7 @@
     </li>
     {/if}
     {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
-    <h3>Admin Panel</h3>
+    <h3>管理</h3>
     <ul class="toggle">
       <li class="icon-bell"><a href="{$smarty.server.PHP_SELF}?page=admin&action=monitoring">监控</a></li>
       <li class="icon-torso"><a href="{$smarty.server.PHP_SELF}?page=admin&action=user">用户信息</a></li>

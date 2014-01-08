@@ -37,12 +37,12 @@
         <td class="leftheader">当前难度</td>
         <td colspan="4"><a href="{$GLOBAL.website.chaininfo.url}" target="_new">{$DIFFICULTY}</a></td>
       </tr>
-      {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
+      {*{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}*}
         <tr>
           <td class="leftheader">预估下次难度</td>
           <td colspan="4"><a href="{$GLOBAL.website.chaininfo.url}" target="_new">{$NETWORK.EstNextDifficulty}</a></td>
         </tr>
-      {/if}
+      {*{/if}*}
     {/if}
     {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
       <tr>

@@ -13,14 +13,14 @@ if ($user->isAuthenticated()) {
     break;
   case 'add':
     if ($worker->addWorker($_SESSION['USERDATA']['id'], $_POST['username'], $_POST['password'])) {
-      $_SESSION['POPUP'][] = array('CONTENT' => '添加矿工失败');
+      $_SESSION['POPUP'][] = array('CONTENT' => '添加矿工成功');
     } else {
       $_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'errormsg');
     }
     break;
   case 'update':
     if ($worker->updateWorkers($_SESSION['USERDATA']['id'], @$_POST['data'])) {
-      $_SESSION['POPUP'][] = array('CONTENT' => '矿工更新成');
+      $_SESSION['POPUP'][] = array('CONTENT' => '矿工更新成功');
     } else {
       $_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'errormsg');
     }

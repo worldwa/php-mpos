@@ -62,6 +62,7 @@
     {/if}
     <h3>帮助</h3>
     <ul class="toggle">
+      <li class="icon-doc"><a href="http://www.iwakuang.com/bbs">爱挖矿论坛</a></li>
       <li class="icon-desktop"><a href="{$smarty.server.PHP_SELF}?page=gettingstarted">新手指南</a></li>
       {if !$GLOBAL.website.about.disabled}
       <li class="icon-doc"><a href="{$smarty.server.PHP_SELF}?page=about&action=pool">关于我们</a></li>

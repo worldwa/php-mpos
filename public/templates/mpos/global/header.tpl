@@ -18,6 +18,7 @@
           {elseif $smarty.request.page|escape|default:'index' == 'dashboard' }数据统计
           {elseif $smarty.request.page|escape|default:'index' == 'account' }账户
           {elseif $smarty.request.page|escape|default:'index' == 'statistics' }统计
+          {elseif $smarty.request.page|escape|default:'index' == 'mininghardware' }各显卡算力及配置
           {else} {$smarty.request.page|escape|default:"home"|capitalize}
           {/if}
         {/if}

@@ -13,8 +13,13 @@
         <li><em>CGMiner Mac OS X:</em> <a href="http://spaceman.ca/cgminer/" target="_blank">点此下载</a></li>
       </ul>
     </li>
-    <li>3. <strong>配置您的挖矿软件.</strong>
-      <p>Settings for Stratum (recommended):</p>
+    <li><span  style="color:red">3.</span> <strong style="color:red">各显卡算力及配置.</strong>
+      <p>请点击此链接查看: <a href="{$smarty.server.PHP_SELF}?page=mininghardware">各显卡算力及配置</a></p>
+    </li>
+
+    <li>3. <strong>配置您的挖矿软件.( 有任何问题请联系群里技术支持解决 )</strong>
+      <p>查看上面的配置列表, 根据自己的显卡下载对应配置文件覆盖cgminer.conf.</p>
+      <p>本矿池的配置参数如下: ( 下载的配置文件中已经初始化好，只要修改用户名.矿工名和密码即可 ).</p>
       <table width="50%">
         <tbody>
           <tr><td>STRATUM:</td><td><kbd>stratum+tcp://stratum.iwakuang.com</kbd></td></tr>

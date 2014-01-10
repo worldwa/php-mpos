@@ -1,5 +1,8 @@
     <hr/>
     <li class="icon-home"><a href="{$smarty.server.PHP_SELF}">首页</a></li>
+    <li class="icon-desktop"><a href="{$smarty.server.PHP_SELF}?page=gettingstarted">新手指南</a></li>
+    <li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=mininghardware">各显卡算力及配置</a></li>
+    <li class="icon-doc"><a href="{$smarty.server.PHP_SELF}/bbs">爱挖矿论坛</a></li>
     {if $smarty.session.AUTHENTICATED|default:"0" == 1}
     <h3>我的账户</h3>
     <ul class="toggle">
@@ -60,17 +63,15 @@
        {*{/if}*}
       {*</ul>*}
     {/if}
-    <h3>帮助</h3>
-    <ul class="toggle">
-      <li class="icon-doc"><a href="http://www.iwakuang.com/bbs">爱挖矿论坛</a></li>
-      <li class="icon-desktop"><a href="{$smarty.server.PHP_SELF}?page=gettingstarted">新手指南</a></li>
-      {if !$GLOBAL.website.about.disabled}
-      <li class="icon-doc"><a href="{$smarty.server.PHP_SELF}?page=about&action=pool">关于我们</a></li>
-      {/if}
-      {if !$GLOBAL.website.donors.disabled}
-      <li class="icon-money"><a href="{$smarty.server.PHP_SELF}?page=about&action=donors">捐赠</a></li>
-      {/if}
-    </ul>
+    {*<h3>帮助</h3>*}
+    {*<ul class="toggle">*}
+      {*{if !$GLOBAL.website.about.disabled}*}
+      {*<li class="icon-doc"><a href="{$smarty.server.PHP_SELF}?page=about&action=pool">关于我们</a></li>*}
+      {*{/if}*}
+      {*{if !$GLOBAL.website.donors.disabled}*}
+      {*<li class="icon-money"><a href="{$smarty.server.PHP_SELF}?page=about&action=donors">捐赠</a></li>*}
+      {*{/if}*}
+    {*</ul>*}
     <h3>其他</h3>
     <ul class="toggle">
       {if $smarty.session.AUTHENTICATED|default:"0" == 1}

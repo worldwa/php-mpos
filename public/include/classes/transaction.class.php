@@ -282,8 +282,8 @@ class Transaction extends Base {
     $this->debug->append("STA " . __METHOD__, 4);
     $stmt = $this->mysqli->prepare("
         SELECT
-        sum(amount) as amount24hours
-        from transactions
+        ROUND( sum(amount), 8) AS amount24hours
+        FROM transactions
         WHERE t.account_id = ?
         AND archived = 0
         AND  UNIX_TIMESTAMP(NOW())-UNIX_TIMESTAMP(t.timestamp) <= 87000 ;

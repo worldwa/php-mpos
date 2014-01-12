@@ -284,10 +284,10 @@ class Transaction extends Base {
         SELECT
         ROUND( sum(amount), 8) AS amount24hours
         FROM transactions
-        WHERE t.account_id = ?
+        WHERE account_id = ?
         AND archived = 0
-        AND  UNIX_TIMESTAMP(NOW())-UNIX_TIMESTAMP(t.timestamp) <= 87000 ;
-        AND type IN ('Credit_PPS','Donation_PPS') ;
+        AND  UNIX_TIMESTAMP(NOW())-UNIX_TIMESTAMP(timestamp) <= 87000
+        AND type IN ('Credit_PPS','Donation_PPS')
         ");
     if ($this->checkStmt($stmt) && $stmt->bind_param("i", $account_id) && $stmt->execute() && $result = $stmt->get_result())
       return $result->fetch_assoc();

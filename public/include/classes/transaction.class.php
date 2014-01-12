@@ -272,8 +272,28 @@ class Transaction extends Base {
       return $result->fetch_assoc();
     return $this->sqlError();
   }
-}
 
+  /**
+   * Get an accounts total balance, ignore archived entries
+   * @param account_id int Account ID
+   * @return data float Credit - Debit - Fees - Donation
+   **/
+  public function getAmount24Hours($account_id) {
+    $this->debug->append("STA " . __METHOD__, 4);
+    $stmt = $this->mysqli->prepare("
+        SELECT
+        sum(amount) as amount24hours
+        from transactions
+        WHERE t.account_id = ?
+        AND archived = 0
+        AND  UNIX_TIMESTAMP(NOW())-UNIX_TIMESTAMP(t.timestamp) <= 87000 ;
+        AND type IN ('Credit_PPS','Donation_PPS') ;
+        ");
+    if ($this->checkStmt($stmt) && $stmt->bind_param("i", $account_id) && $stmt->execute() && $result = $stmt->get_result())
+      return $result->fetch_assoc();
+    return $this->sqlError();
+  }
+}
 $transaction = new Transaction();
 $transaction->setMemcache($memcache);
 $transaction->setDebug($debug);

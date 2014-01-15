@@ -1,5 +1,5 @@
 <article class="module width_full">
-  <header><h3>Block Shares</h3></header>
+  <header><h3>爆块趋势</h3></header>
   <table width="70%" class="visualize" rel="line">
     <caption>块share数</caption>
     <thead>

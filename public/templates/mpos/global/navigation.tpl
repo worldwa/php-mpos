@@ -50,9 +50,7 @@
        <li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=statistics">矿池概况</a>
        {*{/if}*}
        {if $GLOBAL.acl.block.statistics}
-         {if $smarty.session.AUTHENTICATED|default: "0" == 1 && $GLOBAL.userdata.is_admin == 1}
-            <li class="icon-th-large"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blocks">爆块统计</a></li>
-         {/if}
+          <li class="icon-th-large"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blocks">爆块统计</a></li>
        {/if}
        {*{if $GLOBAL.acl.round.statistics}*}
        {*<li class="icon-chart"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=round">周期</a></li>*}

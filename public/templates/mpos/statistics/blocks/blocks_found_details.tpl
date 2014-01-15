@@ -1,5 +1,5 @@
 <article class="module width_full">
-  <header><h3>Last {$BLOCKLIMIT} Blocks Found</h3></header>
+  <header><h3>最近爆的{$BLOCKLIMIT}块</h3></header>
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
@@ -36,7 +36,7 @@
 {else if $BLOCKSFOUND[block].confirmations == -1}
           <span class="orphan">孤立</span>
 {else}
-          <span class="unconfirmed">还需{$GLOBAL.confirmations - $BLOCKSFOUND[block].confirmations}个确认 </span>
+          <span class="unconfirmed">$BLOCKSFOUND[block].confirmations确认 </span>
 {/if}
         </td>
         {*<td>{if $BLOCKSFOUND[block].is_anonymous|default:"0" == 1 && $GLOBAL.userdata.is_admin|default:"0" == 0}anonymous{else}{$BLOCKSFOUND[block].finder|default:"unknown"|escape}{/if}</td>*}

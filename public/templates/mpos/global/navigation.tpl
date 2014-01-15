@@ -41,17 +41,19 @@
         <li class="icon-search"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blockfinder">发现者</a></li>
         {if $GLOBAL.config.monitoring_uptimerobot_api_keys|default:"0"}<li class="icon-bell"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=uptime">运行时间</a></li>{/if}
       </ul>
-    {*{else}*}
-      {*<h3>统计</h3>*}
-      {*<ul class="toggle">*}
+    {else}
+      <h3>统计</h3>
+      <ul class="toggle">
        {*{if $GLOBAL.acl.pool.statistics}*}
        {*<li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=pool">矿池</a></li>*}
        {*{else}*}
-       {*<li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=statistics">统计</a>*}
+       <li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=statistics">矿池概况</a>
        {*{/if}*}
-       {*{if $GLOBAL.acl.block.statistics}*}
-       {*<li class="icon-th-large"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blocks">块</a></li>*}
-       {*{/if}*}
+       {if $GLOBAL.acl.block.statistics}
+         {if $smarty.session.AUTHENTICATED|default: "0" == 1 && $GLOBAL.userdata.is_admin == 1}
+            <li class="icon-th-large"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blocks">爆块统计</a></li>
+         {/if}
+       {/if}
        {*{if $GLOBAL.acl.round.statistics}*}
        {*<li class="icon-chart"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=round">周期</a></li>*}
        {*{/if}*}
@@ -61,7 +63,7 @@
        {*{if $GLOBAL.acl.uptime.statistics}*}
        {*{if $GLOBAL.config.monitoring_uptimerobot_api_keys|default:"0"}<li class="icon-bell"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=uptime">Uptime</a></li>{/if}*}
        {*{/if}*}
-      {*</ul>*}
+      </ul>
     {/if}
     {*<h3>帮助</h3>*}
     {*<ul class="toggle">*}

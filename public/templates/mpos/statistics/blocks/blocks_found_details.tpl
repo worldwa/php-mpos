@@ -3,16 +3,16 @@
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
-        <th align="center">Block</th>
-        <th align="center">Validity</th>
-        <th>Finder</th>
-        <th align="center">Time</th>
-        <th align="right">Difficulty</th>
-        <th align="right">Amount</th>
-        <th align="right">Expected Shares</th>
+        <th align="center">块</th>
+        <th align="center">确认</th>
+        <th>爆块者</th>
+        <th align="center">日期</th>
+        <th align="right">难度</th>
+        <th align="right">金额</th>
+        <th align="right">预期share数</th>
 {if $GLOBAL.config.payout_system == 'pplns'}<th align="right">PPLNS Shares</th>{/if}
-        <th align="right">Actual Shares</th>
-        <th align="right" style="padding-right: 25px;">Percentage</th>
+        <th align="right">实际share数</th>
+        <th align="right" style="padding-right: 25px;">比例</th>
       </tr>
     </thead>
     <tbody>
@@ -32,15 +32,16 @@
 {/if}
         <td align="center">
 {if $BLOCKSFOUND[block].confirmations >= $GLOBAL.confirmations}
-          <span class="confirmed">Confirmed</span>
+          <span class="confirmed">已确认</span>
 {else if $BLOCKSFOUND[block].confirmations == -1}
-          <span class="orphan">Orphan</span>
+          <span class="orphan">孤立</span>
 {else}
-          <span class="unconfirmed">{$GLOBAL.confirmations - $BLOCKSFOUND[block].confirmations} left</span>
+          <span class="unconfirmed">还需{$GLOBAL.confirmations - $BLOCKSFOUND[block].confirmations}个确认 </span>
 {/if}
         </td>
-        <td>{if $BLOCKSFOUND[block].is_anonymous|default:"0" == 1 && $GLOBAL.userdata.is_admin|default:"0" == 0}anonymous{else}{$BLOCKSFOUND[block].finder|default:"unknown"|escape}{/if}</td>
-        <td align="center">{$BLOCKSFOUND[block].time|date_format:"%d/%m %H:%M:%S"}</td>
+        {*<td>{if $BLOCKSFOUND[block].is_anonymous|default:"0" == 1 && $GLOBAL.userdata.is_admin|default:"0" == 0}anonymous{else}{$BLOCKSFOUND[block].finder|default:"unknown"|escape}{/if}</td>*}
+        <td>{$BLOCKSFOUND[block].finder|default:"unknown"|escape}</td>
+        <td align="center">{$BLOCKSFOUND[block].time|date_format:"y%/%m/%d %H:%M:%S"}</td>
         <td align="right">{$BLOCKSFOUND[block].difficulty|number_format:"2"}</td>
         <td align="right">{$BLOCKSFOUND[block].amount|number_format:"2"}</td>
         <td align="right">
@@ -65,6 +66,6 @@
     </tbody>
   </table>
   <footer>
-    {if $GLOBAL.config.payout_system != 'pps'}<ul><li>Note: Round Earnings are not credited until <font color="orange">{$GLOBAL.confirmations}</font> confirms.</li></ul>{/if}
+    {*{if $GLOBAL.config.payout_system != 'pps'}<ul><li>Note: Round Earnings are not credited until <font color="orange">{$GLOBAL.confirmations}</font> confirms.</li></ul>{/if}*}
   </footer>
 </article>

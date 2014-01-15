@@ -1,7 +1,7 @@
 <article class="module width_full">
   <header><h3>Block Shares</h3></header>
   <table width="70%" class="visualize" rel="line">
-    <caption>Block Shares</caption>
+    <caption>块share数</caption>
     <thead>
       <tr>
 {section block $BLOCKSFOUND step=-1}
@@ -11,13 +11,13 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row">Expected</th>
+        <th scope="row">预期</th>
 {section block $BLOCKSFOUND step=-1}
         <td>{$BLOCKSFOUND[block].estshares}</td>
 {/section}
       </tr>
       <tr>
-        <th scope="row">Actual</th>
+        <th scope="row">实际</th>
 {section block $BLOCKSFOUND step=-1}
         <td>{$BLOCKSFOUND[block].shares|default:"0"}</td>
 {/section}
@@ -29,7 +29,7 @@
 {/section}
    </tr>{/if}
     {if $USEBLOCKAVERAGE}<tr>
-      <th scope="row">Average</th>
+      <th scope="row">平均</th>
 {section block $BLOCKSFOUND step=-1}
       <td>{$BLOCKSFOUND[block].block_avg}</td>
 {/section}
@@ -50,8 +50,9 @@
   </table>
   <footer>
     <p style="padding-left:30px; padding-redight:30px; font-size:10px;">
-    The graph above illustrates N shares to find a block vs. E Shares expected to find a block based on
-    target and network difficulty and assuming a zero variance scenario.
+      爆块实际share数据以及预期share数曲线图
+    {*The graph above illustrates N shares to find a block vs. E Shares expected to find a block based on*}
+    {*target and network difficulty and assuming a zero variance scenario.*}
     </p>
   </footer>
 </article>

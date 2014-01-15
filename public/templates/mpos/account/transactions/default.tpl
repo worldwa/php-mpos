@@ -104,6 +104,7 @@
           <td>{date('Y-m-d H:i:s', strtotime($TRANSACTIONS[transaction].timestamp)+8*60*60)}</td>
           <td>
             {if $TRANSACTIONS[transaction].type == 'Credit_PPS'}PPS收益{/if}
+            {if $TRANSACTIONS[transaction].type == 'Bonus'}爆块奖励{/if}
             {if $TRANSACTIONS[transaction].type == 'Debit_MP'}手动提现{/if}
             {if $TRANSACTIONS[transaction].type == 'Debit_AP'}自动提现{/if}
             {if $TRANSACTIONS[transaction].type == 'Donation_PPS'}捐赠{/if}
@@ -116,6 +117,7 @@
                 $TRANSACTIONS[transaction].type == 'Debit_MP' OR
                 $TRANSACTIONS[transaction].type == 'Debit_AP' OR
                 $TRANSACTIONS[transaction].type == 'TXFee' OR
+                $TRANSACTIONS[transaction].type == 'Bonus' OR
                 $TRANSACTIONS[transaction].confirmations >= $GLOBAL.confirmations
             }<span class="confirmed">已确认</span>
             {else if $TRANSACTIONS[transaction].confirmations == -1}<span class="orphan">孤立</span>

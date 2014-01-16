@@ -7,9 +7,9 @@
         <th align="center">名次</th>
         <th align="right"></th>
         <th align="left" scope="col">用户名</th>
-        <th align="right" scope="col">KH/s</th>
+        <th align="center" scope="col">KH/s</th>
 {*{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}*}
-        <th align="right">{$GLOBAL.config.currency}/天</th>
+        <th align="center">{$GLOBAL.config.currency}/天</th>
         {*{if $GLOBAL.config.price.currency}<th align="right" style="padding-right: 25px;">{$GLOBAL.config.price.currency}/天</th>{/if}*}
 {*{/if}*}
       </tr>
@@ -23,9 +23,9 @@
         <td align="center">{$rank++}</td>
         <td align="right">{if $CONTRIBHASHES[contrib].donate_percent > 0}<i class="icon-star-empty"></i>{/if}</td>
         <td>{if $CONTRIBHASHES[contrib].is_anonymous|default:"0" == 1 && $GLOBAL.userdata.is_admin|default:"0" == 0}anonymous{else}{$CONTRIBHASHES[contrib].account|escape}{/if}</td>
-        <td align="right">{$CONTRIBHASHES[contrib].hashrate|number_format}</td>
+        <td align="center">{$CONTRIBHASHES[contrib].hashrate|number_format}</td>
 {*{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}*}
-        <td align="right">{$estday|number_format:"3"}</td>
+        <td align="center">{$estday|number_format:"3"}</td>
         {*{if $GLOBAL.config.price.currency}<td align="right" style="padding-right: 25px;">{($estday * $GLOBAL.price)|default:"n/a"|number_format:"4"}</td>{/if}*}
 {*{/if}*}
       </tr>
@@ -36,8 +36,8 @@
         <td align="center">n/a</td>
         <td align="right">{if $GLOBAL.userdata.donate_percent > 0}<i class="icon-star-empty"></i>{/if}</td>
         <td>{$GLOBAL.userdata.username|escape}</td>
-        <td align="right">{$GLOBAL.userdata.rawhashrate|number_format}</td>
-        <td align="right">{$myestday|number_format:"3"|default:"n/a"}</td>
+        <td align="center">{$GLOBAL.userdata.rawhashrate|number_format}</td>
+        <td align="center">{$myestday|number_format:"3"|default:"n/a"}</td>
         {*{if $GLOBAL.config.price.currency}<td align="right" style="padding-right: 25px;">{($myestday * $GLOBAL.price)|default:"n/a"|number_format:"4"}</td>{/if}*}
       </tr>
 {/if}

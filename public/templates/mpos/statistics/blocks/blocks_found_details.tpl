@@ -36,7 +36,7 @@
 {else if $BLOCKSFOUND[block].confirmations == -1}
           <span class="orphan">孤立</span>
 {else}
-          <span class="unconfirmed">$BLOCKSFOUND[block].confirmations确认 </span>
+          <span class="unconfirmed">{$BLOCKSFOUND[block].confirmations}确认 </span>
 {/if}
         </td>
         {*<td>{if $BLOCKSFOUND[block].is_anonymous|default:"0" == 1 && $GLOBAL.userdata.is_admin|default:"0" == 0}anonymous{else}{$BLOCKSFOUND[block].finder|default:"unknown"|escape}{/if}</td>*}

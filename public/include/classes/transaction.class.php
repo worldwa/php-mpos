@@ -293,6 +293,18 @@ class Transaction extends Base {
       return $result->fetch_assoc();
     return $this->sqlError();
   }
+
+
+  public  function getBonus(){
+    $this->debug->append("STA " . __METHOD__, 4);
+    $stmt = $this->mysqli->prepare("
+       select a.username as username, t.amount as amount, t.timestamp as timestamp, t.block_id as block_id from accounts as a, transactions as t where t.type='Bonus' and t.account_id = a.id order by timestamp desc;
+        ");
+    if ($this->checkStmt($stmt) && $stmt->execute() && $result = $stmt->get_result())
+      return $result->fetch_all(MYSQLI_ASSOC);
+    return $this->sqlError();
+  }
+
 }
 $transaction = new Transaction();
 $transaction->setMemcache($memcache);

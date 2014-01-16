@@ -49,9 +49,10 @@
        {*{else}*}
        <li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=statistics">矿池概况</a>
        {*{/if}*}
-       {if $GLOBAL.acl.block.statistics}
+       {*{if $GLOBAL.acl.block.statistics}*}
           <li class="icon-th-large"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blocks">爆块统计</a></li>
-       {/if}
+          <li class="icon-th-large"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=blockbonus">爆块奖励</a></li>
+       {*{/if}*}
        {*{if $GLOBAL.acl.round.statistics}*}
        {*<li class="icon-chart"><a href="{$smarty.server.PHP_SELF}?page=statistics&action=round">周期</a></li>*}
        {*{/if}*}

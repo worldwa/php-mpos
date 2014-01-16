@@ -55,9 +55,7 @@
                     </tr>
                     <tr><td colspan="2">&nbsp;</td></tr>
                     <tr><td colspan="2"><b><u>{$GLOBAL.config.currency} 账户结余</u></b></td></tr>
-                  {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
                     <tr><td>24小时</td><td align="right"><b>{$GLOBAL.userdata.amount24hours.amount24hours|default:"0"|number_format:"8"}</td></tr>
-                  {/if}
                     <tr><td>已确认</td><td align="right"><b>{$GLOBAL.userdata.balance.confirmed|default:"0"|number_format:"8"}</td></tr>
                     {*<tr><td>未确认</td><td align="right"><b>{$GLOBAL.userdata.balance.unconfirmed|default:"0"|number_format:"8"}</td></tr>*}
                   </table>

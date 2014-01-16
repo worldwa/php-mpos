@@ -13,9 +13,9 @@
   <h3>总体统计</h3>
 {include file="statistics/pool/general_stats.tpl"}
 </div>
-{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
+{*{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}*}
   <div data-role="collapsible">
-  <h3>Last Blocks</h3>
+  <h3>最近爆块</h3>
   {include file="statistics/blocks/small_table.tpl" ALIGN="right" SHORT=true}
   </div>
-{/if}
+{*{/if}*}

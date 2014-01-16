@@ -8,10 +8,10 @@
         <th align="right"></th>
         <th align="left" scope="col">用户名</th>
         <th align="right" scope="col">KH/s</th>
-{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
+{*{if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}*}
         <th align="right">{$GLOBAL.config.currency}/天</th>
-        {if $GLOBAL.config.price.currency}<th align="right" style="padding-right: 25px;">{$GLOBAL.config.price.currency}/天</th>{/if}
-{/if}
+        {*{if $GLOBAL.config.price.currency}<th align="right" style="padding-right: 25px;">{$GLOBAL.config.price.currency}/天</th>{/if}*}
+{*{/if}*}
       </tr>
     </thead>
     <tbody>
@@ -30,17 +30,17 @@
 {/if}
       </tr>
 {/section}
-{if $listed != 1 && $GLOBAL.userdata.username|default:"" && $GLOBAL.userdata.rawhashrate|default:"0" > 0}
+{*{if $listed != 1 && $GLOBAL.userdata.username|default:"" && $GLOBAL.userdata.rawhashrate|default:"0" > 0}*}
       {math assign="myestday" equation="round(reward / ( diff * pow(2,32) / ( hashrate * 1000 ) / 3600 / 24), 3)" diff=$DIFFICULTY reward=$REWARD hashrate=$GLOBAL.userdata.rawhashrate}
-      <tr>
-        <td align="center">n/a</td>
-        <td align="right">{if $GLOBAL.userdata.donate_percent > 0}<i class="icon-star-empty"></i>{/if}</td>
-        <td>{$GLOBAL.userdata.username|escape}</td>
-        <td align="right">{$GLOBAL.userdata.rawhashrate|number_format}</td>
-        <td align="right">{$myestday|number_format:"3"|default:"n/a"}</td>
-        {if $GLOBAL.config.price.currency}<td align="right" style="padding-right: 25px;">{($myestday * $GLOBAL.price)|default:"n/a"|number_format:"4"}</td>{/if}
-      </tr>
-{/if}
+      {*<tr>*}
+        {*<td align="center">n/a</td>*}
+        {*<td align="right">{if $GLOBAL.userdata.donate_percent > 0}<i class="icon-star-empty"></i>{/if}</td>*}
+        {*<td>{$GLOBAL.userdata.username|escape}</td>*}
+        {*<td align="right">{$GLOBAL.userdata.rawhashrate|number_format}</td>*}
+        {*<td align="right">{$myestday|number_format:"3"|default:"n/a"}</td>*}
+        {*{if $GLOBAL.config.price.currency}<td align="right" style="padding-right: 25px;">{($myestday * $GLOBAL.price)|default:"n/a"|number_format:"4"}</td>{/if}*}
+      {*</tr>*}
+{*{/if}*}
     </tbody>
   </table>
 </article>

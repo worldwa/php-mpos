@@ -3,7 +3,7 @@
   <table class="tablesorter" cellspacing="0">
     <thead>
       <tr>
-        <th align="center">块</th>
+        <th align="center">块ID</th>
         <th align="center">确认</th>
         <th>爆块者</th>
         <th align="center">日期</th>

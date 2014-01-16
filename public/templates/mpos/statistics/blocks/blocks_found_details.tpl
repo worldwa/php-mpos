@@ -41,8 +41,8 @@
         </td>
         {*<td>{if $BLOCKSFOUND[block].is_anonymous|default:"0" == 1 && $GLOBAL.userdata.is_admin|default:"0" == 0}anonymous{else}{$BLOCKSFOUND[block].finder|default:"unknown"|escape}{/if}</td>*}
         <td>{$BLOCKSFOUND[block].finder|default:"unknown"|escape}</td>
-        {*<td align="center">{$BLOCKSFOUND[block].time|date_format:"%m/%d %H:%M:%S"}</td>*}
-        <td align="center">{date('Y-m-d H:i:s', strtotime($BLOCKSFOUND[block].time)+8*60*60)}</td>
+        <td align="center">{$BLOCKSFOUND[block].time|date_format:"%m/%d %H:%M:%S"}</td>
+        {*<td align="center">{date('Y-m-d H:i:s', strtotime($BLOCKSFOUND[block].time)+8*60*60)}</td>*}
         <td align="right">{$BLOCKSFOUND[block].difficulty|number_format:"2"}</td>
         <td align="right">{$BLOCKSFOUND[block].amount|number_format:"2"}</td>
         <td align="right">

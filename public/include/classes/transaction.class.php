@@ -298,7 +298,7 @@ class Transaction extends Base {
   public  function getBonus(){
     $this->debug->append("STA " . __METHOD__, 4);
     $stmt = $this->mysqli->prepare("
-       select a.username as username, t.amount as amount, t.timestamp as timestamp, b.height as height from accounts as a, transactions as t, blocks as b where t.type='Bonus' and t.account_id = a.id and b.id = t.block_id order by timestamp desc;select a.username as username, t.amount as amount, t.timestamp as timestamp, b.height as height from accounts as a, transactions as t, blocks as b where t.type='Bonus' and t.account_id = a.id and b.id = t.block_id order by timestamp desc;
+       select a.username as username, t.amount as amount, t.timestamp as timestamp, b.height as height from accounts as a, transactions as t, blocks as b where t.type='Bonus' and t.account_id = a.id and b.id = t.block_id order by timestamp desc;
         ");
     if ($this->checkStmt($stmt) && $stmt->execute() && $result = $stmt->get_result())
       return $result->fetch_all(MYSQLI_ASSOC);

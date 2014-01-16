@@ -9,7 +9,7 @@
     </li>
     <li>2. <strong>下载一个挖矿软件.</strong>
       <ul>
-        <li><em>CGMiner Linux/Windows:</em> <a href="http://ck.kolivas.org/apps/cgminer/" target="_blank">点此下载</a></li>
+        <li><em>CGMiner Linux/Windows （下载 3.7 之前的版本）:</em> <a href="http://ck.kolivas.org/apps/cgminer/" target="_blank">点此下载</a></li>
         <li><em>CGMiner Mac OS X:</em> <a href="http://spaceman.ca/cgminer/" target="_blank">点此下载</a></li>
       </ul>
     </li>

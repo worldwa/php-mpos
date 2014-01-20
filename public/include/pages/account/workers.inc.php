@@ -6,7 +6,7 @@ if ($user->isAuthenticated()) {
   switch (@$_REQUEST['do']) {
   case 'delete':
     if ($worker->deleteWorker($_SESSION['USERDATA']['id'], $_GET['id'])) {
-      $_SESSION['POPUP'][] = array('CONTENT' => '矿工失败成功');
+      $_SESSION['POPUP'][] = array('CONTENT' => '删除矿工成功');
     } else {
       $_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'errormsg');
     }
@@ -20,7 +20,7 @@ if ($user->isAuthenticated()) {
     break;
   case 'update':
     if ($worker->updateWorkers($_SESSION['USERDATA']['id'], @$_POST['data'])) {
-      $_SESSION['POPUP'][] = array('CONTENT' => '矿工更新成功');
+      $_SESSION['POPUP'][] = array('CONTENT' => '更新矿工成功');
     } else {
       $_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'errormsg');
     }

@@ -43,10 +43,10 @@
         </li>
         </ul>
     </li>
-    <li>5. <strong>添加莱特币地址，以便我们及时提款给您</strong>
+    <li>5. <strong>添加狗币地址，以便我们及时提款给您</strong>
       <ul>
-        <li> 下载莱特币钱包客户端，<a href="{$SITECOINURL|default:"http://www.litecoin.org"}" target="_blank">莱特币钱包下载</a>.
-          <p>生成一个莱特币地址然后绑定到您的个人账户上.</p>
+        <li> 下载狗币钱包客户端，<a href="{$SITECOINURL|default:"http://www.dogecoin.com"}" target="_blank">狗币钱包下载</a>.
+          <p>生成一个狗币地址然后绑定到您的个人账户上.</p>
         </li>
       </ul>
     </li>

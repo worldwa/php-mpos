@@ -7,7 +7,7 @@
         <th align="center">名次</th>
         <th>矿工</th>
         <th align="center">块数</th>
-        <th align="right" style="padding-right: 25px;">LTC数</th>
+        <th align="right" style="padding-right: 25px;">DogeCoin</th>
       </tr>
     </thead>
     <tbody>

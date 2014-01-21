@@ -19,7 +19,7 @@
 	{else}
       	<td>{$BLOCKDETAILS.height|number_format:"0"|default:"0"}</td>
 	{/if}
-        <td>含多少LTC</td>
+        <td>DogeCoin</td>
         <td>{$BLOCKDETAILS.amount|number_format|default:"0"}</td>
         <td>确认</td>
         <td>{if $BLOCKDETAILS.confirmations >= $GLOBAL.confirmations}

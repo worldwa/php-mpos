@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>{$GLOBAL.website.title}</title>
-  <meta name="keywords" content="莱特币矿池 矿池 LTC矿池 爱挖矿 莱特币 LTC" />
-  <meta name="description" content="{$GLOBAL.website.title},永久免费的莱特币矿池,专业指导，矿工停机实时通知，24小时随机提款。"/>
+  <meta name="keywords" content="狗币矿池 矿池 Doge矿池 爱挖矿 狗币 DogeCoin" />
+  <meta name="description" content="{$GLOBAL.website.title},中国最好的狗币矿池,专业指导，矿工停机实时通知，24小时随时提款。"/>
 
   <link rel="stylesheet" href="{$PATH}/css/layout.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="{$PATH}/css/fontello.css">

@@ -12,7 +12,7 @@ if (!$smarty->isCached('master.tpl', $smarty_cache_key)) {
   } else {
     $dDifficulty = 1;
     $iBlock = 0;
-    $_SESSION['POPUP'][] = array('CONTENT' => '连接litecoind RPC服务失败: ' . $bitcoin->can_connect(), 'TYPE' => 'errormsg');
+    $_SESSION['POPUP'][] = array('CONTENT' => '连接钱包服务失败: ' . $bitcoin->can_connect(), 'TYPE' => 'errormsg');
   }
   $smarty->assign("CURRENTBLOCK", $iBlock);
   $smarty->assign("DIFFICULTY", $dDifficulty);

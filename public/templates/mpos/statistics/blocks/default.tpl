@@ -2,6 +2,8 @@
 {include file="statistics/blocks/block_shares_graph.tpl"}
 
   {include file="statistics/blocks/block_overview_time.tpl"}
+{/if}
 
+{if $smarty.session.AUTHENTICATED|default:"0" == 1 }
 {include file="statistics/blocks/blocks_found_details.tpl"}
 {/if}

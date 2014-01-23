@@ -17,7 +17,7 @@ $(document).ready(function(){
   var g1, g2, g3, g4, g5;
 
   var jqPlotShareinfoOptions = {
-    title: 'Shares',
+    title: '贡献',
     highlighter: { show: false },
     grid: { drawBorder: false, background: '#fbfbfb', shadow: false },
     seriesColors: [ '#26a4ed', '#ee8310', '#e9e744' ],
@@ -56,7 +56,7 @@ $(document).ready(function(){
   } else {
     initSharerate = 1
   }
-  g4 = new JustGage({id: "sharerate", value: parseFloat({/literal}{$GLOBAL.userdata.sharerate}{literal}).toFixed(2), min: 0, max: Math.round(initSharerate), gaugeColor: '#6f7a8a', valueFontColor: '#555', shadowOpacity : 0.8, shadowSize : 0, shadowVerticalOffset : 10, title: "Share速率", label: "shares/s"});
+  g4 = new JustGage({id: "sharerate", value: parseFloat({/literal}{$GLOBAL.userdata.sharerate}{literal}).toFixed(2), min: 0, max: Math.round(initSharerate), gaugeColor: '#6f7a8a', valueFontColor: '#555', shadowOpacity : 0.8, shadowSize : 0, shadowVerticalOffset : 10, title: "贡献速率", label: "贡献/秒"});
 });
 {/literal}
 </script>

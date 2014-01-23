@@ -11,7 +11,7 @@
     </div>
     <div style="display: inline-block;">
       <div id="nethashrate" style="width:120px; height:90px;"></div>
-      <div id="querytime" style="width:120px; height:90px;"></div>
+      {*<div id="querytime" style="width:120px; height:90px;"></div>*}
     </div>
     </center>
     {if !$DISABLED_DASHBOARD and !$DISABLED_DASHBOARD_API}

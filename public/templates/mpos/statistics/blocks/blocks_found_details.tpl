@@ -8,9 +8,9 @@
         <th>爆块者</th>
         <th align="center">日期</th>
         <th align="right">难度</th>
-        <th align="right">金额</th>
+        <th align="right">币量</th>
         <th align="right">预期贡献数</th>
-{if $GLOBAL.config.payout_system == 'pplns'}<th align="right">PPLNS 贡献</th>{/if}
+{if $GLOBAL.config.payout_system == 'pplns'}<th align="right">PPLNS 贡献数</th>{/if}
         <th align="right">实际贡献数</th>
         <th align="right" style="padding-right: 25px;">比例</th>
       </tr>

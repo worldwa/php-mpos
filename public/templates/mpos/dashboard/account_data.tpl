@@ -1,4 +1,4 @@
-<article class="module width_quarter">
+<article class="module width_3_quarter">
   <header><h3>账户信息</h3></header>
     <table class="tablesorter" cellspacing="0">
       <tr>

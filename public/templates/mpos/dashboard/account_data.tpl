@@ -24,16 +24,16 @@
       </thead>
         <tr>
           <td align="left" style="font-weight: bold;">最近24小时收益</td>
-          <td align="right"><span id="b-amount24hours" class="confirmed" style="width: calc(150px); font-size: 12px;">{$GLOBAL.userdata.amount24hours.amount24hours|default:"0"|number_format:"8"}</span></td>
+          <td align="right"><span id="b-amount24hours" class="confirmed" style="width: calc(120px); font-size: 12px;">{$GLOBAL.userdata.amount24hours.amount24hours|default:"0"|number_format:"8"}</span></td>
         </tr>
 
       <tr>
         <td align="left" style="font-weight: bold;">已确认</td>
-        <td align="right"><span id="b-confirmed" class="confirmed" style="width: calc(150px); font-size: 12px;">{$GLOBAL.userdata.balance.confirmed|default:"0"|number_format:"8"}</span></td>
+        <td align="right"><span id="b-confirmed" class="confirmed" style="width: calc(120px); font-size: 12px;">{$GLOBAL.userdata.balance.confirmed|default:"0"|number_format:"8"}</span></td>
       </tr>
       <tr>
         <td align="left" style="font-weight: bold;">未确认</td>
-        <td align="right"><span id="b-unconfirmed" class="unconfirmed" style="width: calc(150px); font-size: 12px;">{$GLOBAL.userdata.balance.unconfirmed|default:"0"|number_format:"8"}</span></td>
+        <td align="right"><span id="b-unconfirmed" class="unconfirmed" style="width: calc(120px); font-size: 12px;">{$GLOBAL.userdata.balance.unconfirmed|default:"0"|number_format:"8"}</span></td>
       </tr>
     </table>
     {if !$DISABLED_DASHBOARD and !$DISABLED_DASHBOARD_API}

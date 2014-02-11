@@ -32,21 +32,21 @@
           <table width="50%">
             <tbody>
               <tr><td>STRATUM:</td><td style="color:red"><kbd>stratum+tcp://stratum.iwakuang.com</kbd></td></tr>
-              <tr><td>端口:</td><td style="color:red"><kbd>{$SITESTRATUMPORT|default:"3333"}</kbd></td></tr>
+              <tr><td>端口:</td><td style="color:red"><kbd>{$SITESTRATUMPORT|default:"1111"}</kbd></td></tr>
               <tr><td>矿工:</td><td style="color:red"><kbd><em>用户名</em>.<em>矿工名</em></kbd></td></tr>
               <tr><td>矿工密码:</td><td style="color:red"><kbd>*******</kbd></td></tr>
             </tbody>
           </table>
         <li>
           <p>如果您用的是命令行的方式，如下:</p>
-          <pre>./cgminer {if $GLOBAL.config.algorithm == 'scrypt'}--scrypt {/if} -o stratum+tcp://stratum.iwakuang.com:{$SITESTRATUMPORT|default:"3333"} -u <em>用户名</em>.<em>矿工名</em> -p <em>矿工密码</em></pre>
+          <pre>./cgminer {if $GLOBAL.config.algorithm == 'scrypt'}--scrypt {/if} -o stratum+tcp://stratum.iwakuang.com:{$SITESTRATUMPORT|default:"1111"} -u <em>用户名</em>.<em>矿工名</em> -p <em>矿工密码</em></pre>
         </li>
         </ul>
     </li>
-    <li>5. <strong>添加狗币地址，以便我们及时提款给您</strong>
+    <li>5. <strong>添加收款地址，以便我们及时提款给您</strong>
       <ul>
-        <li> 下载狗币钱包客户端，<a href="{$SITECOINURL|default:"http://www.dogecoin.com"}" target="_blank">狗币钱包下载</a>.
-          <p>生成一个狗币地址然后绑定到您的个人账户上.</p>
+        <li> 下载钱包客户端，<a href="{$SITECOINURL|default:"http://worldcoinforum.org/"}" target="_blank">世界钱包下载</a>.
+          <p>生成一个钱包地址然后绑定到您的个人账户上.</p>
         </li>
       </ul>
     </li>

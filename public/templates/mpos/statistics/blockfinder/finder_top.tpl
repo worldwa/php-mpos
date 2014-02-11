@@ -7,7 +7,7 @@
         <th align="center">名次</th>
         <th>Username</th>
         <th align="center">发现块数</th>
-        <th align="right" style="padding-right: 25px;">DogeCoin</th>
+        <th align="right" style="padding-right: 25px;">Coin</th>
       </tr>
     </thead>
     <tbody>

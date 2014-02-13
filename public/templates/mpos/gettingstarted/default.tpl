@@ -45,7 +45,7 @@
     </li>
     <li>5. <strong>添加收款地址，以便我们及时提款给您</strong>
       <ul>
-        <li> 下载钱包客户端，<a href="{$SITECOINURL|default:"http://worldcoinforum.org/"}" target="_blank">世界钱包下载</a>.
+        <li> 下载钱包客户端，<a href="{$SITECOINURL|default:"http://www.iwakuang.com/"}" target="_blank">钱包下载</a>.
           <p>生成一个钱包地址然后绑定到您的个人账户上.</p>
         </li>
       </ul>

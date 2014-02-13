@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>{$GLOBAL.website.title}</title>
-  <meta name="keywords" content="世界币矿池 矿池 爱挖矿 世界币 WorldCoin" />
-  <meta name="description" content="{$GLOBAL.website.title},中国最好的世界币矿池,专业指导，矿工停机实时通知，24小时随时提款。"/>
+  <meta name="keywords" content="矿池 爱挖矿" />
+  <meta name="description" content="{$GLOBAL.website.title},中国最好的矿池,专业指导，矿工停机实时通知，24小时随时提款。"/>
 
   <link rel="stylesheet" href="{$PATH}/css/layout.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="{$PATH}/css/fontello.css">

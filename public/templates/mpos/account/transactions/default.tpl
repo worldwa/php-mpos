@@ -7,6 +7,9 @@
         {foreach $SUMMARY as $type=>$total}
           <th>
             {if $type == 'Credit_PPS'}PPS收益{/if}
+            {if $type == 'Credit'}PPLNS收益{/if}
+            {if $type == 'Bonus'}爆块奖励{/if}
+            {if $type == 'Fee'}手续费{/if}
             {if $type == 'Debit_MP'}手动提现{/if}
             {if $type == 'Debit_AP'}自动提现{/if}
             {if $type == 'Donation_PPS'}捐赠{/if}
@@ -104,6 +107,8 @@
           <td>{date('Y-m-d H:i:s', strtotime($TRANSACTIONS[transaction].timestamp)+8*60*60)}</td>
           <td>
             {if $TRANSACTIONS[transaction].type == 'Credit_PPS'}PPS收益{/if}
+            {if $TRANSACTIONS[transaction].type == 'Credit'}PPLNS收益{/if}
+            {if $TRANSACTIONS[transaction].type == 'Fee'}手续费{/if}
             {if $TRANSACTIONS[transaction].type == 'Bonus'}爆块奖励{/if}
             {if $TRANSACTIONS[transaction].type == 'Debit_MP'}手动提现{/if}
             {if $TRANSACTIONS[transaction].type == 'Debit_AP'}自动提现{/if}

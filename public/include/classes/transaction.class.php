@@ -287,7 +287,7 @@ class Transaction extends Base {
         WHERE account_id = ?
         AND archived = 0
         AND  UNIX_TIMESTAMP(NOW())-UNIX_TIMESTAMP(timestamp) <= 87000
-        AND type IN ('Credit_PPS','Donation_PPS')
+        AND type IN ('Credit_PPS','Donation_PPS', 'Credit', 'Bonus')
         ");
     if ($this->checkStmt($stmt) && $stmt->bind_param("i", $account_id) && $stmt->execute() && $result = $stmt->get_result())
       return $result->fetch_assoc();

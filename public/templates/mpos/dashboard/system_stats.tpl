@@ -1,4 +1,4 @@
- <article class="module width_quarter" >
+ <article class="module width_quarter" style="margin-top: -285px">
    <header><h3>{$GLOBAL.config.payout_system|capitalize} 统计</h3></header>
    <div class="module_content">
      <table width="100%">

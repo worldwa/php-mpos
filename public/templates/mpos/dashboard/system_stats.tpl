@@ -37,8 +37,8 @@
 
            <td id="b-fee" class="right">{($GLOBAL.userdata.shares.invalid / ($GLOBAL.roundshares.valid + $GLOBAL.roundshares.invalid) * 100)|number_format:"2"}%</td>
        </tr>
-       <tr><td colspan="2">&nbsp;</td></tr>
-         {include file="dashboard/payout_estimates.tpl"}
+       {*<tr><td colspan="2">&nbsp;</td></tr>*}
+         {*{include file="dashboard/payout_estimates.tpl"}*}
          <tr><td colspan="2">&nbsp;</td></tr>
          {include file="dashboard/network_info.tpl"}
          <tr><td colspan="2">&nbsp;</td></tr>

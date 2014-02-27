@@ -1,4 +1,6 @@
     <hr/>
+    <li class="icon-th-large"><a href="http://www.iwakuang.com" target="_blank">爱挖矿池列表</a></li>
+    <li class="icon-record"><a href="http://btc-appstore.com/" target="_blank">BTC应用市场</a></li>
     <li class="icon-home"><a href="{$smarty.server.PHP_SELF}">首页</a></li>
     <li class="icon-desktop"><a href="{$smarty.server.PHP_SELF}?page=gettingstarted">新手指南</a></li>
     <li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=mininghardware">各显卡算力及配置</a></li>

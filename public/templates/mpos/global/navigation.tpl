@@ -4,7 +4,7 @@
     <li class="icon-home"><a href="{$smarty.server.PHP_SELF}">首页</a></li>
     <li class="icon-desktop"><a href="{$smarty.server.PHP_SELF}?page=gettingstarted">新手指南</a></li>
     <li class="icon-align-left"><a href="{$smarty.server.PHP_SELF}?page=mininghardware">各显卡算力及配置</a></li>
-    <li class="icon-doc"><a href="http://www.iwakuang.com/bbs" target="_blank">爱挖矿论坛</a></li>
+    <li class="icon-doc"><a href="http://lite.iwakuang.com/bbs" target="_blank">爱挖矿论坛</a></li>
     {if $smarty.session.AUTHENTICATED|default:"0" == 1}
     <h3>我的账户</h3>
     <ul class="toggle">

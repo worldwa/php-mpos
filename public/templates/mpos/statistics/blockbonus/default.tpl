@@ -17,7 +17,7 @@
         <td align="center">{$BLOCKBONUS[bb].height}</td>
         <td align="center">{$BLOCKBONUS[bb].username}</td>
         <td align="center">{$BLOCKBONUS[bb].amount|number_format:"2"} coin</td>
-        <td align="center">{date('Y-m-d H:i:s', strtotime($BLOCKBONUS[bb].timestamp)+8*60*60)}</td>
+        <td align="center">{date('Y-m-d H:i:s', strtotime($BLOCKBONUS[bb].timestamp))}</td>
       </tr>
     {/section}
     </tbody>

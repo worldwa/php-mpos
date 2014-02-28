@@ -104,7 +104,7 @@
         <tr class="{cycle values="odd,even"}">
           <td align="center">{$TRANSACTIONS[transaction].id}</td>
           <td>{$TRANSACTIONS[transaction].username}</td>
-          <td>{date('Y-m-d H:i:s', strtotime($TRANSACTIONS[transaction].timestamp)+8*60*60)}</td>
+          <td>{date('Y-m-d H:i:s', strtotime($TRANSACTIONS[transaction].timestamp))}</td>
           <td>
             {if $TRANSACTIONS[transaction].type == 'Credit_PPS'}PPS收益{/if}
             {if $TRANSACTIONS[transaction].type == 'Credit'}收益{/if}
